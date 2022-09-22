@@ -1,0 +1,237 @@
+|RCA
+s[0] <= FA:FA_0.port0
+s[1] <= FA:FA_1.port0
+s[2] <= FA:FA_2.port0
+s[3] <= FA:FA_3.port0
+s[4] <= FA:FA_4.port0
+s[5] <= FA:FA_5.port0
+s[6] <= FA:FA_6.port0
+s[7] <= FA:FA_7.port0
+Carry_out <= FA:FA_7.port1
+x[0] => x[0].IN1
+x[1] => x[1].IN1
+x[2] => x[2].IN1
+x[3] => x[3].IN1
+x[4] => x[4].IN1
+x[5] => x[5].IN1
+x[6] => x[6].IN1
+x[7] => x[7].IN1
+y[0] => y[0].IN1
+y[1] => y[1].IN1
+y[2] => y[2].IN1
+y[3] => y[3].IN1
+y[4] => y[4].IN1
+y[5] => y[5].IN1
+y[6] => y[6].IN1
+y[7] => y[7].IN1
+Carry_in => Carry_in.IN1
+
+
+|RCA|FA:FA_0
+s <= HA:HA_2.s
+Carry_out <= comb.DB_MAX_OUTPUT_PORT_TYPE
+x => x.IN1
+y => y.IN1
+Carry_in => Carry_in.IN1
+
+
+|RCA|FA:FA_0|HA:HA_1
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+x => comb.IN0
+x => comb.IN0
+y => comb.IN1
+y => comb.IN1
+
+
+|RCA|FA:FA_0|HA:HA_2
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+x => comb.IN0
+x => comb.IN0
+y => comb.IN1
+y => comb.IN1
+
+
+|RCA|FA:FA_1
+s <= HA:HA_2.s
+Carry_out <= comb.DB_MAX_OUTPUT_PORT_TYPE
+x => x.IN1
+y => y.IN1
+Carry_in => Carry_in.IN1
+
+
+|RCA|FA:FA_1|HA:HA_1
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+x => comb.IN0
+x => comb.IN0
+y => comb.IN1
+y => comb.IN1
+
+
+|RCA|FA:FA_1|HA:HA_2
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+x => comb.IN0
+x => comb.IN0
+y => comb.IN1
+y => comb.IN1
+
+
+|RCA|FA:FA_2
+s <= HA:HA_2.s
+Carry_out <= comb.DB_MAX_OUTPUT_PORT_TYPE
+x => x.IN1
+y => y.IN1
+Carry_in => Carry_in.IN1
+
+
+|RCA|FA:FA_2|HA:HA_1
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+x => comb.IN0
+x => comb.IN0
+y => comb.IN1
+y => comb.IN1
+
+
+|RCA|FA:FA_2|HA:HA_2
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+x => comb.IN0
+x => comb.IN0
+y => comb.IN1
+y => comb.IN1
+
+
+|RCA|FA:FA_3
+s <= HA:HA_2.s
+Carry_out <= comb.DB_MAX_OUTPUT_PORT_TYPE
+x => x.IN1
+y => y.IN1
+Carry_in => Carry_in.IN1
+
+
+|RCA|FA:FA_3|HA:HA_1
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+x => comb.IN0
+x => comb.IN0
+y => comb.IN1
+y => comb.IN1
+
+
+|RCA|FA:FA_3|HA:HA_2
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+x => comb.IN0
+x => comb.IN0
+y => comb.IN1
+y => comb.IN1
+
+
+|RCA|FA:FA_4
+s <= HA:HA_2.s
+Carry_out <= comb.DB_MAX_OUTPUT_PORT_TYPE
+x => x.IN1
+y => y.IN1
+Carry_in => Carry_in.IN1
+
+
+|RCA|FA:FA_4|HA:HA_1
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+x => comb.IN0
+x => comb.IN0
+y => comb.IN1
+y => comb.IN1
+
+
+|RCA|FA:FA_4|HA:HA_2
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+x => comb.IN0
+x => comb.IN0
+y => comb.IN1
+y => comb.IN1
+
+
+|RCA|FA:FA_5
+s <= HA:HA_2.s
+Carry_out <= comb.DB_MAX_OUTPUT_PORT_TYPE
+x => x.IN1
+y => y.IN1
+Carry_in => Carry_in.IN1
+
+
+|RCA|FA:FA_5|HA:HA_1
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+x => comb.IN0
+x => comb.IN0
+y => comb.IN1
+y => comb.IN1
+
+
+|RCA|FA:FA_5|HA:HA_2
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+x => comb.IN0
+x => comb.IN0
+y => comb.IN1
+y => comb.IN1
+
+
+|RCA|FA:FA_6
+s <= HA:HA_2.s
+Carry_out <= comb.DB_MAX_OUTPUT_PORT_TYPE
+x => x.IN1
+y => y.IN1
+Carry_in => Carry_in.IN1
+
+
+|RCA|FA:FA_6|HA:HA_1
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+x => comb.IN0
+x => comb.IN0
+y => comb.IN1
+y => comb.IN1
+
+
+|RCA|FA:FA_6|HA:HA_2
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+x => comb.IN0
+x => comb.IN0
+y => comb.IN1
+y => comb.IN1
+
+
+|RCA|FA:FA_7
+s <= HA:HA_2.s
+Carry_out <= comb.DB_MAX_OUTPUT_PORT_TYPE
+x => x.IN1
+y => y.IN1
+Carry_in => Carry_in.IN1
+
+
+|RCA|FA:FA_7|HA:HA_1
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+x => comb.IN0
+x => comb.IN0
+y => comb.IN1
+y => comb.IN1
+
+
+|RCA|FA:FA_7|HA:HA_2
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+x => comb.IN0
+x => comb.IN0
+y => comb.IN1
+y => comb.IN1
+
+

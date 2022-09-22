@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<!--Created by Liquid XML 2008 (www.liquid-technologies.com) for Altera-->
+<ProgramExecution xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+	<QuartusExecution>
+		<AddressBits>32</AddressBits>
+		<ApplicationError>
+		<Bits>64</Bits>
+		<CommandLine>quartus_fit --read_settings_files=off --write_settings_files=off MUX -c MUX</CommandLine>
+		<ErrorMessage></ErrorMessage>
+		<Line>3776</Line>
+		<Platform>windows</Platform>
+		<SourceFile>/quartus/ddb/dygr/dygr_place_info.cpp</SourceFile>
+		<StackTrace>
+	 0x6a4bbc9c: (___sse2_available_init + 0x11d74)
+	 0x6a49275b: (?populate_port_info_transient_data@DYGR_BLK_PHYSICAL_IMPLEMENTATION@@QAEXXZ + 0x14b)
+	 0x6a49220a: (?set_transient_data_members@DYGR_PLACE_INFO_BODY@@AAEXPAVDYGR_DIE_INFO@@PAVMEM_UTILS_CHUNK_ALLOC@@@Z + 0x4a)
+	 0x6a494906: (?load_data_from_pdb@DYGR_PLACE_INFO_BODY@@SAPAV1@PAVDYGR_DIE_INFO@@@Z + 0x1b6)
+	 0x6a4985be: (?load_data@DYGR_PLACE_INFO_BODY@@SAPAV1@PAVDYGR_DIE_INFO@@@Z + 0x1e)
+	 0x6a497973: (?load_data@DYGR_PLACE_INFO@@QAE_NXZ + 0x33)
+	 0x6a4823d4: (?load_data@DYGR_DIE_INFO_BODY@@QAE_NW4DEV_DIE_INFO_TYPE_ENUM@@@Z + 0xf4)
+	 0x60966fa3: (?start@MPP_ROOT@@QAE_NPAVCMP_FACADE@@_N@Z + 0x553)
+	 0x608f594b: (?qfit_execute_mpp@@YA_NPAVCMP_FACADE@@@Z + 0x3b)
+	 0x608f1615: (?execute@QFIT_FRAMEWORK@@QAE_NXZ + 0x2a5)
+	 0x608f1bd3: (_qfit_legacy_flow_run_legacy_fitter_flow + 0x273)
+	 0x6ff2d2bd: (_TclInvokeStringCommand + 0x8d)
+	 0x6ff2e91e: (_TclEvalObjvInternal + 0x2ee)
+	 0x6ff2f4ec: (_TclEvalEx + 0x6fc)
+	 0x6ff2fec8: (_TclEvalObjEx + 0x248)
+	 0x6ff36893: (_Tcl_EvalObjCmd + 0x73)
+	 0x6ff2e91e: (_TclEvalObjvInternal + 0x2ee)
+	 0x6ff69a81: (_TclExecuteByteCode + 0xd21)
+	 0x6ffa923a: (_TclObjInterpProcCore + 0x4a)
+	 0x6ffa91d3: (_TclObjInterpProc + 0x33)
+	 0x6ff2e91e: (_TclEvalObjvInternal + 0x2ee)
+	 0x6ff69a81: (_TclExecuteByteCode + 0xd21)
+	 0x6ffa923a: (_TclObjInterpProcCore + 0x4a)
+	 0x6ffa91d3: (_TclObjInterpProc + 0x33)
+	 0x6ff2e91e: (_TclEvalObjvInternal + 0x2ee)
+	 0x6ff2f4ec: (_TclEvalEx + 0x6fc)
+	 0x6ff2eddc: (_Tcl_EvalEx + 0x1c)
+	 0x6ff8a877: (_Tcl_FSEvalFileEx + 0x227)
+	 0x6ff8911f: (_Tcl_EvalFile + 0x1f)
+	 0x6f45b3ed: (??$_Uninit_copy@PAU?$pair@V?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@V12@@_Dinkum_std@@PAU12@V?$MEM_STL_ALLOCATOR@U?$pair@V?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@V12@@_Dinkum_std@@@@@_Dinkum_std@@YAPAU?$pair@V?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@V12@@0@PAU10@00AAV?$MEM_STL_ALLOCATOR@U?$pair@V?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@V12@@_Dinkum_std@@@@U_Nonscalar_ptr_iterator_tag@0@@Z + 0x25d)
+	 0x6f460953: (?qexe_get_tcl_sub_option@@YA_NPBDPAV?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@@Z + 0x1323)
+	 0x6f4634cf: (?qexe_run_tcl_option@@YA_NPAVQEXE_FRAMEWORK@@PBDPAV?$list@V?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@V?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@@@@_Dinkum_std@@_N@Z + 0x43f)
+	 0x65c2ae8d: (?qcu_run_tcl_option@@YA_NPAVQCU_FRAMEWORK@@PBDPAV?$list@V?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@V?$basic_string@DU?$char_traits@D@_Dinkum_std@@V?$MEM_STL_ALLOCATOR@D@@@_Dinkum_std@@@@@_Dinkum_std@@_N@Z + 0x7dd)
+	   0x531673: (?qfit2_main@@YAHHPAPBD@Z + 0x153)
+	 0x6f463a90: (?qexe_process_cmdline_arguments@@YA_NPAVQEXE_CMDLINE@@HPAPBD@Z + 0x4e0)
+	 0x6f463bd4: (?qexe_standard_main@@YAHPAVQEXE_FRAMEWORK@@PAPBUQEXE_OPTION_DEFINITION@@HPAPBD@Z + 0x84)
+	   0x5315d6: (?qfit2_main@@YAHHPAPBD@Z + 0xb6)
+	 0x71b04e21: (?msg_main_thread@@YAPAXPAX@Z + 0x11)
+	 0x714f1c98: (_thr_final_wrapper + 0x8)
+	 0x71b05515: (?msg_thread_wrapper@@YAPAXP6APAXPAX@Z0@Z + 0x85)
+	 0x71c33921: (?mem_thread_wrapper@@YAPAXP6APAXPAX@Z0@Z + 0x31)
+	 0x71b060f1: (?msg_exe_main@@YAHHPAPBDP6AHH0@Z@Z + 0x81)
+	   0x5316ac: (_main + 0x1c)
+	   0x5321b6: (__CxxThrowException@8 + 0x172)
+	 0x75b5a4a7: (timeGetTime + 0xa3b37)
+	 0x75abed9b: (timeGetTime + 0x842b)
+	 0x779791cf: (_fltused + 0x7a41b)
+	 0x77979137: (_fltused + 0x7a383)
+	 0x77a3670b: (_fltused + 0x137957)
+		</StackTrace>
+		<Subsystem>DYGR</Subsystem>
+	</ApplicationError>
+	<Compilation>
+			<CompileID>121371511130.165148121109656</CompileID>
+			<DeviceFamily>Cyclone II</DeviceFamily>
+			<IncrementalCompilation>FULL_INCREMENTAL_COMPILATION</IncrementalCompilation>
+			<TopLevelEntityName>MUX</TopLevelEntityName>
+		</Compilation>
+		<DateInvoked>2022/05/02 16:46:53</DateInvoked>
+		<ElapsedTime>0</ElapsedTime>
+		<IP>10.211.55.4</IP>
+		<IsInternal>false</IsInternal>
+		<IsQt>false</IsQt>
+		<License>
+			<Edition>Web Edition</Edition>
+			<LicenseHostID/>
+		</License>
+		<Machine>
+			<CPUCountLogical>4</CPUCountLogical>
+			<CPUCountPhysical>1</CPUCountPhysical>
+			<CPUSpeed>3200</CPUSpeed>
+			<Hostname>5EDE</Hostname>
+			<NIC>
+				<Address>001c424e495a</Address>
+			</NIC>
+			<OS>Windows 7</OS>
+			<OSAddressBits>64</OSAddressBits>
+			<OSVersion>6.2</OSVersion>
+			<Platform>windows</Platform>
+			<ScreenResolution>unknown</ScreenResolution>
+			<TotalPhysicalRAM>4095</TotalPhysicalRAM>
+			<TotalVirtualRAM>0</TotalVirtualRAM>
+		</Machine>
+		<Name>quartus_fit</Name>
+		<PeakMemoryUsed>0</PeakMemoryUsed>
+		<ProjectRevision>
+			<ProjectName>MUX</ProjectName>
+			<Revision>MUX</Revision>
+		</ProjectRevision>
+		<QuartusInstallation>
+			<InstallationID>121371511130.165090129806716</InstallationID>
+			<Version>
+				<Build>232</Build>
+				<BuildSite>SJ</BuildSite>
+				<BuildSuffix/>
+				<Edition>Web Edition</Edition>
+				<ServicePack>0</ServicePack>
+				<VersionNumber>13</VersionNumber>
+			</Version>
+		</QuartusInstallation>
+		<QuartusUser>
+			<AlteraUserName/>
+			<FAEContactName/>
+			<TalkbackStatus>
+				<DateSet/>
+				<TalkbackOn>true</TalkbackOn>
+			</TalkbackStatus>
+			<UserID>121371511130.163913005201124</UserID>
+			<UserName>renfu</UserName>
+		</QuartusUser>
+	</QuartusExecution>
+	<SchemaVersion>schema_2013-01-18</SchemaVersion>
+</ProgramExecution>
+
