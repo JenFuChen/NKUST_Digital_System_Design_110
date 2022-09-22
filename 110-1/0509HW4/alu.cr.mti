@@ -1,0 +1,29 @@
+C:/Users/User/Desktop/0509/HW4/alu.vo {1 {vlog -work work C:/Users/User/Desktop/0509/HW4/alu.vo
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module alu
+
+Top level modules:
+	alu
+
+} {} {}} C:/Users/user/Documents/JenFu/DigitalDesign/0509HW4/alu.v {1 {vlog -work work C:/Users/user/Documents/JenFu/DigitalDesign/0509HW4/alu.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module alu
+
+Top level modules:
+	alu
+
+} {} {}} C:/Users/user/Documents/JenFu/DigitalDesign/0509HW4/alu_tb.v {1 {vlog -work work C:/Users/user/Documents/JenFu/DigitalDesign/0509HW4/alu_tb.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module alu_tb
+
+Top level modules:
+	alu_tb
+
+} {} {}} C:/Users/User/Desktop/0509/HW4/alu_tb.v {1 {vlog -work work C:/Users/User/Desktop/0509/HW4/alu_tb.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module alu_tb
+
+Top level modules:
+	alu_tb
+
+} {} {}}
