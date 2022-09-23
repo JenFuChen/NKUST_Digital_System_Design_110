@@ -1,4 +1,0 @@
-{ "Warning" "WQCU_PARALLEL_CANT_AUTODETECT_PROCESSORS" "" "Cannot detect the number of processors available - disabling parallel compilation" {  } {  } 0 20027 "Cannot detect the number of processors available - disabling parallel compilation" 0 0 "Fitter" 0 -1 1651481213182 ""}
-{ "Info" "IMPP_MPP_USER_DEVICE" "MUX EP2C70F896C8 " "Selected device EP2C70F896C8 for design \"MUX\"" {  } {  } 0 119006 "Selected device %2!s! for design \"%1!s!\"" 0 0 "Fitter" 0 -1 1651481213182 ""}
-{ "Info" "ICUT_CUT_USING_OPERATING_CONDITION" "Low junction temperature 0 degrees C " "Low junction temperature is 0 degrees C" {  } {  } 0 21077 "%1!s! is %2!s!" 0 0 "Fitter" 0 -1 1651481213214 ""}
-{ "Info" "ICUT_CUT_USING_OPERATING_CONDITION" "High junction temperature 85 degrees C " "High junction temperature is 85 degrees C" {  } {  } 0 21077 "%1!s! is %2!s!" 0 0 "Fitter" 0 -1 1651481213214 ""}
