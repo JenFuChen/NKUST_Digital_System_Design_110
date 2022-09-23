@@ -1,0 +1,215 @@
+|HW2_CLA
+a1[0] => a1[0].IN1
+a1[1] => a1[1].IN1
+a1[2] => a1[2].IN1
+a1[3] => a1[3].IN1
+a1[4] => a1[4].IN1
+a1[5] => a1[5].IN1
+a1[6] => a1[6].IN1
+a1[7] => a1[7].IN1
+b1[0] => b1[0].IN1
+b1[1] => b1[1].IN1
+b1[2] => b1[2].IN1
+b1[3] => b1[3].IN1
+b1[4] => b1[4].IN1
+b1[5] => b1[5].IN1
+b1[6] => b1[6].IN1
+b1[7] => b1[7].IN1
+p[0] <= p[0].DB_MAX_OUTPUT_PORT_TYPE
+p[1] <= p[1].DB_MAX_OUTPUT_PORT_TYPE
+p[2] <= p[2].DB_MAX_OUTPUT_PORT_TYPE
+p[3] <= p[3].DB_MAX_OUTPUT_PORT_TYPE
+p[4] <= p[4].DB_MAX_OUTPUT_PORT_TYPE
+p[5] <= p[5].DB_MAX_OUTPUT_PORT_TYPE
+p[6] <= p[6].DB_MAX_OUTPUT_PORT_TYPE
+p[7] <= p[7].DB_MAX_OUTPUT_PORT_TYPE
+g[0] <= g[0].DB_MAX_OUTPUT_PORT_TYPE
+g[1] <= g[1].DB_MAX_OUTPUT_PORT_TYPE
+g[2] <= g[2].DB_MAX_OUTPUT_PORT_TYPE
+g[3] <= g[3].DB_MAX_OUTPUT_PORT_TYPE
+g[4] <= g[4].DB_MAX_OUTPUT_PORT_TYPE
+g[5] <= g[5].DB_MAX_OUTPUT_PORT_TYPE
+g[6] <= g[6].DB_MAX_OUTPUT_PORT_TYPE
+g[7] <= g[7].DB_MAX_OUTPUT_PORT_TYPE
+sum[0] <= cla:cla1.port0
+sum[1] <= cla:cla2.port0
+sum[2] <= cla:cla3.port0
+sum[3] <= cla:cla4.port0
+sum[4] <= cla:cla5.port0
+sum[5] <= cla:cla6.port0
+sum[6] <= cla:cla7.port0
+sum[7] <= cla:cla8.port0
+sum[8] <= cla:cla9.port0
+c2[0] <= <GND>
+c2[1] <= c2[1].DB_MAX_OUTPUT_PORT_TYPE
+c2[2] <= c2[2].DB_MAX_OUTPUT_PORT_TYPE
+c2[3] <= c2[3].DB_MAX_OUTPUT_PORT_TYPE
+c2[4] <= c2[4].DB_MAX_OUTPUT_PORT_TYPE
+c2[5] <= c2[5].DB_MAX_OUTPUT_PORT_TYPE
+c2[6] <= c2[6].DB_MAX_OUTPUT_PORT_TYPE
+c2[7] <= c2[7].DB_MAX_OUTPUT_PORT_TYPE
+c2[8] <= c2[8].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW2_CLA|fa:fa1
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+a => comb.IN0
+a => comb.IN0
+b => comb.IN1
+b => comb.IN1
+
+
+|HW2_CLA|fa:fa2
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+a => comb.IN0
+a => comb.IN0
+b => comb.IN1
+b => comb.IN1
+
+
+|HW2_CLA|fa:fa3
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+a => comb.IN0
+a => comb.IN0
+b => comb.IN1
+b => comb.IN1
+
+
+|HW2_CLA|fa:fa4
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+a => comb.IN0
+a => comb.IN0
+b => comb.IN1
+b => comb.IN1
+
+
+|HW2_CLA|fa:fa5
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+a => comb.IN0
+a => comb.IN0
+b => comb.IN1
+b => comb.IN1
+
+
+|HW2_CLA|fa:fa6
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+a => comb.IN0
+a => comb.IN0
+b => comb.IN1
+b => comb.IN1
+
+
+|HW2_CLA|fa:fa7
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+a => comb.IN0
+a => comb.IN0
+b => comb.IN1
+b => comb.IN1
+
+
+|HW2_CLA|fa:fa8
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+a => comb.IN0
+a => comb.IN0
+b => comb.IN1
+b => comb.IN1
+
+
+|HW2_CLA|cla:cla1
+s1 <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c1 <= c1.DB_MAX_OUTPUT_PORT_TYPE
+p1 => comb.IN0
+p1 => c1.IN0
+g1 => c1.IN1
+c0 => comb.IN1
+c0 => c1.IN1
+
+
+|HW2_CLA|cla:cla2
+s1 <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c1 <= c1.DB_MAX_OUTPUT_PORT_TYPE
+p1 => comb.IN0
+p1 => c1.IN0
+g1 => c1.IN1
+c0 => comb.IN1
+c0 => c1.IN1
+
+
+|HW2_CLA|cla:cla3
+s1 <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c1 <= c1.DB_MAX_OUTPUT_PORT_TYPE
+p1 => comb.IN0
+p1 => c1.IN0
+g1 => c1.IN1
+c0 => comb.IN1
+c0 => c1.IN1
+
+
+|HW2_CLA|cla:cla4
+s1 <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c1 <= c1.DB_MAX_OUTPUT_PORT_TYPE
+p1 => comb.IN0
+p1 => c1.IN0
+g1 => c1.IN1
+c0 => comb.IN1
+c0 => c1.IN1
+
+
+|HW2_CLA|cla:cla5
+s1 <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c1 <= c1.DB_MAX_OUTPUT_PORT_TYPE
+p1 => comb.IN0
+p1 => c1.IN0
+g1 => c1.IN1
+c0 => comb.IN1
+c0 => c1.IN1
+
+
+|HW2_CLA|cla:cla6
+s1 <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c1 <= c1.DB_MAX_OUTPUT_PORT_TYPE
+p1 => comb.IN0
+p1 => c1.IN0
+g1 => c1.IN1
+c0 => comb.IN1
+c0 => c1.IN1
+
+
+|HW2_CLA|cla:cla7
+s1 <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c1 <= c1.DB_MAX_OUTPUT_PORT_TYPE
+p1 => comb.IN0
+p1 => c1.IN0
+g1 => c1.IN1
+c0 => comb.IN1
+c0 => c1.IN1
+
+
+|HW2_CLA|cla:cla8
+s1 <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c1 <= c1.DB_MAX_OUTPUT_PORT_TYPE
+p1 => comb.IN0
+p1 => c1.IN0
+g1 => c1.IN1
+c0 => comb.IN1
+c0 => c1.IN1
+
+
+|HW2_CLA|cla:cla9
+s1 <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c1 <= c1.DB_MAX_OUTPUT_PORT_TYPE
+p1 => comb.IN0
+p1 => c1.IN0
+g1 => c1.IN1
+c0 => comb.IN1
+c0 => c1.IN1
+
+
