@@ -1,0 +1,8 @@
+|FA
+s <= <GND>
+Carry_out <= <GND>
+x => ~NO_FANOUT~
+y => ~NO_FANOUT~
+Carry_in => ~NO_FANOUT~
+
+

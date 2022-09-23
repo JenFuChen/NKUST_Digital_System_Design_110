@@ -1,0 +1,507 @@
+|HW1_CSA
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+A[8] => A[8].IN1
+A[9] => A[9].IN1
+A[10] => A[10].IN1
+A[11] => A[11].IN1
+A[12] => A[12].IN1
+A[13] => A[13].IN1
+A[14] => A[14].IN1
+A[15] => A[15].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+B[8] => B[8].IN1
+B[9] => B[9].IN1
+B[10] => B[10].IN1
+B[11] => B[11].IN1
+B[12] => B[12].IN1
+B[13] => B[13].IN1
+B[14] => B[14].IN1
+B[15] => B[15].IN1
+Cin[0] => Cin[0].IN1
+Cin[1] => Cin[1].IN1
+Cin[2] => Cin[2].IN1
+Cin[3] => Cin[3].IN1
+Cin[4] => Cin[4].IN1
+Cin[5] => Cin[5].IN1
+Cin[6] => Cin[6].IN1
+Cin[7] => Cin[7].IN1
+Cin[8] => Cin[8].IN1
+Cin[9] => Cin[9].IN1
+Cin[10] => Cin[10].IN1
+Cin[11] => Cin[11].IN1
+Cin[12] => Cin[12].IN1
+Cin[13] => Cin[13].IN1
+Cin[14] => Cin[14].IN1
+Cin[15] => Cin[15].IN1
+Cout <= HA:E16.c
+SUM[0] <= FA:D1.s
+SUM[1] <= HA:E1.s
+SUM[2] <= FA:E2.s
+SUM[3] <= FA:E3.s
+SUM[4] <= FA:E4.s
+SUM[5] <= FA:E5.s
+SUM[6] <= FA:E6.s
+SUM[7] <= FA:E7.s
+SUM[8] <= FA:E8.s
+SUM[9] <= FA:E9.s
+SUM[10] <= FA:E10.s
+SUM[11] <= FA:E11.s
+SUM[12] <= FA:E12.s
+SUM[13] <= FA:E13.s
+SUM[14] <= FA:E14.s
+SUM[15] <= FA:E15.s
+SUM[16] <= HA:E16.s
+
+
+|HW1_CSA|FA:D1
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:D2
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:D3
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:D4
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:D5
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:D6
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:D7
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:D8
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:D9
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:D10
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:D11
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:D12
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:D13
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:D14
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:D15
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:D16
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|HA:E1
+a => comb.IN0
+a => comb.IN0
+b => comb.IN1
+b => comb.IN1
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:E2
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:E3
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:E4
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:E5
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:E6
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:E7
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:E8
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:E9
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:E10
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:E11
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:E12
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:E13
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:E14
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|FA:E15
+a => WideXor0.IN0
+a => c1.IN0
+a => c3.IN0
+b => WideXor0.IN1
+b => c1.IN1
+b => c2.IN0
+c => WideXor0.IN2
+c => c2.IN1
+c => c3.IN1
+s <= WideXor0.DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HW1_CSA|HA:E16
+a => comb.IN0
+a => comb.IN0
+b => comb.IN1
+b => comb.IN1
+s <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+

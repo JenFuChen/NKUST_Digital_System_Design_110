@@ -1,0 +1,15 @@
+|BP
+clk => State~1.DATAIN
+rst => State~3.DATAIN
+jump => Selector1.IN3
+jump => Selector2.IN3
+jump => Selector3.IN1
+jump => Selector0.IN1
+jump => Selector1.IN1
+jump => Selector2.IN1
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2].DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3].DB_MAX_OUTPUT_PORT_TYPE
+
+

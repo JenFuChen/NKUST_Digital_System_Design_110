@@ -1,0 +1,45 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\User\Desktop\HW\test3\RLF
+vBP
+!i10b 1
+!s100 <ODNQ;iifAX^A18L2hIoT2
+IRNWU^MzI8Bo[;k39XC4j=2
+Vf36Y>A0E?O3FhOb[D4O?c0
+Z1 dC:\Users\User\Desktop\HW\test\0530HW7
+w1653896988
+8C:/Users/User/Desktop/HW/test/0530HW7/BP.v
+FC:/Users/User/Desktop/HW/test/0530HW7/BP.v
+L0 1
+Z2 OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1653898487.445000
+!s107 C:/Users/User/Desktop/HW/test/0530HW7/BP.v|
+!s90 -reportprogress|300|-work|work|C:/Users/User/Desktop/HW/test/0530HW7/BP.v|
+!s101 -O0
+Z3 o-work work -O0
+n@b@p
+vBP_tb
+Z4 !s100 <z^WJ=WnNNneW16F7Ee[Y0
+Z5 IWE3Vdg==1h<n[8LhXNOn:2
+Z6 VHFABj>[kF2Sk7C3Jl6]052
+R1
+Z7 w1653898308
+Z8 8C:/Users/User/Desktop/HW/test/0530HW7/BP_tb.v
+Z9 FC:/Users/User/Desktop/HW/test/0530HW7/BP_tb.v
+L0 10
+R2
+r1
+31
+Z10 !s90 -reportprogress|300|-work|work|C:/Users/User/Desktop/HW/test/0530HW7/BP_tb.v|
+R3
+Z11 n@b@p_tb
+!i10b 1
+!s85 0
+Z12 !s108 1653898487.393000
+Z13 !s107 C:/Users/User/Desktop/HW/test/0530HW7/BP_tb.v|
+!s101 -O0

@@ -1,0 +1,13 @@
+module RCA(s, Carry_out, x, y, Carry_in);
+input  [7:0] x, y;
+output [7:0] s;
+input  Carry_in;
+output Carry_out;
+
+//===================== Your Design Begin=====================
+
+
+
+//===================== Your Design End  =====================
+
+endmodule
