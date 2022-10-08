@@ -1,5 +1,5 @@
 EDA Netlist Writer report for HW3_Shoot_Darts
-Wed Oct 05 11:15:11 2022
+Thu Oct 06 14:30:27 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Wed Oct 05 11:15:11 2022 ;
+; EDA Netlist Writer Status ; Successful - Thu Oct 06 14:30:27 2022 ;
 ; Revision Name             ; HW3_Shoot_Darts                       ;
 ; Top-level Entity Name     ; HW3_Shoot_Darts                       ;
 ; Family                    ; Cyclone IV GX                         ;
@@ -80,12 +80,12 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Oct 05 11:15:10 2022
+    Info: Processing started: Thu Oct 06 14:30:26 2022
 Info: Command: quartus_eda --functional=on --simulation=on --tool=modelsim_oem --format=verilog HW3_Shoot_Darts -c HW3_Shoot_Darts
 Info (204019): Generated file HW3_Shoot_Darts.vo in folder "C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/0929/HW3_Shoot_Darts/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4572 megabytes
-    Info: Processing ended: Wed Oct 05 11:15:11 2022
+    Info: Peak virtual memory: 4571 megabytes
+    Info: Processing ended: Thu Oct 06 14:30:27 2022
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

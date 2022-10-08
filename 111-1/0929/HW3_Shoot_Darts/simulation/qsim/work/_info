@@ -4,82 +4,82 @@ K3
 cModel Technology
 Z0 dC:\Users\dht98\Downloads\NKUST\NKUST_Digital_System_Design_110\111-1\0929\HW3_Shoot_Darts\simulation\qsim
 vHW3_Shoot_Darts
-Z1 !s100 ;FQOeUIT<T2@YL?>MYZ]H3
-Z2 I`G<TkPRni3MVOWN_k7HSG0
-Z3 V6hNmhWK]kGb]H5D3GSL5a3
-Z4 dC:\Users\dht98\Downloads\NKUST\NKUST_Digital_System_Design_110\111-1\0929\HW3_Shoot_Darts\simulation\qsim
-Z5 w1664939711
-Z6 8HW3_Shoot_Darts.vo
-Z7 FHW3_Shoot_Darts.vo
+Z1 IGPGTzhePfNoHAPRgd[V:Q1
+Z2 V2`_1_QJ<PSJ>MO]f3F2S92
+Z3 dC:\Users\dht98\Downloads\NKUST\NKUST_Digital_System_Design_110\111-1\0929\HW3_Shoot_Darts\simulation\qsim
+Z4 w1665037827
+Z5 8HW3_Shoot_Darts.vo
+Z6 FHW3_Shoot_Darts.vo
 L0 31
-Z8 OV;L;10.1d;51
+Z7 OV;L;10.1d;51
 r1
 31
-Z9 !s90 -work|work|HW3_Shoot_Darts.vo|
-Z10 o-work work -O0
-Z11 n@h@w3_@shoot_@darts
+Z8 !s90 -work|work|HW3_Shoot_Darts.vo|
+Z9 o-work work -O0
+Z10 n@h@w3_@shoot_@darts
 !i10b 1
+Z11 !s100 81_KAg`Yc93UK4S@J86dL1
 !s85 0
-Z12 !s108 1664939711.904000
+Z12 !s108 1665037829.875000
 Z13 !s107 HW3_Shoot_Darts.vo|
 !s101 -O0
 vHW3_Shoot_Darts_vlg_check_tst
 !i10b 1
-Z14 !s100 nY3^f;9MnPBNV`NHjda7Y0
-Z15 Ikih[g39:cJmDo8Q;UKF6E1
-Z16 V^fAMJ^O?ZM1T60DM6>B8L3
-R4
-Z17 w1664939710
-Z18 8HW3_Shoot_Darts.vt
-Z19 FHW3_Shoot_Darts.vt
+!s100 4eif@FE;JbckPPQlBNC_K1
+IYG<]G>]fmzJ`B]jld4aQb2
+VHNZRW>;CcOkIITaW6653j3
+R3
+Z14 w1665037826
+Z15 8HW3_Shoot_Darts.vt
+Z16 FHW3_Shoot_Darts.vt
 L0 71
-R8
+R7
 r1
 !s85 0
 31
-Z20 !s108 1664939711.985000
-Z21 !s107 HW3_Shoot_Darts.vt|
-Z22 !s90 -work|work|HW3_Shoot_Darts.vt|
+Z17 !s108 1665037830.007000
+Z18 !s107 HW3_Shoot_Darts.vt|
+Z19 !s90 -work|work|HW3_Shoot_Darts.vt|
 !s101 -O0
-R10
-Z23 n@h@w3_@shoot_@darts_vlg_check_tst
+R9
+Z20 n@h@w3_@shoot_@darts_vlg_check_tst
 vHW3_Shoot_Darts_vlg_sample_tst
 !i10b 1
-Z24 !s100 9HTmnn^nTUf_VAb^Yc^E]1
-Z25 IIJUb6:9R6eJToRAUl7Pi11
-Z26 VYo?G8RB;U06aAhW2@;>4K3
-R4
-R17
-R18
-R19
+!s100 ZCZEkW<ZU;_jc3=iUI^2h2
+ICbTl5ihe5fIi7X_kno5KB1
+VG[4M:jB[@B@Jd0>K?9Cog3
+R3
+R14
+R15
+R16
 L0 29
-R8
+R7
 r1
 !s85 0
 31
-R20
-R21
-R22
+R17
+R18
+R19
 !s101 -O0
-R10
-Z27 n@h@w3_@shoot_@darts_vlg_sample_tst
+R9
+Z21 n@h@w3_@shoot_@darts_vlg_sample_tst
 vHW3_Shoot_Darts_vlg_vec_tst
 !i10b 1
-Z28 !s100 fzITO<P2J?nfL]JYJ4khC2
-Z29 I3X@H96g^PnEbXe0n<6PE:0
-Z30 VHeBMJ3H_d489Y4oVBaNO:2
-R4
-R17
-R18
-R19
-Z31 L0 449
-R8
+!s100 @;?R8NKQOLUAWkVS8Ud=00
+I7<az2Jnb`LC8JME:8S;Ua1
+Z22 VHeBMJ3H_d489Y4oVBaNO:2
+R3
+R14
+R15
+R16
+Z23 L0 449
+R7
 r1
 !s85 0
 31
-R20
-R21
-R22
+R17
+R18
+R19
 !s101 -O0
-R10
-Z32 n@h@w3_@shoot_@darts_vlg_vec_tst
+R9
+Z24 n@h@w3_@shoot_@darts_vlg_vec_tst

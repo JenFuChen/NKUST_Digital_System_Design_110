@@ -1,5 +1,5 @@
 Analysis & Synthesis report for HW3_Shoot_Darts
-Wed Oct 05 11:14:18 2022
+Thu Oct 06 14:25:32 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -14,8 +14,9 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Elapsed Time Per Partition
- 10. Analysis & Synthesis Messages
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -41,13 +42,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Oct 05 11:14:18 2022           ;
+; Analysis & Synthesis Status        ; Successful - Thu Oct 06 14:25:32 2022           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; HW3_Shoot_Darts                                 ;
 ; Top-level Entity Name              ; HW3_Shoot_Darts                                 ;
 ; Family                             ; Cyclone IV GX                                   ;
-; Total logic elements               ; 138                                             ;
-;     Total combinational functions  ; 138                                             ;
+; Total logic elements               ; 148                                             ;
+;     Total combinational functions  ; 148                                             ;
 ;     Dedicated logic registers      ; 0                                               ;
 ; Total registers                    ; 0                                               ;
 ; Total pins                         ; 47                                              ;
@@ -175,24 +176,24 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------+------------------+
 ; I/O pins                 ; 47               ;
 ; DSP block 9-bit elements ; 0                ;
-; Maximum fan-out node     ; y1[0]~input      ;
+; Maximum fan-out node     ; s:s1|s[0]~2      ;
 ; Maximum fan-out          ; 8                ;
-; Total fan-out            ; 470              ;
-; Average fan-out          ; 2.03             ;
+; Total fan-out            ; 568              ;
+; Average fan-out          ; 2.35             ;
 +--------------------------+------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                           ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name       ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------+--------------+
-; |HW3_Shoot_Darts           ; 138 (6)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 47   ; 0            ; |HW3_Shoot_Darts          ; work         ;
-;    |Score:A1|              ; 33 (33)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |HW3_Shoot_Darts|Score:A1 ; work         ;
-;    |Score:B1|              ; 33 (33)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |HW3_Shoot_Darts|Score:B1 ; work         ;
-;    |Score:C1|              ; 33 (33)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |HW3_Shoot_Darts|Score:C1 ; work         ;
-;    |Score:D1|              ; 33 (33)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |HW3_Shoot_Darts|Score:D1 ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                       ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name   ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------+--------------+
+; |HW3_Shoot_Darts           ; 148 (38)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 47   ; 0            ; |HW3_Shoot_Darts      ; work         ;
+;    |s:s1|                  ; 27 (27)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |HW3_Shoot_Darts|s:s1 ; work         ;
+;    |s:s2|                  ; 28 (28)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |HW3_Shoot_Darts|s:s2 ; work         ;
+;    |s:s3|                  ; 27 (27)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |HW3_Shoot_Darts|s:s3 ; work         ;
+;    |s:s4|                  ; 28 (28)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |HW3_Shoot_Darts|s:s4 ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -211,12 +212,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |HW3_Shoot_Darts|s:s1|s[1] ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |HW3_Shoot_Darts|s:s2|s[1] ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |HW3_Shoot_Darts|s:s3|s[1] ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |HW3_Shoot_Darts|s:s4|s[1] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -226,26 +239,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Oct 05 11:14:16 2022
+    Info: Processing started: Thu Oct 06 14:25:29 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off HW3_Shoot_Darts -c HW3_Shoot_Darts
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Warning (10229): Verilog HDL Expression warning at HW3_Shoot_Darts.v(42): truncated literal to match 3 bits
 Info (12021): Found 2 design units, including 2 entities, in source file hw3_shoot_darts.v
     Info (12023): Found entity 1: HW3_Shoot_Darts
-    Info (12023): Found entity 2: Score
+    Info (12023): Found entity 2: s
 Info (12127): Elaborating entity "HW3_Shoot_Darts" for the top level hierarchy
-Info (12128): Elaborating entity "Score" for hierarchy "Score:A1"
+Info (12128): Elaborating entity "s" for hierarchy "s:s1"
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 185 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 195 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 32 input pins
     Info (21059): Implemented 15 output pins
-    Info (21061): Implemented 138 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4645 megabytes
-    Info: Processing ended: Wed Oct 05 11:14:18 2022
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+    Info (21061): Implemented 148 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4649 megabytes
+    Info: Processing ended: Thu Oct 06 14:25:32 2022
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 
