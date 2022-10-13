@@ -1,0 +1,5 @@
+module HW3();
+input CLK,RST;
+output [7:0] out[0:7],temp;
+
+reg [

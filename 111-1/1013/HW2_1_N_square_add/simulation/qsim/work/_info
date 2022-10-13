@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\dht98\Downloads\NKUST\NKUST_Digital_System_Design_110\111-1\1013\HW2_1_N_square_add\simulation\qsim
+vHW2
+Z1 IjZP4:;;V1DXh0B`GLdW7V0
+Z2 VcfYZ1:@mBLV`<]:g5b6aF0
+Z3 dC:\Users\dht98\Downloads\NKUST\NKUST_Digital_System_Design_110\111-1\1013\HW2_1_N_square_add\simulation\qsim
+Z4 w1665646026
+Z5 8HW2.vo
+Z6 FHW2.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|HW2.vo|
+Z9 o-work work -O0
+Z10 n@h@w2
+!i10b 1
+Z11 !s100 2_g=eU3Na48Y^9UzQ:@??0
+!s85 0
+Z12 !s108 1665646028.044000
+Z13 !s107 HW2.vo|
+!s101 -O0
+vHW2_vlg_check_tst
+!i10b 1
+Z14 !s100 RgT`JNk2ROjj;fI247EVH2
+Z15 INDlNKhL27Zi[:DLWV5lQY2
+Z16 Ve[78aBANhB;oTMQ3WDcKR3
+R3
+Z17 w1665646025
+Z18 8HW2.vt
+Z19 FHW2.vt
+L0 63
+R7
+r1
+!s85 0
+31
+Z20 !s108 1665646028.169000
+Z21 !s107 HW2.vt|
+Z22 !s90 -work|work|HW2.vt|
+!s101 -O0
+R9
+Z23 n@h@w2_vlg_check_tst
+vHW2_vlg_sample_tst
+!i10b 1
+Z24 !s100 JUmQAOCB<U3H?K`GIc=3d0
+Z25 IHn[8diEV:[c5V0OWmIP3f2
+Z26 V=Z6VAWR3Pgl4gQMci=ORE0
+R3
+R17
+R18
+R19
+L0 29
+R7
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R9
+Z27 n@h@w2_vlg_sample_tst
+vHW2_vlg_vec_tst
+!i10b 1
+Z28 !s100 NdLO^]KOHTmJA<AgiP6aU0
+Z29 IcoXen7M5QD8ik:QGE@7i^2
+Z30 V>GCd7Ki<YBKKeU8zV<@cU1
+R3
+R17
+R18
+R19
+Z31 L0 570
+R7
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R9
+Z32 n@h@w2_vlg_vec_tst

@@ -1,0 +1,54 @@
+module HW2(CLK, RST, EN, Valid, Order, Sum);
+input CLK, RST, EN, Valid;
+input [3:0] Order;
+output [10:0] Sum;
+
+reg [10:0] Sum;
+reg [1:0] State, NextState;
+reg [3:0] counter;
+reg [10:0] temp;
+parameter 	IN = 2'b00,
+				ADDER = 2'b01,
+				OUT = 2'b10;
+
+always @(posedge CLK or ~RST)
+begin
+	if(RST)
+		State <= IN;
+	else if(EN == 1)
+		counter <= Order;
+		State <= NextState;
+end
+
+
+always @(*)
+begin
+
+
+end
+
+always @(State)
+begin
+	case(State)
+		IN:
+			begin 
+				Sum <=0;
+				Valid <= 0;
+			end
+		ADDER: 
+			begin 
+				Sum <= 0;
+				Valid <= 0;
+			end
+		OUT: 
+			begin 
+				Sum <= temp;
+				Valid <= 1;
+			end
+		
+	endcase
+end
+
+
+
+endmodule
