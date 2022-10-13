@@ -4,7 +4,7 @@ input [3:0] Order;
 output [10:0] Sum,temp;
 output Valid;
 
-// Finish 1013
+// Finished 1013
 
 reg [10:0] Sum, temp;
 reg [1:0] State, NextState;

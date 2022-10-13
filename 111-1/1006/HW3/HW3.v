@@ -1,5 +1,5 @@
 module HW3(CLK, RST, En, Valid, num, out);
-
+// Finished
 integer count = 0, i = 0, j = 1; 
 
 input CLK, RST, En;

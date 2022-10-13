@@ -5,7 +5,7 @@ output Cout;
 wire [1:0] C[15:0]; // First Level of Cout
 wire [1:0] S[15:0]; // First Level of Sum
 wire [1:0] C2[15:0]; // Second Level of Cout
-
+//Finished
 /*=====Function=====*/ 
 FA D1(.a(A[0]), .b(B[0]), .c(Cin[0]), .s(SUM[0]), .cout(C[0]));
 FA D2(.a(A[1]), .b(B[1]), .c(Cin[1]), .s(S[1]), .cout(C[1]));

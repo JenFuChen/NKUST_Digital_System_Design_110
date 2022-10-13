@@ -5,6 +5,7 @@ output [7:0]p;
 output [7:0]g;
 output [8:0]sum;
 output [8:0]c2;
+// Finished
 fa fa1(p[0],g[0],a1[0],b1[0]);
 fa fa2(p[1],g[1],a1[1],b1[1]);
 fa fa3(p[2],g[2],a1[2],b1[2]);

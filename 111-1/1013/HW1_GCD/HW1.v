@@ -3,7 +3,7 @@ input CLK, RST, EN;
 input [7:0] A, B;
 output [10:0] outcome;
 output Valid;
-
+// Finished
 
 
 reg [7:0] D,E,F;

@@ -3,7 +3,7 @@ input CLK,RST;
 output [7:0] out[0:7], temp;
 
 reg [7:0] out[0:7], temp;
-
+// Building
 always @(posedge CLK)
 begin
 	if(RST)
