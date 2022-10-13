@@ -1,0 +1,6 @@
+
+State Machine - |HW1|State
+Name State.IN State.OUT State.DIV 
+State.IN 0 0 0 
+State.DIV 1 0 1 
+State.OUT 1 1 0 
