@@ -1,0 +1,132 @@
+Determining the location of the ModelSim executable...
+
+Using: C:/altera/13.1/modelsim_ase/win32aloem
+
+To specify a ModelSim executable directory, select: Tools -> Options -> EDA Tool Options
+Note: if both Questa Intel FPGA Edition and ModelSim executables are available, Questa Intel FPGA Edition will be used.
+
+**** Generating the ModelSim Testbench ****
+
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off HW1_ALU_TestBench -c HW1_ALU_TestBench --vector_source="C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1020/HW1_ALU_TestBench/Waveform.vwf" --testbench_file="C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1020/HW1_ALU_TestBench/simulation/qsim/Waveform.vwf.vt"
+
+Info: *******************************************************************
+Info: Running Quartus Prime EDA Netlist Writer
+    Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
+    Info: Copyright (C) 2022  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and any partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details, at
+    Info: https://fpgasoftware.intel.com/eula.
+    Info: Processing started: Thu Oct 20 14:57:51 2022
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off HW1_ALU_TestBench -c HW1_ALU_TestBench --vector_source=C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1020/HW1_ALU_TestBench/Waveform.vwf --testbench_file=C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1020/HW1_ALU_TestBench/simulation/qsim/Waveform.vwf.vt
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+
+Completed successfully. 
+
+Completed successfully. 
+
+**** Generating the functional simulation netlist ****
+
+quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1020/HW1_ALU_TestBench/simulation/qsim/" HW1_ALU_TestBench -c HW1_ALU_TestBench
+
+Info: *******************************************************************
+Info: Running Quartus Prime EDA Netlist Writer
+    Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
+    Info: Copyright (C) 2022  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and any partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details, at
+    Info: https://fpgasoftware.intel.com/eula.
+    Info: Processing started: Thu Oct 20 14:57:53 2022
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1020/HW1_ALU_TestBench/simulation/qsim/ HW1_ALU_TestBench -c HW1_ALU_TestBench
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (204019): Generated file HW1_ALU_TestBench.vo in folder "C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1020/HW1_ALU_TestBench/simulation/qsim//" for EDA simulation tool
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4743 megabytes
+    Info: Processing ended: Thu Oct 20 14:57:55 2022
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+Completed successfully. 
+
+**** Generating the ModelSim .do script ****
+
+C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1020/HW1_ALU_TestBench/simulation/qsim/HW1_ALU_TestBench.do generated.
+
+Completed successfully. 
+
+**** Running the ModelSim simulation ****
+
+C:/altera/13.1/modelsim_ase/win32aloem/vsim -c -do HW1_ALU_TestBench.do
+
+Reading C:/altera/13.1/modelsim_ase/tcl/vsim/pref.tcl 
+
+
+# 10.1d
+
+
+# do HW1_ALU_TestBench.do 
+
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+
+# -- Compiling module HW1_ALU_TestBench
+
+# 
+
+# Top level modules:
+# 	HW1_ALU_TestBench
+
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+
+# -- Compiling module HW1_ALU_TestBench_vlg_vec_tst
+
+# 
+
+# Top level modules:
+# 	HW1_ALU_TestBench_vlg_vec_tst
+
+# vsim -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver -c -t 1ps -novopt work.HW1_ALU_TestBench_vlg_vec_tst 
+
+# Loading work.HW1_ALU_TestBench_vlg_vec_tst
+# Loading work.HW1_ALU_TestBench
+
+# after#19
+
+# ** Note: $finish    : Waveform.vwf.vt(51)
+#    Time: 1 us  Iteration: 0  Instance: /HW1_ALU_TestBench_vlg_vec_tst
+
+Completed successfully. 
+
+**** Converting ModelSim VCD to vector waveform ****
+
+Reading C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1020/HW1_ALU_TestBench/Waveform.vwf...
+
+Reading C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1020/HW1_ALU_TestBench/simulation/qsim/HW1_ALU_TestBench.msim.vcd...
+
+Processing channel transitions... 
+
+Writing the resulting VWF to C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1020/HW1_ALU_TestBench/simulation/qsim/HW1_ALU_TestBench_20221020145801.sim.vwf
+
+Finished VCD to VWF conversion.
+
+Completed successfully. 
+
+All completed.

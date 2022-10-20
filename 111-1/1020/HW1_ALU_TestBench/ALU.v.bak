@@ -1,0 +1,8 @@
+module ALU(A, B, C, Sel, Alu);
+input [7:0] A, B;
+input [4:0] C;
+input [1:0] Sel;
+output [8:0] Alu;
+
+
+endmodule

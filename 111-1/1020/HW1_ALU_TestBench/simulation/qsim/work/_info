@@ -1,0 +1,45 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\dht98\Downloads\NKUST\NKUST_Digital_System_Design_110\111-1\1020\HW1_ALU_TestBench\simulation\qsim
+vHW1_ALU_TestBench
+Z1 IR10`jhoGk[D8VzcDGd1003
+Z2 V]GQV2VMkM3mn0Id]@eIS@3
+Z3 dC:\Users\dht98\Downloads\NKUST\NKUST_Digital_System_Design_110\111-1\1020\HW1_ALU_TestBench\simulation\qsim
+Z4 w1666249074
+Z5 8HW1_ALU_TestBench.vo
+Z6 FHW1_ALU_TestBench.vo
+L0 32
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 o-work work -O0
+Z9 n@h@w1_@a@l@u_@test@bench
+!i10b 1
+Z10 !s100 z>QJ4IN@jH0e8lBzaG:O`3
+!s85 0
+Z11 !s108 1666249079.647000
+Z12 !s107 HW1_ALU_TestBench.vo|
+Z13 !s90 -work|work|HW1_ALU_TestBench.vo|
+!s101 -O0
+vHW1_ALU_TestBench_vlg_vec_tst
+!i10b 1
+!s100 5QZDPeG5HYneSD9KnDYoE2
+IKUOMXjNmeK^PoOHN<IenN0
+VH8hi`McSh^lDSW=>17jgO0
+R3
+w1666249073
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 30
+R7
+r1
+!s85 0
+31
+!s108 1666249079.781000
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!s101 -O0
+R8
+n@h@w1_@a@l@u_@test@bench_vlg_vec_tst
