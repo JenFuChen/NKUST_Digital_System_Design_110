@@ -3,7 +3,7 @@ input [31:0]D;
 output [5:0]c;
 wire [2:0] F[0:7];
 wire cs[6:0], s[6:0];
-
+// Finished
 comb D0(.A(D[3]),.B(D[2]),.C(D[1]),.D(D[0]),.s(F[0]));
 comb D1(.A(D[7]),.B(D[6]),.C(D[5]),.D(D[4]),.s(F[1]));
 comb D2(.A(D[11]),.B(D[10]),.C(D[9]),.D(D[8]),.s(F[2]));
