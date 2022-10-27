@@ -1,0 +1,44 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\13.0sp1
+vHW1_ALU_TestBench
+!i10b 1
+Z1 !s100 NlQ[W7i6R`_1hk`^Zo:e`3
+Z2 InTXk[zcP=hS1QN;K@I;PX2
+Z3 V]GQV2VMkM3mn0Id]@eIS@3
+Z4 dC:\Users\dht98\Downloads\NKUST\NKUST_Digital_System_Design_110\111-1\1020\HW1_ALU_TestBench
+Z5 w1666859384
+Z6 8C:\Users\dht98\Downloads\NKUST\NKUST_Digital_System_Design_110\111-1\1020\HW1_ALU_TestBench\HW1_ALU_TestBench.v
+Z7 FC:\Users\dht98\Downloads\NKUST\NKUST_Digital_System_Design_110\111-1\1020\HW1_ALU_TestBench\HW1_ALU_TestBench.v
+L0 1
+Z8 OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1666859934.406000
+!s107 C:\Users\dht98\Downloads\NKUST\NKUST_Digital_System_Design_110\111-1\1020\HW1_ALU_TestBench\HW1_ALU_TestBench.v|
+Z9 !s90 -reportprogress|300|-work|work|C:\Users\dht98\Downloads\NKUST\NKUST_Digital_System_Design_110\111-1\1020\HW1_ALU_TestBench\HW1_ALU_TestBench.v|
+!s101 -O0
+Z10 o-work work -O0
+Z11 n@h@w1_@a@l@u_@test@bench
+vtb
+Z12 IGR_3L?FGS;BNGL8OcgGeF1
+Z13 VV@Xn<HnSRM[I5c1?BH]3a3
+R4
+Z14 w1666859930
+Z15 8C:\Users\dht98\Downloads\NKUST\NKUST_Digital_System_Design_110\111-1\1020\HW1_ALU_TestBench\tb.v
+Z16 FC:\Users\dht98\Downloads\NKUST\NKUST_Digital_System_Design_110\111-1\1020\HW1_ALU_TestBench\tb.v
+L0 9
+R8
+r1
+31
+Z17 !s90 -reportprogress|300|-work|work|C:\Users\dht98\Downloads\NKUST\NKUST_Digital_System_Design_110\111-1\1020\HW1_ALU_TestBench\tb.v|
+R10
+!i10b 1
+Z18 !s100 <:g:YQX;PDb99<65jW@U80
+!s85 0
+Z19 !s108 1666859934.271000
+Z20 !s107 C:\Users\dht98\Downloads\NKUST\NKUST_Digital_System_Design_110\111-1\1020\HW1_ALU_TestBench\tb.v|
+!s101 -O0

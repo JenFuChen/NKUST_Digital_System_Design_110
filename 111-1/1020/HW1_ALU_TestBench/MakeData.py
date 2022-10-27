@@ -1,7 +1,7 @@
 from random import randint as rand
 
 # ===== OPEN ===== #
-A = open('A.txt', 'w')
+A = open('./A.txt', 'w')
 A_int = open('A_int.txt', 'w')
 B = open('B.txt', 'w')
 B_int = open('B_int.txt', 'w')
@@ -23,7 +23,7 @@ print('', end='', file=Alu)
 print('', end='', file=Alu_int)
 
 # ===== CREATE ===== #
-for i in range(0, 5):
+for i in range(0, 10000):
     # A
     a_num = rand(0, 255)
     a_new = format(a_num, '08b')
@@ -31,9 +31,9 @@ for i in range(0, 5):
     print(a_new, file=A)
     # B
     b_num = rand(0, 255)
-    new = format(b_num, '08b')
+    b_new = format(b_num, '08b')
     print(b_num, file=B_int)
-    print(new, file=B)
+    print(b_new, file=B)
 
     # C
     c_num = rand(0, 31)
@@ -60,7 +60,7 @@ for i in range(0, 5):
             print(a_num, file=Alu_int)
             print(format(a_num, '09b'), file=Alu)
     if (sel == 3):
-        if ((int(c_new[::-2]) > int(a_new[::-2]))):
+        if ((int(c_new[3::]) > int(a_new[6::]))):
             ans = c_num
         else:
             ans = a_num
@@ -69,10 +69,19 @@ for i in range(0, 5):
     if (sel == 2):
         if (c_num > 5):
             ans = a_num ^ b_num
+            print(ans, file=Alu_int)
+            print(format(ans, '09b'), file=Alu)
         else:
-            ans = a_num
-        print(ans, file=Alu_int)
-        print(format(ans, '09b'), file=Alu)
+            ans = ""
+            ans += '0'
+            for i in range(0, 8):
+                if (a_new[i] == b_new[i] and a_new[i] == '1' and b_new[i] == '1'):
+                    ans += '0'
+                else:
+                    ans += '1'
+            
+            print(ans, file=Alu_int)
+            print(ans, file=Alu)
 A.close()
 A_int.close()
 B.close()

@@ -1,0 +1,74 @@
+`timescale 1ns/10ps
+`define F "./A.txt"
+`define G "./B.txt"
+`define H "./C.txt"
+`define I "./Sel.txt"
+`define J "./Alu_Ans.txt"
+module tb;
+
+integer i;
+integer pass;
+integer error;
+reg [7:0] a[9999:0], b[9999:0];
+reg [4:0] c[9999:0];
+reg [1:0] sel[9999:0];
+reg [9:0] ans[9999:0];
+wire [9:0] out[9999:0];
+HW1_ALU_TestBench U1(.A(a), .B(b), .C(c), .Sel(sel), .Alu(out));
+        
+initial  begin
+
+    $readmemb(`F, a);
+    $readmemb(`G, b);
+    $readmemb(`H, c);
+    $readmemb(`I, sel);
+    $readmemb(`J, ans);
+    $display("\n");
+    $display("                                     _____          ");
+    $display("    **************************      /     \\         ");
+    $display("    *                        *      vvvvvvv  /|__/|  ");
+    $display("    *       START      !!    *         I   / O.O  | ");
+    $display("    *                        *         I /_____   | ");
+    $display("    *  Simulation Start!!    *        J|/^ ^ ^ \\  |");
+    $display("    *                        *         |^ ^ ^ ^ |w| ");
+    $display("    **************************          \\m___m__|_|");
+    $display("\n");
+
+    for(i = 0 ;i < 9999;i = i + 1)begin
+        if(out[i] == ans[i])
+            $display("\n %d PASS \n", i);
+        else if(out[i] != ans[i])
+        begin
+            error = error + 1;
+            $display("\n ERROR in line %d : Your: %d |Correct: %d\n", i,out[i],ans[i]);
+        end
+        if(i == 9998 && error == 0)begin
+            $display("\n");
+            $display("        **************************               ");
+            $display("        *                        *        /|__/|  ");
+            $display("        *     Successful !!      *      / O.O  | ");
+            $display("        *                        *    /_____   | ");
+            $display("        *  Simulation PASS!!     *   /^ ^ ^ \\  |");
+            $display("        *                        *  |^ ^ ^ ^ |w| ");
+            $display("        **************************   \\m___m__|_|");
+            $display("\n");
+        end else begin
+            $display("\n");
+            $display("        **************************               ");
+            $display("        *                        *        /|__/|  ");
+            $display("        *  OOPS!!                *      / X,X  | ");
+            $display("        *                        *    /_____   | ");
+            $display("        *  Simulation Failed!!   *   /^ ^ ^ \\  |");
+            $display("        *                        *  |^ ^ ^ ^ |w| ");
+            $display("        **************************   \\m___m__|_|");
+            $display("         Totally has %d errors                     ", error);
+            $display("\n");
+		$finish;
+        end
+    end
+    
+end
+
+
+
+endmodule
