@@ -6,6 +6,7 @@ reg [2:0]ma;
  s s2(b_x,b_y,B_s);
  s s3(c_x,c_y,C_s);
  s s4(d_x,d_y,D_s);
+ // Finished
 always@(*)
 begin
  if(A_s==7||B_s==7||C_s==7||D_s==7)

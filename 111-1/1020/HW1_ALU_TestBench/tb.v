@@ -7,7 +7,7 @@
 `define I "./Sel.txt"
 `define J "./Alu_Ans.txt"
 module tb;
-
+ // Finished
 integer i;
 integer pass;
 integer error;
