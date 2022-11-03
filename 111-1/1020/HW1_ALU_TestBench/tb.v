@@ -8,6 +8,7 @@
 `define J "./Alu_Ans.txt"
 module tb;
  // Finished
+
 integer i;
 integer pass;
 integer error;
@@ -44,7 +45,6 @@ initial  begin
     $display("    *                        *         |^ ^ ^ ^ |w| ");
     $display("    **************************          \\m___m__|_|");
     $display("\n");
-
     for(i = 0 ;i < 9999;i = i + 1)begin
         a1 = a[i];
         b1 = b[i];

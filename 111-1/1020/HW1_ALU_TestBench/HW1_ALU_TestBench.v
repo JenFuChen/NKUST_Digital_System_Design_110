@@ -6,7 +6,6 @@ output [8:0] Alu;
 
 reg [8:0] Alu;
 
-
 always @(*)
 begin
 	case(Sel)
