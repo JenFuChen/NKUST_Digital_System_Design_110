@@ -1,15 +1,1 @@
-C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1020/HW1_ALU_TestBench/tb.v {1 {vlog -work work {C:\Users\dht98\Downloads\NKUST\NKUST_Digital_System_Design_110\111-1\1020\HW1_ALU_TestBench\tb.v}
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module tb
 
-Top level modules:
-	tb
-
-} {} {}} C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1020/HW1_ALU_TestBench/HW1_ALU_TestBench.v {1 {vlog -work work {C:\Users\dht98\Downloads\NKUST\NKUST_Digital_System_Design_110\111-1\1020\HW1_ALU_TestBench\HW1_ALU_TestBench.v}
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module HW1_ALU_TestBench
-
-Top level modules:
-	HW1_ALU_TestBench
-
-} {} {}}
