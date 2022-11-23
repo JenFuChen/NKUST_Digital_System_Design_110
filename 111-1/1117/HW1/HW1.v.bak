@@ -1,0 +1,12 @@
+module HW1(switch, LED);
+input [15:0] switch;
+output [15:0] LED;
+
+always@(*) begin
+
+	LED <= switch;
+	
+end
+
+
+endmodule
