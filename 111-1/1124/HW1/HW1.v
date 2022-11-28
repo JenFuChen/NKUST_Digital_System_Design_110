@@ -1,12 +1,13 @@
 module HW1(clk, SW, KEY, LEDR);
- input clk;
-   input [17:0] SW;
-   input [3:0] KEY;
-   output reg [17:0] LEDR;
- reg [31:0] counter=0, counter2=0, count=0;
- reg _KEY1, _KEY3;
- reg clk5 = 0;
- 
+    input clk;
+    input [17:0] SW;
+    input [3:0] KEY;
+    output reg [17:0] LEDR;
+    
+    reg _KEY1, _KEY3;
+    reg clk5 = 0;
+
+    reg [31:0] counter=0, counter2=0, count=0;
  /// make CLK to  5HZ
  always @(posedge clk) begin
    if(counter2 >= 5_000_000)begin
@@ -20,15 +21,16 @@ module HW1(clk, SW, KEY, LEDR);
  reg flag = 0, rst = 0;
  reg [10:0] switch = 1;
  /// Clean Button
+ 
  always @(posedge clk) begin
-  if(count >= 1000)begin
-   count <= 0;
-   _KEY1 <= KEY[1];
-   _KEY3 <= KEY[3];
-  end else if(_KEY1 ^ KEY[1] || _KEY3 ^ KEY[3]) 
-   count <= count + 1;
-  else 
-   count <= 0;
+    if(count >= 1000)begin
+        count <= 0;
+        _KEY1 <= KEY[1];
+        _KEY3 <= KEY[3];
+    end else if(_KEY1 ^ KEY[1] || _KEY3 ^ KEY[3]) 
+        count <= count + 1;
+    else 
+        count <= 0;
  end
  reg [17:0] result;
  always @(negedge _KEY1) begin
