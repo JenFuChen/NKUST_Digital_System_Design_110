@@ -8,7 +8,7 @@ module HW1(clk, SW, KEY, LEDR);
     reg clk5 = 0;
 
     reg [31:0] counter=0, counter2=0, count=0;
- /// make CLK to  5HZ
+ /// make CLK to 5HZ
  always @(posedge clk) begin
    if(counter2 >= 5_000_000)begin
    counter2 <= 1;
@@ -71,4 +71,3 @@ module HW1(clk, SW, KEY, LEDR);
       end
     end
 endmodule
-跑馬燈

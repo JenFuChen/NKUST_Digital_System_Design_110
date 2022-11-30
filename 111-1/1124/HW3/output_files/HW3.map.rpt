@@ -1,0 +1,624 @@
+Analysis & Synthesis report for HW3
+Mon Nov 28 11:18:58 2022
+Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |HW3
+ 13. Port Connectivity Checks: "LED_Decoder:U3"
+ 14. Port Connectivity Checks: "LED_Decoder:U2"
+ 15. Port Connectivity Checks: "LED_Decoder:U1"
+ 16. Port Connectivity Checks: "LED_Decoder:U0"
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+ 20. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Nov 28 11:18:58 2022       ;
+; Quartus Prime Version           ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
+; Revision Name                   ; HW3                                         ;
+; Top-level Entity Name           ; HW3                                         ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 154                                         ;
+; Total pins                      ; 97                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Top-level entity name                                                           ; HW3                ; HW3                ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                      ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                        ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
+; HW3.v                            ; yes             ; User Verilog HDL File  ; C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 163       ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 277       ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 47        ;
+;     -- 5 input functions                    ; 25        ;
+;     -- 4 input functions                    ; 22        ;
+;     -- <=3 input functions                  ; 183       ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 154       ;
+;                                             ;           ;
+; I/O pins                                    ; 97        ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; CLK~input ;
+; Maximum fan-out                             ; 99        ;
+; Total fan-out                               ; 1572      ;
+; Average fan-out                             ; 2.52      ;
++---------------------------------------------+-----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |HW3                       ; 277 (149)           ; 154 (88)                  ; 0                 ; 0          ; 97   ; 0            ; |HW3                ; HW3         ; work         ;
+;    |Debounce:U8|           ; 41 (41)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |HW3|Debounce:U8    ; Debounce    ; work         ;
+;    |Debounce:U9|           ; 41 (41)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |HW3|Debounce:U9    ; Debounce    ; work         ;
+;    |LED_Decoder:U2|        ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HW3|LED_Decoder:U2 ; LED_Decoder ; work         ;
+;    |LED_Decoder:U4|        ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HW3|LED_Decoder:U4 ; LED_Decoder ; work         ;
+;    |LED_Decoder:U5|        ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HW3|LED_Decoder:U5 ; LED_Decoder ; work         ;
+;    |LED_Decoder:U6|        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HW3|LED_Decoder:U6 ; LED_Decoder ; work         ;
+;    |LED_Decoder:U7|        ; 14 (14)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HW3|LED_Decoder:U7 ; LED_Decoder ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; NextState[0]                                        ; Mux55               ; yes                    ;
+; NextState[1]                                        ; Mux55               ; yes                    ;
+; guess[0]                                            ; Mux3                ; yes                    ;
+; A[1]                                                ; Mux53               ; yes                    ;
+; A[2]                                                ; Mux53               ; yes                    ;
+; guess[1]                                            ; Mux3                ; yes                    ;
+; guess[2]                                            ; Mux3                ; yes                    ;
+; guess[3]                                            ; Mux3                ; yes                    ;
+; guess[4]                                            ; Mux3                ; yes                    ;
+; guess[5]                                            ; Mux3                ; yes                    ;
+; guess[6]                                            ; Mux3                ; yes                    ;
+; guess[7]                                            ; Mux3                ; yes                    ;
+; guess[8]                                            ; Mux3                ; yes                    ;
+; guess[9]                                            ; Mux3                ; yes                    ;
+; guess[10]                                           ; Mux3                ; yes                    ;
+; guess[11]                                           ; Mux3                ; yes                    ;
+; guess[12]                                           ; Mux3                ; yes                    ;
+; guess[13]                                           ; Mux3                ; yes                    ;
+; guess[14]                                           ; Mux3                ; yes                    ;
+; guess[15]                                           ; Mux3                ; yes                    ;
+; B[1]                                                ; Mux53               ; yes                    ;
+; B[2]                                                ; Mux53               ; yes                    ;
+; Number of user-specified and inferred latches = 22  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; run[3]                                ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 1 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 154   ;
+; Number of registers using Synchronous Clear  ; 81    ;
+; Number of registers using Synchronous Load   ; 32    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 52    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 4:1                ; 17 bits   ; 34 LEs        ; 0 LEs                ; 34 LEs                 ; Yes        ; |HW3|LEDR[16]~reg0         ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |HW3|Debounce:U8|count[0]  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |HW3|Debounce:U9|count[17] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |HW3|run[3]                ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |HW3|Mux29                 ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |HW3|Mux43                 ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |HW3|LED_Decoder:U0|out[1] ;
+; 3:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; No         ; |HW3|LED_Decoder:U6|out[0] ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |HW3|LED_Decoder:U7|out[5] ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |HW3|LED_Decoder:U6|out[5] ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |HW3|LED_Decoder:U5|out[5] ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |HW3|LED_Decoder:U4|out[5] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |HW3 ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; Set            ; 00    ; Unsigned Binary                            ;
+; Waiting        ; 01    ; Unsigned Binary                            ;
+; Play           ; 10    ; Unsigned Binary                            ;
+; End            ; 11    ; Unsigned Binary                            ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "LED_Decoder:U3"   ;
++------------+-------+----------+--------------+
+; Port       ; Type  ; Severity ; Details      ;
++------------+-------+----------+--------------+
+; data[1..0] ; Input ; Info     ; Stuck at VCC ;
+; data[3]    ; Input ; Info     ; Stuck at VCC ;
+; data[2]    ; Input ; Info     ; Stuck at GND ;
++------------+-------+----------+--------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "LED_Decoder:U2" ;
++---------+-------+----------+---------------+
+; Port    ; Type  ; Severity ; Details       ;
++---------+-------+----------+---------------+
+; data[3] ; Input ; Info     ; Stuck at GND  ;
+; data[0] ; Input ; Info     ; Stuck at GND  ;
++---------+-------+----------+---------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "LED_Decoder:U1" ;
++---------+-------+----------+---------------+
+; Port    ; Type  ; Severity ; Details       ;
++---------+-------+----------+---------------+
+; data[3] ; Input ; Info     ; Stuck at VCC  ;
+; data[2] ; Input ; Info     ; Stuck at GND  ;
+; data[1] ; Input ; Info     ; Stuck at VCC  ;
+; data[0] ; Input ; Info     ; Stuck at GND  ;
++---------+-------+----------+---------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "LED_Decoder:U0" ;
++---------+-------+----------+---------------+
+; Port    ; Type  ; Severity ; Details       ;
++---------+-------+----------+---------------+
+; data[3] ; Input ; Info     ; Stuck at GND  ;
+; data[0] ; Input ; Info     ; Stuck at GND  ;
++---------+-------+----------+---------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 154                         ;
+;     ENA               ; 35                          ;
+;     ENA SCLR          ; 17                          ;
+;     SCLR              ; 64                          ;
+;     SLD               ; 32                          ;
+;     plain             ; 6                           ;
+; arriav_lcell_comb     ; 284                         ;
+;     arith             ; 127                         ;
+;         1 data inputs ; 126                         ;
+;         2 data inputs ; 1                           ;
+;     normal            ; 157                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 8                           ;
+;         2 data inputs ; 7                           ;
+;         3 data inputs ; 46                          ;
+;         4 data inputs ; 22                          ;
+;         5 data inputs ; 25                          ;
+;         6 data inputs ; 47                          ;
+; boundary_port         ; 97                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.10                        ;
+; Average LUT depth     ; 3.05                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
+    Info: Processing started: Mon Nov 28 11:18:48 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off HW3 -c HW3
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 3 design units, including 3 entities, in source file hw3.v
+    Info (12023): Found entity 1: HW3 File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 5
+    Info (12023): Found entity 2: LED_Decoder File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 219
+    Info (12023): Found entity 3: Debounce File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 270
+Info (12127): Elaborating entity "HW3" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at HW3.v(72): truncated value with size 32 to match size of target (1) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 72
+Warning (10230): Verilog HDL assignment warning at HW3.v(91): truncated value with size 32 to match size of target (1) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 91
+Warning (10230): Verilog HDL assignment warning at HW3.v(109): truncated value with size 32 to match size of target (4) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 109
+Warning (10235): Verilog HDL Always Construct warning at HW3.v(129): variable "flag" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 129
+Warning (10235): Verilog HDL Always Construct warning at HW3.v(135): variable "SW" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 135
+Warning (10235): Verilog HDL Always Construct warning at HW3.v(137): variable "SW" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 137
+Warning (10235): Verilog HDL Always Construct warning at HW3.v(137): variable "flag" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 137
+Warning (10235): Verilog HDL Always Construct warning at HW3.v(141): variable "A" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 141
+Warning (10235): Verilog HDL Always Construct warning at HW3.v(141): variable "times" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 141
+Warning (10235): Verilog HDL Always Construct warning at HW3.v(147): variable "SW" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 147
+Warning (10235): Verilog HDL Always Construct warning at HW3.v(149): variable "SW" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 149
+Warning (10235): Verilog HDL Always Construct warning at HW3.v(149): variable "flag" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 149
+Warning (10240): Verilog HDL Always Construct warning at HW3.v(126): inferring latch(es) for variable "NextState", which holds its previous value in one or more paths through the always construct File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 126
+Warning (10235): Verilog HDL Always Construct warning at HW3.v(159): variable "answer" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 159
+Warning (10235): Verilog HDL Always Construct warning at HW3.v(162): variable "run" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 162
+Warning (10235): Verilog HDL Always Construct warning at HW3.v(165): variable "guess" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 165
+Warning (10235): Verilog HDL Always Construct warning at HW3.v(170): variable "A" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 170
+Warning (10240): Verilog HDL Always Construct warning at HW3.v(156): inferring latch(es) for variable "showA", which holds its previous value in one or more paths through the always construct File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 156
+Warning (10240): Verilog HDL Always Construct warning at HW3.v(156): inferring latch(es) for variable "showB", which holds its previous value in one or more paths through the always construct File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 156
+Warning (10240): Verilog HDL Always Construct warning at HW3.v(181): inferring latch(es) for variable "A", which holds its previous value in one or more paths through the always construct File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Warning (10240): Verilog HDL Always Construct warning at HW3.v(181): inferring latch(es) for variable "B", which holds its previous value in one or more paths through the always construct File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Warning (10240): Verilog HDL Always Construct warning at HW3.v(181): inferring latch(es) for variable "guess", which holds its previous value in one or more paths through the always construct File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Warning (10240): Verilog HDL Always Construct warning at HW3.v(181): inferring latch(es) for variable "answer", which holds its previous value in one or more paths through the always construct File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "answer[0]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "answer[1]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "answer[2]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "answer[3]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "answer[4]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "answer[5]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "answer[6]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "answer[7]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "answer[8]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "answer[9]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "answer[10]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "answer[11]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "answer[12]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "answer[13]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "answer[14]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "answer[15]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "guess[0]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "guess[1]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "guess[2]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "guess[3]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "guess[4]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "guess[5]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "guess[6]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "guess[7]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "guess[8]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "guess[9]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "guess[10]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "guess[11]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "guess[12]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "guess[13]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "guess[14]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "guess[15]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "B[0]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "B[1]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "B[2]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "B[3]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "A[0]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "A[1]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "A[2]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "A[3]" at HW3.v(181) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Info (10041): Inferred latch for "showB[0]" at HW3.v(156) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 156
+Info (10041): Inferred latch for "showB[1]" at HW3.v(156) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 156
+Info (10041): Inferred latch for "showB[2]" at HW3.v(156) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 156
+Info (10041): Inferred latch for "showB[3]" at HW3.v(156) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 156
+Info (10041): Inferred latch for "showA[0]" at HW3.v(156) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 156
+Info (10041): Inferred latch for "showA[1]" at HW3.v(156) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 156
+Info (10041): Inferred latch for "showA[2]" at HW3.v(156) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 156
+Info (10041): Inferred latch for "showA[3]" at HW3.v(156) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 156
+Info (10041): Inferred latch for "NextState[0]" at HW3.v(126) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 126
+Info (10041): Inferred latch for "NextState[1]" at HW3.v(126) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 126
+Info (12128): Elaborating entity "LED_Decoder" for hierarchy "LED_Decoder:U0" File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 25
+Warning (10240): Verilog HDL Always Construct warning at HW3.v(226): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Info (10041): Inferred latch for "out[0]" at HW3.v(226) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Info (10041): Inferred latch for "out[1]" at HW3.v(226) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Info (10041): Inferred latch for "out[2]" at HW3.v(226) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Info (10041): Inferred latch for "out[3]" at HW3.v(226) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Info (10041): Inferred latch for "out[4]" at HW3.v(226) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Info (10041): Inferred latch for "out[5]" at HW3.v(226) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Info (10041): Inferred latch for "out[6]" at HW3.v(226) File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Info (12128): Elaborating entity "Debounce" for hierarchy "Debounce:U8" File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 38
+Warning (14026): LATCH primitive "LED_Decoder:U7|out[2]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U7|out[1]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U7|out[0]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U7|out[4]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U7|out[5]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U7|out[6]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U7|out[3]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U6|out[2]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U6|out[1]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U6|out[0]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U6|out[4]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U6|out[5]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U6|out[6]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U6|out[3]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U5|out[2]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U5|out[1]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U5|out[0]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U5|out[4]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U5|out[5]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U5|out[6]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U5|out[3]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U4|out[2]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U4|out[1]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U4|out[0]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U4|out[4]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U4|out[5]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U4|out[6]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U4|out[3]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U3|out[2]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U3|out[4]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U3|out[5]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U3|out[6]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U3|out[3]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U2|out[2]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U2|out[1]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U2|out[0]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U2|out[4]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U2|out[5]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U2|out[6]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U2|out[3]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U1|out[2]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U1|out[1]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U1|out[0]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U1|out[4]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U1|out[5]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U1|out[6]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U0|out[2]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U0|out[1]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U0|out[0]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U0|out[4]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U0|out[5]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U0|out[6]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Warning (14026): LATCH primitive "LED_Decoder:U0|out[3]" is permanently enabled File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 226
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "B[1]" merged with LATCH primitive "A[1]" File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+    Info (13026): Duplicate LATCH primitive "B[2]" merged with LATCH primitive "A[1]" File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+    Info (13026): Duplicate LATCH primitive "A[2]" merged with LATCH primitive "A[1]" File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+Warning (13012): Latch NextState[0] has unsafe behavior File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 126
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal NextState[0] File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 126
+Warning (13012): Latch NextState[1] has unsafe behavior File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 126
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rst File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 14
+Warning (13012): Latch guess[0] has unsafe behavior File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rst File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 14
+Warning (13012): Latch A[1] has unsafe behavior File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rst File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 14
+Warning (13012): Latch guess[1] has unsafe behavior File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rst File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 14
+Warning (13012): Latch guess[2] has unsafe behavior File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rst File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 14
+Warning (13012): Latch guess[3] has unsafe behavior File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rst File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 14
+Warning (13012): Latch guess[4] has unsafe behavior File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rst File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 14
+Warning (13012): Latch guess[5] has unsafe behavior File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rst File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 14
+Warning (13012): Latch guess[6] has unsafe behavior File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rst File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 14
+Warning (13012): Latch guess[7] has unsafe behavior File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rst File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 14
+Warning (13012): Latch guess[8] has unsafe behavior File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rst File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 14
+Warning (13012): Latch guess[9] has unsafe behavior File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rst File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 14
+Warning (13012): Latch guess[10] has unsafe behavior File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rst File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 14
+Warning (13012): Latch guess[11] has unsafe behavior File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rst File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 14
+Warning (13012): Latch guess[12] has unsafe behavior File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rst File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 14
+Warning (13012): Latch guess[13] has unsafe behavior File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rst File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 14
+Warning (13012): Latch guess[14] has unsafe behavior File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rst File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 14
+Warning (13012): Latch guess[15] has unsafe behavior File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 181
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rst File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 14
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 10
+    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 10
+    Warning (13410): Pin "HEX6[3]" is stuck at VCC File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 10
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/output_files/HW3.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 8
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/HW3.v Line: 8
+Info (21057): Implemented 391 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 23 input pins
+    Info (21059): Implemented 74 output pins
+    Info (21061): Implemented 294 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 123 warnings
+    Info: Peak virtual memory: 4868 megabytes
+    Info: Processing ended: Mon Nov 28 11:18:58 2022
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:12
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1124/HW3/output_files/HW3.map.smsg.
+
+
