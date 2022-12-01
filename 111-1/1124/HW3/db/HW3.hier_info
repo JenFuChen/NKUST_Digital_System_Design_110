@@ -1,43 +1,59 @@
 |HW3
-CLK => CLK.IN2
+clk => CLK.IN2
 KEY[0] => ~NO_FANOUT~
 KEY[1] => KEY[1].IN1
 KEY[2] => ~NO_FANOUT~
 KEY[3] => KEY[3].IN1
-SW[0] => Mux46.IN3
-SW[0] => Equal3.IN31
-SW[1] => Mux45.IN3
-SW[1] => Equal3.IN30
-SW[2] => Mux28.IN3
-SW[2] => Equal3.IN29
-SW[3] => Mux27.IN3
-SW[3] => Equal3.IN28
-SW[4] => Mux8.IN3
-SW[4] => Equal3.IN27
-SW[5] => Mux7.IN3
-SW[5] => Equal3.IN26
-SW[6] => Mux6.IN3
-SW[6] => Equal3.IN25
-SW[7] => Mux5.IN3
-SW[7] => Equal3.IN24
-SW[8] => Mux4.IN3
-SW[8] => Equal3.IN23
-SW[9] => Mux2.IN3
-SW[9] => Equal3.IN22
-SW[10] => Mux0.IN3
-SW[10] => Equal3.IN21
-SW[11] => Mux47.IN3
-SW[11] => Equal3.IN20
-SW[12] => Mux48.IN3
-SW[12] => Equal3.IN19
-SW[13] => Mux49.IN3
-SW[13] => Equal3.IN18
+SW[0] => WideOr0.IN0
+SW[0] => Mux42.IN3
+SW[0] => answer[0].DATAIN
+SW[1] => WideOr0.IN1
+SW[1] => Mux63.IN3
+SW[1] => answer[1].DATAIN
+SW[2] => WideOr0.IN2
+SW[2] => Mux62.IN3
+SW[2] => answer[2].DATAIN
+SW[3] => WideOr0.IN3
+SW[3] => Mux61.IN3
+SW[3] => answer[3].DATAIN
+SW[4] => WideOr0.IN4
+SW[4] => Mux60.IN3
+SW[4] => answer[4].DATAIN
+SW[5] => WideOr0.IN5
+SW[5] => Mux59.IN3
+SW[5] => answer[5].DATAIN
+SW[6] => WideOr0.IN6
+SW[6] => Mux58.IN3
+SW[6] => answer[6].DATAIN
+SW[7] => WideOr0.IN7
+SW[7] => Mux57.IN3
+SW[7] => answer[7].DATAIN
+SW[8] => WideOr0.IN8
+SW[8] => Mux56.IN3
+SW[8] => answer[8].DATAIN
+SW[9] => WideOr0.IN9
+SW[9] => Mux55.IN3
+SW[9] => answer[9].DATAIN
+SW[10] => WideOr0.IN10
+SW[10] => Mux54.IN3
+SW[10] => answer[10].DATAIN
+SW[11] => WideOr0.IN11
+SW[11] => Mux53.IN3
+SW[11] => answer[11].DATAIN
+SW[12] => WideOr0.IN12
+SW[12] => Mux52.IN3
+SW[12] => answer[12].DATAIN
+SW[13] => WideOr0.IN13
+SW[13] => Mux51.IN3
+SW[13] => answer[13].DATAIN
+SW[14] => WideOr0.IN14
 SW[14] => Mux50.IN3
-SW[14] => Equal3.IN17
-SW[15] => Mux51.IN3
-SW[15] => Equal3.IN16
-SW[16] => Equal3.IN15
-SW[17] => Equal3.IN14
+SW[14] => answer[14].DATAIN
+SW[15] => WideOr0.IN15
+SW[15] => Mux49.IN3
+SW[15] => answer[15].DATAIN
+SW[16] => WideOr0.IN16
+SW[17] => WideOr0.IN17
 HEX0[0] <= LED_Decoder:U7.out
 HEX0[1] <= LED_Decoder:U7.out
 HEX0[2] <= LED_Decoder:U7.out
@@ -112,10 +128,18 @@ LEDR[14] <= LEDR[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 LEDR[15] <= LEDR[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 LEDR[16] <= LEDR[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 LEDR[17] <= LEDR[17]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDG[0] <= State[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDG[1] <= State[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDG[2] <= Debounce:U8.out
+LEDG[3] <= <GND>
+LEDG[4] <= <GND>
+LEDG[5] <= <GND>
+LEDG[6] <= Debounce:U9.out
+LEDG[7] <= <GND>
 
 
 |HW3|LED_Decoder:U0
-data[0] => Decoder1.IN3
+data[0] => Decoder0.IN3
 data[1] => Decoder0.IN2
 data[1] => Decoder1.IN2
 data[2] => Decoder0.IN1
@@ -140,7 +164,7 @@ mode[1] => Equal3.IN31
 
 
 |HW3|LED_Decoder:U1
-data[0] => Decoder1.IN3
+data[0] => Decoder0.IN3
 data[1] => Decoder0.IN2
 data[1] => Decoder1.IN2
 data[2] => Decoder0.IN1
@@ -165,7 +189,7 @@ mode[1] => Equal3.IN31
 
 
 |HW3|LED_Decoder:U2
-data[0] => Decoder1.IN3
+data[0] => Decoder0.IN3
 data[1] => Decoder0.IN2
 data[1] => Decoder1.IN2
 data[2] => Decoder0.IN1
@@ -190,7 +214,7 @@ mode[1] => Equal3.IN31
 
 
 |HW3|LED_Decoder:U3
-data[0] => Decoder1.IN3
+data[0] => Decoder0.IN3
 data[1] => Decoder0.IN2
 data[1] => Decoder1.IN2
 data[2] => Decoder0.IN1
@@ -215,7 +239,7 @@ mode[1] => Equal3.IN31
 
 
 |HW3|LED_Decoder:U4
-data[0] => Decoder1.IN3
+data[0] => Decoder0.IN3
 data[1] => Decoder0.IN2
 data[1] => Decoder1.IN2
 data[2] => Decoder0.IN1
@@ -240,7 +264,7 @@ mode[1] => Equal3.IN31
 
 
 |HW3|LED_Decoder:U5
-data[0] => Decoder1.IN3
+data[0] => Decoder0.IN3
 data[1] => Decoder0.IN2
 data[1] => Decoder1.IN2
 data[2] => Decoder0.IN1
@@ -265,7 +289,7 @@ mode[1] => Equal3.IN31
 
 
 |HW3|LED_Decoder:U6
-data[0] => Decoder1.IN3
+data[0] => Decoder0.IN3
 data[1] => Decoder0.IN2
 data[1] => Decoder1.IN2
 data[2] => Decoder0.IN1
@@ -290,7 +314,7 @@ mode[1] => Equal3.IN31
 
 
 |HW3|LED_Decoder:U7
-data[0] => Decoder1.IN3
+data[0] => Decoder0.IN3
 data[1] => Decoder0.IN2
 data[1] => Decoder1.IN2
 data[2] => Decoder0.IN1
