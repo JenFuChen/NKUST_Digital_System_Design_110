@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'iClk'
+Slack : -3.119
+TNS   : -161.470
+
+Type  : Slow 1200mV 85C Model Setup 'IR_RECEIVE:U1|data_ready'
+Slack : -2.234
+TNS   : -54.879
+
+Type  : Slow 1200mV 85C Model Hold 'iClk'
+Slack : 0.137
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'IR_RECEIVE:U1|data_ready'
+Slack : 0.389
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'iClk'
+Slack : -3.000
+TNS   : -130.215
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'IR_RECEIVE:U1|data_ready'
+Slack : -1.285
+TNS   : -32.125
+
+Type  : Slow 1200mV 0C Model Setup 'iClk'
+Slack : -2.776
+TNS   : -138.044
+
+Type  : Slow 1200mV 0C Model Setup 'IR_RECEIVE:U1|data_ready'
+Slack : -2.056
+TNS   : -50.419
+
+Type  : Slow 1200mV 0C Model Hold 'iClk'
+Slack : 0.196
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'IR_RECEIVE:U1|data_ready'
+Slack : 0.341
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'iClk'
+Slack : -3.000
+TNS   : -130.215
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'IR_RECEIVE:U1|data_ready'
+Slack : -1.285
+TNS   : -32.125
+
+Type  : Fast 1200mV 0C Model Setup 'iClk'
+Slack : -1.032
+TNS   : -31.560
+
+Type  : Fast 1200mV 0C Model Setup 'IR_RECEIVE:U1|data_ready'
+Slack : -0.762
+TNS   : -18.554
+
+Type  : Fast 1200mV 0C Model Hold 'iClk'
+Slack : -0.117
+TNS   : -0.936
+
+Type  : Fast 1200mV 0C Model Hold 'IR_RECEIVE:U1|data_ready'
+Slack : 0.172
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'iClk'
+Slack : -3.000
+TNS   : -108.324
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'IR_RECEIVE:U1|data_ready'
+Slack : -1.000
+TNS   : -25.000
+
+------------------------------------------------------------

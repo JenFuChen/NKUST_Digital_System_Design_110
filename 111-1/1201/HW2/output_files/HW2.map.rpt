@@ -1,0 +1,590 @@
+Analysis & Synthesis report for HW2
+Thu Dec 01 16:56:20 2022
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |HW2|next_command
+  9. State Machine - |HW2|state
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: Top-level Entity: |HW2
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Dec 01 16:56:20 2022           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; HW2                                             ;
+; Top-level Entity Name              ; HW2                                             ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 452                                             ;
+;     Total combinational functions  ; 450                                             ;
+;     Dedicated logic registers      ; 224                                             ;
+; Total registers                    ; 224                                             ;
+; Total pins                         ; 21                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; HW2                ; HW2                ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 16     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                      ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                        ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
+; HW2.v                            ; yes             ; User Verilog HDL File  ; C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1201/HW2/HW2.v ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                 ;
++---------------------------------------------+-------------------------------+
+; Resource                                    ; Usage                         ;
++---------------------------------------------+-------------------------------+
+; Estimated Total logic elements              ; 452                           ;
+;                                             ;                               ;
+; Total combinational functions               ; 450                           ;
+; Logic element usage by number of LUT inputs ;                               ;
+;     -- 4 input functions                    ; 253                           ;
+;     -- 3 input functions                    ; 57                            ;
+;     -- <=2 input functions                  ; 140                           ;
+;                                             ;                               ;
+; Logic elements by mode                      ;                               ;
+;     -- normal mode                          ; 357                           ;
+;     -- arithmetic mode                      ; 93                            ;
+;                                             ;                               ;
+; Total registers                             ; 224                           ;
+;     -- Dedicated logic registers            ; 224                           ;
+;     -- I/O registers                        ; 0                             ;
+;                                             ;                               ;
+; I/O pins                                    ; 21                            ;
+; Embedded Multiplier 9-bit elements          ; 0                             ;
+; Maximum fan-out node                        ; LCD_display_string:u1|clk_5hz ;
+; Maximum fan-out                             ; 133                           ;
+; Total fan-out                               ; 2139                          ;
+; Average fan-out                             ; 2.95                          ;
++---------------------------------------------+-------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name        ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+--------------+
+; |HW2                       ; 450 (148)         ; 224 (59)     ; 0           ; 0            ; 0       ; 0         ; 21   ; 0            ; |HW2                       ; work         ;
+;    |Custom_font_ROM:ROM_U| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HW2|Custom_font_ROM:ROM_U ; work         ;
+;    |LCD_display_string:u1| ; 298 (298)         ; 165 (165)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HW2|LCD_display_string:u1 ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |HW2|next_command                                                                                                                                                                              ;
++----------------------------+-----------------------+--------------------------+--------------------------+--------------------+---------------------------+-----------------------+----------------------------+
+; Name                       ; next_command.write_CG ; next_command.CG_RAM_HOME ; next_command.RETURN_HOME ; next_command.LINE2 ; next_command.Print_String ; next_command.MODE_SET ; next_command.DISPLAY_CLEAR ;
++----------------------------+-----------------------+--------------------------+--------------------------+--------------------+---------------------------+-----------------------+----------------------------+
+; next_command.DISPLAY_CLEAR ; 0                     ; 0                        ; 0                        ; 0                  ; 0                         ; 0                     ; 0                          ;
+; next_command.MODE_SET      ; 0                     ; 0                        ; 0                        ; 0                  ; 0                         ; 1                     ; 1                          ;
+; next_command.Print_String  ; 0                     ; 0                        ; 0                        ; 0                  ; 1                         ; 0                     ; 1                          ;
+; next_command.LINE2         ; 0                     ; 0                        ; 0                        ; 1                  ; 0                         ; 0                     ; 1                          ;
+; next_command.RETURN_HOME   ; 0                     ; 0                        ; 1                        ; 0                  ; 0                         ; 0                     ; 1                          ;
+; next_command.CG_RAM_HOME   ; 0                     ; 1                        ; 0                        ; 0                  ; 0                         ; 0                     ; 1                          ;
+; next_command.write_CG      ; 1                     ; 0                        ; 0                        ; 0                  ; 0                         ; 0                     ; 1                          ;
++----------------------------+-----------------------+--------------------------+--------------------------+--------------------+---------------------------+-----------------------+----------------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |HW2|state                                                                                                                                                                           ;
++---------------------+----------------+-------------------+-------------------+-------------+--------------------+----------------+---------------------+------------+------------------+-------------+
+; Name                ; state.write_CG ; state.CG_RAM_HOME ; state.RETURN_HOME ; state.LINE2 ; state.Print_String ; state.MODE_SET ; state.DISPLAY_CLEAR ; state.HOLD ; state.DROP_LCD_E ; state.RESET ;
++---------------------+----------------+-------------------+-------------------+-------------+--------------------+----------------+---------------------+------------+------------------+-------------+
+; state.RESET         ; 0              ; 0                 ; 0                 ; 0           ; 0                  ; 0              ; 0                   ; 0          ; 0                ; 0           ;
+; state.DROP_LCD_E    ; 0              ; 0                 ; 0                 ; 0           ; 0                  ; 0              ; 0                   ; 0          ; 1                ; 1           ;
+; state.HOLD          ; 0              ; 0                 ; 0                 ; 0           ; 0                  ; 0              ; 0                   ; 1          ; 0                ; 1           ;
+; state.DISPLAY_CLEAR ; 0              ; 0                 ; 0                 ; 0           ; 0                  ; 0              ; 1                   ; 0          ; 0                ; 1           ;
+; state.MODE_SET      ; 0              ; 0                 ; 0                 ; 0           ; 0                  ; 1              ; 0                   ; 0          ; 0                ; 1           ;
+; state.Print_String  ; 0              ; 0                 ; 0                 ; 0           ; 1                  ; 0              ; 0                   ; 0          ; 0                ; 1           ;
+; state.LINE2         ; 0              ; 0                 ; 0                 ; 1           ; 0                  ; 0              ; 0                   ; 0          ; 0                ; 1           ;
+; state.RETURN_HOME   ; 0              ; 0                 ; 1                 ; 0           ; 0                  ; 0              ; 0                   ; 0          ; 0                ; 1           ;
+; state.CG_RAM_HOME   ; 0              ; 1                 ; 0                 ; 0           ; 0                  ; 0              ; 0                   ; 0          ; 0                ; 1           ;
+; state.write_CG      ; 1              ; 0                 ; 0                 ; 0           ; 0                  ; 0              ; 0                   ; 0          ; 0                ; 1           ;
++---------------------+----------------+-------------------+-------------------+-------------+--------------------+----------------+---------------------+------------+------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                          ;
++----------------------------------------------------+--------------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal            ; Free of Timing Hazards ;
++----------------------------------------------------+--------------------------------+------------------------+
+; LCD_display_string:u1|num[8][0]                    ; LCD_display_string:u1|WideNor0 ; yes                    ;
+; LCD_display_string:u1|num[9][0]                    ; LCD_display_string:u1|WideNor0 ; yes                    ;
+; LCD_display_string:u1|num[8][1]                    ; LCD_display_string:u1|WideNor0 ; yes                    ;
+; LCD_display_string:u1|num[9][1]                    ; LCD_display_string:u1|WideNor0 ; yes                    ;
+; LCD_display_string:u1|num[8][2]                    ; LCD_display_string:u1|WideNor0 ; yes                    ;
+; LCD_display_string:u1|num[9][3]                    ; LCD_display_string:u1|WideNor0 ; yes                    ;
+; Number of user-specified and inferred latches = 6  ;                                ;                        ;
++----------------------------------------------------+--------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-----------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                            ;
++-----------------------------------------+-----------------------------------------------------+
+; Register name                           ; Reason for Removal                                  ;
++-----------------------------------------+-----------------------------------------------------+
+; LCD_display_string:u1|displayreg[0][0]  ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[0][1]  ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[0][2]  ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[0][3]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[0][4]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[0][5]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[0][6]  ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[0][7]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[1][0]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[1][1]  ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[1][2]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[1][3]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[1][4]  ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[1][5]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[1][6]  ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[1][7]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[2][0]  ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[2][1]  ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[2][2]  ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[2][3]  ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[2][4]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[2][5]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[2][6]  ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[2][7]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[3][0]  ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[3][1]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[3][2]  ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[3][3]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[3][4]  ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[3][5]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[3][6]  ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[3][7]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[4][0]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[4][1]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[4][2]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[4][3]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[4][4]  ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[4][5]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[4][6]  ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[4][7]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[5][0]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[5][1]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[5][2]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[5][3]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[5][4]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[5][5]  ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[5][6]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[5][7]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[6][0]  ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[6][1]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[6][2]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[6][3]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[6][4]  ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[6][5]  ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[6][6]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[6][7]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[7][0]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[7][1]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[7][2]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[7][3]  ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[7][4]  ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[7][5]  ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[7][6]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[7][7]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[8][0]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[8][1]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[8][2]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[8][3]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[8][4]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[8][5]  ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[8][6]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[8][7]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[9][0]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[9][1]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[9][2]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[9][3]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[9][4]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[9][5]  ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[9][6]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[9][7]  ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[10][0] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[10][1] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[10][2] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[10][3] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[10][4] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[10][5] ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[10][6] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[10][7] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[11][0] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[11][1] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[11][2] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[11][3] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[11][4] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[11][5] ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[11][6] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[11][7] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[12][0] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[12][1] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[12][2] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[12][3] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[12][4] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[12][5] ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[12][6] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[12][7] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[13][0] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[13][1] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[13][2] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[13][3] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[13][4] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[13][5] ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[13][6] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[13][7] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[14][0] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[14][1] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[14][2] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[14][3] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[14][4] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[14][5] ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[14][6] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[14][7] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[15][0] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[15][1] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[15][2] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[15][3] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[15][4] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[15][5] ; Stuck at VCC due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[15][6] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[15][7] ; Stuck at GND due to stuck port data_in              ;
+; LCD_RW~reg0                             ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[24][7] ; Merged with LCD_display_string:u1|displayreg[16][7] ;
+; LCD_display_string:u1|displayreg[17][7] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[16][7] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[18][7] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[19][7] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[20][7] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[21][7] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[22][7] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[23][7] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[25][7] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[26][7] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[27][7] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[28][7] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[29][7] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[30][7] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[31][7] ; Stuck at GND due to stuck port data_in              ;
+; LCD_display_string:u1|displayreg[17][5] ; Merged with LCD_display_string:u1|displayreg[17][6] ;
+; LCD_display_string:u1|displayreg[16][5] ; Merged with LCD_display_string:u1|displayreg[16][6] ;
+; LCD_display_string:u1|displayreg[18][6] ; Merged with LCD_display_string:u1|displayreg[18][5] ;
+; LCD_display_string:u1|displayreg[19][6] ; Merged with LCD_display_string:u1|displayreg[19][5] ;
+; LCD_display_string:u1|displayreg[20][6] ; Merged with LCD_display_string:u1|displayreg[20][5] ;
+; LCD_display_string:u1|displayreg[21][6] ; Merged with LCD_display_string:u1|displayreg[21][5] ;
+; LCD_display_string:u1|displayreg[22][6] ; Merged with LCD_display_string:u1|displayreg[22][5] ;
+; LCD_display_string:u1|displayreg[23][6] ; Merged with LCD_display_string:u1|displayreg[23][5] ;
+; LCD_display_string:u1|displayreg[24][6] ; Merged with LCD_display_string:u1|displayreg[24][5] ;
+; LCD_display_string:u1|displayreg[25][6] ; Merged with LCD_display_string:u1|displayreg[25][5] ;
+; LCD_display_string:u1|displayreg[26][6] ; Merged with LCD_display_string:u1|displayreg[26][5] ;
+; LCD_display_string:u1|displayreg[27][6] ; Merged with LCD_display_string:u1|displayreg[27][5] ;
+; LCD_display_string:u1|displayreg[28][6] ; Merged with LCD_display_string:u1|displayreg[28][5] ;
+; LCD_display_string:u1|displayreg[29][6] ; Merged with LCD_display_string:u1|displayreg[29][5] ;
+; LCD_display_string:u1|displayreg[30][6] ; Merged with LCD_display_string:u1|displayreg[30][5] ;
+; LCD_display_string:u1|displayreg[31][6] ; Merged with LCD_display_string:u1|displayreg[31][5] ;
+; next_command~2                          ; Lost fanout                                         ;
+; next_command~3                          ; Lost fanout                                         ;
+; next_command~4                          ; Lost fanout                                         ;
+; next_command~5                          ; Lost fanout                                         ;
+; state~11                                ; Lost fanout                                         ;
+; state~12                                ; Lost fanout                                         ;
+; state~13                                ; Lost fanout                                         ;
+; state~14                                ; Lost fanout                                         ;
+; LCD_display_string:u1|cnt[4..31]        ; Lost fanout                                         ;
+; Total Number of Removed Registers = 197 ;                                                     ;
++-----------------------------------------+-----------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                         ;
++---------------+---------------------------+-----------------------------------------+
+; Register name ; Reason for Removal        ; Registers Removed due to This Register  ;
++---------------+---------------------------+-----------------------------------------+
+; LCD_RW~reg0   ; Stuck at GND              ; LCD_display_string:u1|displayreg[21][7] ;
+;               ; due to stuck port data_in ;                                         ;
++---------------+---------------------------+-----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 224   ;
+; Number of registers using Synchronous Clear  ; 20    ;
+; Number of registers using Synchronous Load   ; 43    ;
+; Number of registers using Asynchronous Clear ; 31    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 59    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; 16:1               ; 2 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; Yes        ; |HW2|LCD_display_string:u1|displayreg[17][0] ;
+; 36:1               ; 2 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |HW2|DATA_BUS_VALUE[2]                       ;
+; 36:1               ; 2 bits    ; 48 LEs        ; 38 LEs               ; 10 LEs                 ; Yes        ; |HW2|DATA_BUS_VALUE[3]                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |HW2 ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; RESET          ; 0000  ; Unsigned Binary                            ;
+; DROP_LCD_E     ; 0001  ; Unsigned Binary                            ;
+; HOLD           ; 0010  ; Unsigned Binary                            ;
+; DISPLAY_CLEAR  ; 0011  ; Unsigned Binary                            ;
+; MODE_SET       ; 0100  ; Unsigned Binary                            ;
+; Print_String   ; 0101  ; Unsigned Binary                            ;
+; LINE2          ; 0110  ; Unsigned Binary                            ;
+; RETURN_HOME    ; 0111  ; Unsigned Binary                            ;
+; CG_RAM_HOME    ; 1000  ; Unsigned Binary                            ;
+; write_CG       ; 1001  ; Unsigned Binary                            ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Dec 01 16:56:18 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off HW2 -c HW2
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Warning (10463): Verilog HDL Declaration warning at HW2.v(188): "local" is SystemVerilog-2005 keyword
+Info (12021): Found 3 design units, including 3 entities, in source file hw2.v
+    Info (12023): Found entity 1: HW2
+    Info (12023): Found entity 2: LCD_display_string
+    Info (12023): Found entity 3: Custom_font_ROM
+Info (12127): Elaborating entity "HW2" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at HW2.v(156): truncated value with size 32 to match size of target (6)
+Info (12128): Elaborating entity "Custom_font_ROM" for hierarchy "Custom_font_ROM:ROM_U"
+Warning (10030): Net "data[63]" at HW2.v(346) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "LCD_display_string" for hierarchy "LCD_display_string:u1"
+Warning (10762): Verilog HDL Case Statement warning at HW2.v(228): can't check case statement for completeness because the case expression has too many possible states
+Info (10041): Inferred latch for "num[9][0]" at HW2.v(228)
+Info (10041): Inferred latch for "num[9][1]" at HW2.v(228)
+Info (10041): Inferred latch for "num[9][2]" at HW2.v(228)
+Info (10041): Inferred latch for "num[9][3]" at HW2.v(228)
+Info (10041): Inferred latch for "num[9][4]" at HW2.v(228)
+Info (10041): Inferred latch for "num[9][5]" at HW2.v(228)
+Info (10041): Inferred latch for "num[9][6]" at HW2.v(228)
+Info (10041): Inferred latch for "num[9][7]" at HW2.v(228)
+Info (10041): Inferred latch for "num[8][0]" at HW2.v(228)
+Info (10041): Inferred latch for "num[8][1]" at HW2.v(228)
+Info (10041): Inferred latch for "num[8][2]" at HW2.v(228)
+Info (10041): Inferred latch for "num[8][3]" at HW2.v(228)
+Info (10041): Inferred latch for "num[8][4]" at HW2.v(228)
+Info (10041): Inferred latch for "num[8][5]" at HW2.v(228)
+Info (10041): Inferred latch for "num[8][6]" at HW2.v(228)
+Info (10041): Inferred latch for "num[8][7]" at HW2.v(228)
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "LCD_display_string:u1|num[9][1]" merged with LATCH primitive "LCD_display_string:u1|num[8][1]"
+Warning (13012): Latch LCD_display_string:u1|num[8][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LCD_display_string:u1|flag[0]
+Warning (13012): Latch LCD_display_string:u1|num[9][0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LCD_display_string:u1|flag[0]
+Warning (13012): Latch LCD_display_string:u1|num[8][1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LCD_display_string:u1|flag[0]
+Warning (13012): Latch LCD_display_string:u1|num[8][2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LCD_display_string:u1|flag[0]
+Warning (13012): Latch LCD_display_string:u1|num[9][3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal LCD_display_string:u1|flag[0]
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "LCD_DATA[0]~synth"
+    Warning (13010): Node "LCD_DATA[1]~synth"
+    Warning (13010): Node "LCD_DATA[2]~synth"
+    Warning (13010): Node "LCD_DATA[3]~synth"
+    Warning (13010): Node "LCD_DATA[4]~synth"
+    Warning (13010): Node "LCD_DATA[5]~synth"
+    Warning (13010): Node "LCD_DATA[6]~synth"
+    Warning (13010): Node "LCD_DATA[7]~synth"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LCD_RW" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 36 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 4 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "DATA_IN[0]"
+    Warning (15610): No output dependent on input pin "DATA_IN[1]"
+    Warning (15610): No output dependent on input pin "DATA_IN[2]"
+    Warning (15610): No output dependent on input pin "DATA_IN[3]"
+Info (21057): Implemented 476 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 5 output pins
+    Info (21060): Implemented 8 bidirectional pins
+    Info (21061): Implemented 455 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 31 warnings
+    Info: Peak virtual memory: 4590 megabytes
+    Info: Processing ended: Thu Dec 01 16:56:20 2022
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

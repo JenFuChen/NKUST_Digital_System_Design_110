@@ -1,0 +1,573 @@
+Analysis & Synthesis report for HW3
+Thu Dec 08 16:29:43 2022
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |HW3|IR_RECEIVE:U1|state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: IR_RECEIVE:U1
+ 13. Port Connectivity Checks: "LED_Decoder:U7"
+ 14. Port Connectivity Checks: "LED_Decoder:U6"
+ 15. Port Connectivity Checks: "LED_Decoder:U5"
+ 16. Port Connectivity Checks: "LED_Decoder:U4"
+ 17. Port Connectivity Checks: "LED_Decoder:U3"
+ 18. Port Connectivity Checks: "LED_Decoder:U2"
+ 19. Port Connectivity Checks: "IR_RECEIVE:U1"
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Dec 08 16:29:42 2022           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; HW3                                             ;
+; Top-level Entity Name              ; HW3                                             ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 262                                             ;
+;     Total combinational functions  ; 222                                             ;
+;     Dedicated logic registers      ; 124                                             ;
+; Total registers                    ; 124                                             ;
+; Total pins                         ; 112                                             ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; HW3                ; HW3                ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 16     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                      ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                        ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
+; HW3.v                            ; yes             ; User Verilog HDL File  ; C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/1208/HW3/HW3.v ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimated Total logic elements              ; 262        ;
+;                                             ;            ;
+; Total combinational functions               ; 222        ;
+; Logic element usage by number of LUT inputs ;            ;
+;     -- 4 input functions                    ; 109        ;
+;     -- 3 input functions                    ; 5          ;
+;     -- <=2 input functions                  ; 108        ;
+;                                             ;            ;
+; Logic elements by mode                      ;            ;
+;     -- normal mode                          ; 166        ;
+;     -- arithmetic mode                      ; 56         ;
+;                                             ;            ;
+; Total registers                             ; 124        ;
+;     -- Dedicated logic registers            ; 124        ;
+;     -- I/O registers                        ; 0          ;
+;                                             ;            ;
+; I/O pins                                    ; 112        ;
+; Embedded Multiplier 9-bit elements          ; 0          ;
+; Maximum fan-out node                        ; iClk~input ;
+; Maximum fan-out                             ; 99         ;
+; Total fan-out                               ; 1318       ;
+; Average fan-out                             ; 2.25       ;
++---------------------------------------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |HW3                       ; 222 (10)          ; 124 (25)     ; 0           ; 0            ; 0       ; 0         ; 112  ; 0            ; |HW3                ; work         ;
+;    |IR_RECEIVE:U1|         ; 128 (128)         ; 99 (99)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HW3|IR_RECEIVE:U1  ; work         ;
+;    |LED_Decoder:U2|        ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HW3|LED_Decoder:U2 ; work         ;
+;    |LED_Decoder:U3|        ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HW3|LED_Decoder:U3 ; work         ;
+;    |LED_Decoder:U4|        ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HW3|LED_Decoder:U4 ; work         ;
+;    |LED_Decoder:U5|        ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HW3|LED_Decoder:U5 ; work         ;
+;    |LED_Decoder:U6|        ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HW3|LED_Decoder:U6 ; work         ;
+;    |LED_Decoder:U7|        ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HW3|LED_Decoder:U7 ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------+
+; State Machine - |HW3|IR_RECEIVE:U1|state                      ;
++----------------+------------+----------------+----------------+
+; Name           ; state.IDLE ; state.DATAREAD ; state.GUIDANCE ;
++----------------+------------+----------------+----------------+
+; state.IDLE     ; 0          ; 0              ; 0              ;
+; state.GUIDANCE ; 1          ; 0              ; 1              ;
+; state.DATAREAD ; 1          ; 1              ; 0              ;
++----------------+------------+----------------+----------------+
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; LEDR[0]~reg0                           ; Stuck at VCC due to stuck port data_in ;
+; LEDR[1]~reg0                           ; Stuck at VCC due to stuck port data_in ;
+; LEDR[2]~reg0                           ; Stuck at VCC due to stuck port data_in ;
+; LEDR[3]~reg0                           ; Stuck at VCC due to stuck port data_in ;
+; LEDR[4]~reg0                           ; Stuck at VCC due to stuck port data_in ;
+; LEDR[5]~reg0                           ; Stuck at VCC due to stuck port data_in ;
+; LEDR[6]~reg0                           ; Stuck at VCC due to stuck port data_in ;
+; LEDR[7]~reg0                           ; Stuck at VCC due to stuck port data_in ;
+; LEDR[8]~reg0                           ; Stuck at VCC due to stuck port data_in ;
+; LEDR[9]~reg0                           ; Stuck at VCC due to stuck port data_in ;
+; LEDR[10]~reg0                          ; Stuck at VCC due to stuck port data_in ;
+; LEDR[11]~reg0                          ; Stuck at VCC due to stuck port data_in ;
+; LEDR[12]~reg0                          ; Stuck at VCC due to stuck port data_in ;
+; LEDR[13]~reg0                          ; Stuck at VCC due to stuck port data_in ;
+; LEDR[14]~reg0                          ; Stuck at VCC due to stuck port data_in ;
+; LEDR[15]~reg0                          ; Stuck at VCC due to stuck port data_in ;
+; LEDR[16]~reg0                          ; Stuck at VCC due to stuck port data_in ;
+; LEDR[17]~reg0                          ; Stuck at VCC due to stuck port data_in ;
+; Total Number of Removed Registers = 18 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 124   ;
+; Number of registers using Synchronous Clear  ; 76    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 91    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 62    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |HW3|IR_RECEIVE:U1|bitcount[0] ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |HW3|IR_RECEIVE:U1|Selector0   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: IR_RECEIVE:U1 ;
++-------------------+--------+-------------------------------+
+; Parameter Name    ; Value  ; Type                          ;
++-------------------+--------+-------------------------------+
+; IDLE              ; 00     ; Unsigned Binary               ;
+; GUIDANCE          ; 01     ; Unsigned Binary               ;
+; DATAREAD          ; 10     ; Unsigned Binary               ;
+; IDLE_DUR          ; 230000 ; Signed Integer                ;
+; GUIDANCE_DUR      ; 210000 ; Signed Integer                ;
+; DATAREAD_DUR      ; 262143 ; Signed Integer                ;
+; DATA_HIGH_DUR     ; 41500  ; Signed Integer                ;
+; BIT_AVAILABLE_DUR ; 20000  ; Signed Integer                ;
++-------------------+--------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LED_Decoder:U7"                                                                                                                             ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; mode ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (2 bits) it drives.  Extra input bit(s) "mode[1..1]" will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LED_Decoder:U6"                                                                                                                             ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; mode ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (2 bits) it drives.  Extra input bit(s) "mode[1..1]" will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LED_Decoder:U5"                                                                                                                             ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; mode ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (2 bits) it drives.  Extra input bit(s) "mode[1..1]" will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LED_Decoder:U4"                                                                                                                             ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; mode ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (2 bits) it drives.  Extra input bit(s) "mode[1..1]" will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LED_Decoder:U3"                                                                                                                             ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; mode ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (2 bits) it drives.  Extra input bit(s) "mode[1..1]" will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LED_Decoder:U2"                                                                                                                             ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; mode ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (2 bits) it drives.  Extra input bit(s) "mode[1..1]" will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "IR_RECEIVE:U1"                                                                               ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; oDATA[31..24] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; oDATA[15..0]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Dec 08 16:29:40 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off HW3 -c HW3
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 4 design units, including 4 entities, in source file hw3.v
+    Info (12023): Found entity 1: HW3
+    Info (12023): Found entity 2: SRAM
+    Info (12023): Found entity 3: LED_Decoder
+    Info (12023): Found entity 4: IR_RECEIVE
+Info (12127): Elaborating entity "HW3" for the top level hierarchy
+Info (12128): Elaborating entity "IR_RECEIVE" for hierarchy "IR_RECEIVE:U1"
+Info (12128): Elaborating entity "SRAM" for hierarchy "SRAM:U0"
+Warning (10858): Verilog HDL warning at HW3.v(75): object mod used but never assigned
+Warning (10030): Net "mod" at HW3.v(75) has no driver or initial value, using a default initial value '0'
+Warning (10034): Output port "ADDR" at HW3.v(70) has no driver
+Warning (10034): Output port "CE" at HW3.v(71) has no driver
+Warning (10034): Output port "LB" at HW3.v(71) has no driver
+Warning (10034): Output port "UB" at HW3.v(71) has no driver
+Info (12128): Elaborating entity "LED_Decoder" for hierarchy "LED_Decoder:U2"
+Warning (10240): Verilog HDL Always Construct warning at HW3.v(93): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "out[0]" at HW3.v(93)
+Info (10041): Inferred latch for "out[1]" at HW3.v(93)
+Info (10041): Inferred latch for "out[2]" at HW3.v(93)
+Info (10041): Inferred latch for "out[3]" at HW3.v(93)
+Info (10041): Inferred latch for "out[4]" at HW3.v(93)
+Info (10041): Inferred latch for "out[5]" at HW3.v(93)
+Info (10041): Inferred latch for "out[6]" at HW3.v(93)
+Warning (14026): LATCH primitive "LED_Decoder:U7|out[1]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U7|out[2]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U7|out[3]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U7|out[4]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U7|out[5]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U7|out[6]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U7|out[0]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U6|out[1]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U6|out[2]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U6|out[3]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U6|out[4]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U6|out[5]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U6|out[6]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U6|out[0]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U5|out[1]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U5|out[2]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U5|out[3]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U5|out[4]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U5|out[5]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U5|out[6]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U5|out[0]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U4|out[1]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U4|out[2]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U4|out[3]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U4|out[4]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U4|out[5]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U4|out[6]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U4|out[0]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U3|out[1]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U3|out[2]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U3|out[3]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U3|out[4]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U3|out[5]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U3|out[6]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U3|out[0]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U2|out[1]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U2|out[2]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U2|out[3]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U2|out[4]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U2|out[5]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U2|out[6]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U2|out[0]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U7|out[1]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U7|out[2]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U7|out[3]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U7|out[4]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U7|out[5]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U7|out[6]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U7|out[0]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U6|out[1]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U6|out[2]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U6|out[3]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U6|out[4]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U6|out[5]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U6|out[6]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U6|out[0]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U5|out[1]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U5|out[2]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U5|out[3]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U5|out[4]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U5|out[5]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U5|out[6]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U5|out[0]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U4|out[1]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U4|out[2]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U4|out[3]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U4|out[4]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U4|out[5]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U4|out[6]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U4|out[0]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U3|out[1]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U3|out[2]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U3|out[3]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U3|out[4]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U3|out[5]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U3|out[6]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U3|out[0]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U2|out[1]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U2|out[2]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U2|out[3]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U2|out[4]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U2|out[5]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U2|out[6]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U2|out[0]" is permanently enabled
+Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13039): The following bidir pins have no drivers
+    Warning (13040): Bidir "SRAM_DQ[0]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[1]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[2]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[3]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[4]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[5]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[6]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[7]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[8]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[9]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[10]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[11]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[12]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[13]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[14]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[15]" has no driver
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[0]" is stuck at VCC
+    Warning (13410): Pin "LEDR[1]" is stuck at VCC
+    Warning (13410): Pin "LEDR[2]" is stuck at VCC
+    Warning (13410): Pin "LEDR[3]" is stuck at VCC
+    Warning (13410): Pin "LEDR[4]" is stuck at VCC
+    Warning (13410): Pin "LEDR[5]" is stuck at VCC
+    Warning (13410): Pin "LEDR[6]" is stuck at VCC
+    Warning (13410): Pin "LEDR[7]" is stuck at VCC
+    Warning (13410): Pin "LEDR[8]" is stuck at VCC
+    Warning (13410): Pin "LEDR[9]" is stuck at VCC
+    Warning (13410): Pin "LEDR[10]" is stuck at VCC
+    Warning (13410): Pin "LEDR[11]" is stuck at VCC
+    Warning (13410): Pin "LEDR[12]" is stuck at VCC
+    Warning (13410): Pin "LEDR[13]" is stuck at VCC
+    Warning (13410): Pin "LEDR[14]" is stuck at VCC
+    Warning (13410): Pin "LEDR[15]" is stuck at VCC
+    Warning (13410): Pin "LEDR[16]" is stuck at VCC
+    Warning (13410): Pin "LEDR[17]" is stuck at VCC
+    Warning (13410): Pin "SRAM_ADDR[0]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[1]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[2]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[3]" is stuck at GND
+    Warning (13410): Pin "SRAM_OE_N" is stuck at GND
+    Warning (13410): Pin "SRAM_WE_N" is stuck at VCC
+    Warning (13410): Pin "SRAM_CE_N" is stuck at GND
+    Warning (13410): Pin "SRAM_LB_N" is stuck at GND
+    Warning (13410): Pin "SRAM_UB_N" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 16 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[0]"
+    Warning (15610): No output dependent on input pin "SW[1]"
+    Warning (15610): No output dependent on input pin "SW[2]"
+    Warning (15610): No output dependent on input pin "SW[3]"
+    Warning (15610): No output dependent on input pin "SW[4]"
+    Warning (15610): No output dependent on input pin "SW[5]"
+    Warning (15610): No output dependent on input pin "SW[6]"
+    Warning (15610): No output dependent on input pin "SW[7]"
+    Warning (15610): No output dependent on input pin "SW[8]"
+    Warning (15610): No output dependent on input pin "SW[9]"
+    Warning (15610): No output dependent on input pin "SW[10]"
+    Warning (15610): No output dependent on input pin "SW[11]"
+    Warning (15610): No output dependent on input pin "SW[12]"
+    Warning (15610): No output dependent on input pin "SW[13]"
+    Warning (15610): No output dependent on input pin "SW[14]"
+    Warning (15610): No output dependent on input pin "SW[15]"
+Info (21057): Implemented 374 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 19 input pins
+    Info (21059): Implemented 77 output pins
+    Info (21060): Implemented 16 bidirectional pins
+    Info (21061): Implemented 262 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 155 warnings
+    Info: Peak virtual memory: 4591 megabytes
+    Info: Processing ended: Thu Dec 08 16:29:43 2022
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:01
+
+
