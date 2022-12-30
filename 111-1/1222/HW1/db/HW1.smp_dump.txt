@@ -1,0 +1,13 @@
+
+State Machine - |HW1|IR_RECEIVE:U2|state
+Name state.IDLE state.DATAREAD state.GUIDANCE 
+state.IDLE 0 0 0 
+state.GUIDANCE 1 0 1 
+state.DATAREAD 1 1 0 
+
+State Machine - |HW1|VGA:U1|flag
+Name flag.0011 flag.0010 flag.0001 flag.0100 
+flag.0001 0 0 0 0 
+flag.0010 0 1 1 0 
+flag.0011 1 0 1 0 
+flag.0100 0 0 1 1 

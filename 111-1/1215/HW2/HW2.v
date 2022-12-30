@@ -1,0 +1,388 @@
+`define MAXHZ 5_000_000 // to 5 Hz :  
+module HW2(clk, rst, VGA_HS, VGA_VS ,VGA_R, VGA_G, VGA_B,VGA_BLANK_N,VGA_CLOCK,iIRDA, LEDR, LEDG);
+	
+	input clk, rst, iIRDA;		//clk 50MHz
+	output VGA_HS, VGA_VS;
+	output VGA_BLANK_N,VGA_CLOCK;
+	output 		[7:0] 		LEDG;
+	output reg 	[17:0] 		LEDR;
+	output [7:0] VGA_R,VGA_G,VGA_B;
+	
+	wire 	[31:0] 	IR_Data;
+	wire 	[7:0]		keyCode;
+	wire 				keyValid;
+	reg [23:0] treeColor = 24'hFFFFFF;
+	reg [1:0] mode;
+	reg down;
+	
+	VGA U1(clk, rst, VGA_HS, VGA_VS ,VGA_R, VGA_G, VGA_B,VGA_BLANK_N,VGA_CLOCK, mode, treeColor, down);
+	
+	IR_RECEIVE U2(.iCLK(clk), .iRST_n(rst), .iIRDA(iIRDA), .oDATA_READY(keyValid), .oDATA(IR_Data));
+	
+	assign keyCode = IR_Data[23:16];
+	assign LEDG = keyCode;
+	
+	
+	
+	always @(negedge keyValid)begin
+		if(keyCode == 8'h01) mode <= 2'b00;
+		else if(keyCode == 8'h02) mode <= 2'b01;
+		else if(keyCode == 8'h03) mode <= 2'b10;
+		else if(keyCode == 8'h04) mode <= 2'b11;
+		
+		if(keyCode == 8'h0F) treeColor = 24'hEEEEEE;
+		else if(keyCode == 8'h13) treeColor = 24'h567898;
+		else if(keyCode == 8'h10) treeColor = 24'h012345;
+		else if(keyCode == 8'h12) down = ~down;
+	
+	end
+	
+endmodule
+
+module VGA(clk, rst, VGA_HS, VGA_VS ,VGA_R, VGA_G, VGA_B,VGA_BLANK_N,VGA_CLOCK, mode, treeColor,down);
+
+	input clk, rst;		//clk 50MHz
+	input down;
+	input [1:0] mode;
+	input [23:0] treeColor;
+	output VGA_HS, VGA_VS;
+	output reg [7:0] VGA_R,VGA_G,VGA_B;
+	output VGA_BLANK_N,VGA_CLOCK;
+
+	reg VGA_HS, VGA_VS;
+	reg[10:0] counterHS;
+	reg[9:0] counterVS;
+	reg [2:0] valid;
+	reg clk25M;
+
+	reg [12:0] X,Y;
+	reg [9:0] objX, objY;
+	
+	parameter H_FRONT = 16;
+	parameter H_SYNC  = 96;
+	parameter H_BACK  = 48;
+	parameter H_ACT   = 640;//
+	parameter H_BLANK = H_FRONT + H_SYNC + H_BACK;
+	parameter H_TOTAL = H_FRONT + H_SYNC + H_BACK + H_ACT;
+
+	parameter V_FRONT = 11;
+	parameter V_SYNC  = 2;
+	parameter V_BACK  = 32;
+	parameter V_ACT   = 480;//
+	parameter V_BLANK = V_FRONT + V_SYNC + V_BACK;
+	parameter V_TOTAL = V_FRONT + V_SYNC + V_BACK + V_ACT;
+	assign VGA_SYNC_N = 1'b0;
+	assign VGA_BLANK_N = ~((counterHS<H_BLANK)||(counterVS<V_BLANK));
+	assign VGA_CLOCK = ~clk25M;
+
+	always@(posedge clk)
+		clk25M = ~clk25M;
+
+
+	always@(posedge clk25M)
+	begin
+		if(!rst) 
+			counterHS <= 0;
+		else begin
+		
+			if(counterHS == H_TOTAL) 
+				counterHS <= 0;
+			else 
+				counterHS <= counterHS + 1'b1;
+			
+			if(counterHS == H_FRONT-1)
+				VGA_HS <= 1'b0;
+			if(counterHS == H_FRONT + H_SYNC -1)
+				VGA_HS <= 1'b1;
+				
+			if(counterHS >= H_BLANK)
+				X <= counterHS-H_BLANK;
+			else
+				X <= 0;	
+		end
+	end
+
+	always@(posedge clk25M)
+	begin
+		if(!rst) 
+			counterVS <= 0;
+		else begin
+		
+			if(counterVS == V_TOTAL) 
+				counterVS <= 0;
+			else if(counterHS == H_TOTAL) 
+				counterVS <= counterVS + 1'b1;
+				
+			if(counterVS == V_FRONT-1)
+				VGA_VS <= 1'b0;
+			if(counterVS == V_FRONT + V_SYNC -1)
+				VGA_VS <= 1'b1;
+			if(counterVS >= V_BLANK)
+				Y <= counterVS-V_BLANK;
+			else
+				Y <= 0;
+		end
+	end
+	reg   				CLK_5HZ;
+	reg   	[31:0]  	count;
+// Make CLK to 5HZ
+	always @(posedge clk) begin
+		if( count >= `MAXHZ )begin
+			count <= 1;
+			CLK_5HZ <= ~ CLK_5HZ;   
+		end else begin
+			count <= count + 1;
+		end
+	end
+	
+	reg [23:0]color[3:0];
+	reg [31:0] offsetY;
+	always@(posedge clk25M)
+	begin
+		if (!rst) 
+		begin
+			{VGA_R,VGA_G,VGA_B}<=0;
+		end
+		else 
+		begin
+		objX = 320;
+		objY = 240;
+			case (mode)
+			2'b00: begin // Square
+				if((Y+100)>objY && Y<(objY+100) && (X+100)>objX && X<(objX+100))
+					{VGA_R,VGA_G,VGA_B}<= treeColor;
+				else
+					{VGA_R,VGA_G,VGA_B}<= color[3];
+			end
+			2'b01: begin // Triangle
+				if(Y +140  >= X && Y+140 <= 400 && (X + Y) +140 >= 640)
+					{VGA_R,VGA_G,VGA_B}<= treeColor;
+				else
+					{VGA_R,VGA_G,VGA_B}<= color[3];
+			end
+			2'b10: begin // Circle
+				if( ((X - objX) * (X - objX)  + (Y - objY) * (Y - objY)) <= 4900)
+					{VGA_R,VGA_G,VGA_B}<= treeColor;
+				else
+					{VGA_R,VGA_G,VGA_B}<= 24'hFFFFFF;
+			end
+			2'b11: begin // Tree
+				if(Y >= X && Y <= 400 && (X + Y) >= 640)
+					{VGA_R,VGA_G,VGA_B}<= treeColor;
+				else if(Y+50 >= X && Y <= 350 && (X + Y+50) >= 640)
+					{VGA_R,VGA_G,VGA_B}<= treeColor;
+				else if(Y+100 >= X && Y <= 300 && (X + Y+100) >= 640)
+					{VGA_R,VGA_G,VGA_B}<= treeColor;
+				else if((Y+50)> 390&& Y<(390+50) && (X+20)>objX && X<(objX+20))
+					{VGA_R,VGA_G,VGA_B}<= color[2];
+				else
+					{VGA_R,VGA_G,VGA_B}<= color[3];
+				if(down == 1) begin
+					if( ((X - 20) * (X - 20)  + (Y - 20 - offsetY ) * (Y - 20 - offsetY)) <= 100)
+						{VGA_R,VGA_G,VGA_B}<= 24'hFFFFFF;
+					if( ((X - 50) * (X - 50)  + (Y - 50 - offsetY ) * (Y - 50 - offsetY)) <= 100)
+						{VGA_R,VGA_G,VGA_B}<= 24'hFFFFFF;
+					if( ((X - 100) * (X - 100)  + (Y - 240 - offsetY ) * (Y - 240 - offsetY)) <= 100)
+						{VGA_R,VGA_G,VGA_B}<= 24'hFFFFFF;
+					if( ((X - 150) * (X - 150)  + (Y - 320 - offsetY ) * (Y - 320 - offsetY)) <= 100)
+						{VGA_R,VGA_G,VGA_B}<= 24'hFFFFFF;
+					if( ((X - 20) * (X - 20)  + (Y - 100 - offsetY ) * (Y - 100 - offsetY)) <= 100)
+						{VGA_R,VGA_G,VGA_B}<= 24'hFFFFFF;
+				end
+			end
+				
+			endcase
+		end
+	end
+	always @(posedge CLK_5HZ)begin
+		if(down == 0)
+			offsetY = 0;
+		else 
+			offsetY = offsetY + 20;
+	end
+	always@(posedge clk,negedge rst)begin
+		if(!rst)begin
+			color[0]<=24'h000000;//
+			color[1]<=24'h000000;//
+			color[2]<=24'h000000;//
+			color[3]<=24'h000000;//
+		end else begin
+			color[0]<=24'h0000ff;//blue
+			color[1]<=24'h00ff00;//green
+			color[2]<=24'hff0000;//red
+			color[3]<=24'h000000;//
+		end
+	end
+
+endmodule
+
+module IR_RECEIVE(iCLK,iRST_n,iIRDA,oDATA_READY,oDATA);
+					
+input iCLK;        //input clk,50MHz
+input iRST_n;      //rst
+input iIRDA;       //Irda RX output decoded data
+
+output oDATA_READY; //data ready
+output reg [31:0] oDATA; //output data,32bit 	
+				
+parameter IDLE = 2'b00;   //State Machine 
+parameter GUIDANCE = 2'b01;    
+parameter DATAREAD = 2'b10;    
+
+
+parameter IDLE_DUR = 230000;  // idle_count    230000*0.02us = 4.60ms, threshold for IDLE--------->GUIDANCE
+parameter GUIDANCE_DUR = 210000;  // guidance_count   210000*0.02us = 4.20ms, 4.5-4.2 = 0.3ms < BIT_AVAILABLE_DUR = 0.4ms,threshold for GUIDANCE------->DATAREAD
+parameter DATAREAD_DUR = 262143;  // data_count    262143*0.02us = 5.24ms, threshold for DATAREAD-----> IDLE
+
+parameter DATA_HIGH_DUR = 41500;	 // data_count    41500 *0.02us = 0.83ms, sample time from the posedge of iIRDA
+parameter BIT_AVAILABLE_DUR = 20000;   // data_count    20000 *0.02us = 0.4ms,  the sample bit pointer,can inhibit the interference from iIRDA signal
+
+reg [17:0] idle_count;           
+reg idle_count_flag;       
+reg [17:0] guidance_count;           
+reg guidance_count_flag;      
+reg [17:0] data_count;            
+reg data_count_flag;    
+  
+reg [5:0] bitcount; //sample bit pointer
+reg [1:0] state;   //state reg
+reg [31:0] data;   //data reg
+reg [31:0] data_buf; //data buf
+reg data_ready; //data ready flag
+
+
+assign oDATA_READY = data_ready;
+
+//state change between IDLE,GUIDE,DATA_READ according to irda edge or counter
+always @(posedge iCLK or negedge iRST_n)
+begin 
+	  if (!iRST_n)	     
+	     state <= IDLE;
+	  else 
+			 case (state)
+ 			    IDLE     : if (idle_count > IDLE_DUR)  
+			  	              state <= GUIDANCE; 
+			    GUIDANCE : if (guidance_count > GUIDANCE_DUR)
+			  	              state <= DATAREAD;
+			    DATAREAD : if ((data_count >= DATAREAD_DUR) || (bitcount >= 33))
+			  					      state <= IDLE;
+	        default  : state <= IDLE; 
+			 endcase
+end
+//idle counter switch when iIRDA is low under IDLE state
+always @(posedge iCLK or negedge iRST_n)
+begin	
+	  if (!iRST_n)
+		   idle_count_flag <= 1'b0;
+	  else if ((state == IDLE) && !iIRDA)
+			 idle_count_flag <= 1'b1;
+		else                           
+			 idle_count_flag <= 1'b0;		     		 	
+ end  		  
+//idle counter works on iclk under IDLE state only
+always @(posedge iCLK or negedge iRST_n)
+begin	
+	  if (!iRST_n)
+		   idle_count <= 0;
+	  else if (idle_count_flag)    //the counter works when the flag is 1
+			 idle_count <= idle_count + 1'b1;
+		else  
+			 idle_count <= 0;	         //the counter resets when the flag is 0		      		 	
+end
+   
+//state counter switch when iIRDA is high under GUIDE state
+always @(posedge iCLK or negedge iRST_n)	
+begin
+	  if (!iRST_n)
+		   guidance_count_flag <= 1'b0;
+	  else if ((state == GUIDANCE) && iIRDA)
+			 guidance_count_flag <= 1'b1;
+		else  
+			 guidance_count_flag <= 1'b0;     		 	
+end
+//state counter works on iclk under GUIDE state only
+always @(posedge iCLK or negedge iRST_n)	
+begin
+	  if (!iRST_n)
+		   guidance_count <= 0;
+	  else if (guidance_count_flag)    //the counter works when the flag is 1
+			 guidance_count <= guidance_count + 1'b1;
+		else  
+			 guidance_count <= 0;	        //the counter resets when the flag is 0		      		 	
+end
+//data counter switch
+always @(posedge iCLK or negedge iRST_n)
+begin
+	  if (!iRST_n) 
+		   data_count_flag <= 0;	
+	  else if ((state == DATAREAD) && iIRDA)
+			 data_count_flag <= 1'b1;  
+		else
+			 data_count_flag <= 1'b0; 
+end
+//data read decode counter based on iCLK
+always @(posedge iCLK or negedge iRST_n)	
+begin
+	  if (!iRST_n)
+		   data_count <= 1'b0;
+	  else if(data_count_flag)      //the counter works when the flag is 1
+			 data_count <= data_count + 1'b1;
+		else 
+			 data_count <= 1'b0;        //the counter resets when the flag is 0
+end
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+//data reg pointer counter 
+always @(posedge iCLK or negedge iRST_n)
+begin
+    if (!iRST_n)
+       bitcount <= 6'b0;
+	  else if (state == DATAREAD)
+		begin
+			if (data_count == BIT_AVAILABLE_DUR)
+					bitcount <= bitcount + 1'b1; //add 1 when iIRDA posedge
+		end   
+	  else
+	     bitcount <= 6'b0;
+end	  
+//data decode base on the value of data_count 	
+always @(posedge iCLK or negedge iRST_n)
+begin
+	  if (!iRST_n)
+	     data <= 0;
+		else if (state == DATAREAD)
+		begin
+			 if (data_count >= DATA_HIGH_DUR) //2^15 = 32767*0.02us = 0.64us
+			    data[bitcount-1'b1] <= 1'b1;  //>0.52ms  sample the bit 1
+		end
+		else
+			 data <= 0;	
+end		 
+//set the data_ready flag 
+always @(posedge iCLK or negedge iRST_n)
+begin 
+	  if (!iRST_n)
+	     data_ready <= 1'b0;
+    else if (bitcount == 32)   
+		begin
+			 if (data[31:24] == ~data[23:16])
+			 begin		
+					data_buf <= data;     //fetch the value to the databuf from the data reg
+				  data_ready <= 1'b1;   //set the data ready flag
+			 end	
+			 else
+				  data_ready <= 1'b0 ;  //data error
+		end
+		else
+		   data_ready <= 1'b0 ;
+end
+//read data
+always @(posedge iCLK or negedge iRST_n)
+begin
+	  if (!iRST_n)
+		   oDATA <= 32'b0000;
+	  else if (data_ready)
+	     oDATA <= data_buf;  //output
+end	  
+
+endmodule
