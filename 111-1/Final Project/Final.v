@@ -1,34 +1,41 @@
 `define MAXHZ 5_000_000 // to 5 Hz :   
 module Final(clk, VGA_HS, VGA_VS ,VGA_R, VGA_G, VGA_B, VGA_BLANK_N, VGA_CLOCK, iIRDA, LEDR, LEDG, SW, KEY);
 	
-	input 				clk;
-	input 				iIRDA;
-	input		[3:0]  	KEY;
+	input 			clk;
+	input 			iIRDA;
+
+	input	[3:0]  	KEY;
 	input 	[17:0] 	SW;
-	
-	output 				VGA_HS, VGA_VS, VGA_BLANK_N, VGA_CLOCK;
+
+	// ===== VGA ===== //
+	output 			VGA_HS, VGA_VS, VGA_BLANK_N, VGA_CLOCK;
 	output 	[7:0] 	VGA_R,VGA_G, VGA_B;
 	
+	// ===== Show Data ===== //
 	output 	[7:0] 	LEDG; 
 	output 	[17:0] 	LEDR;
 	
+	// ===== IR Remoter ===== //
+	wire 	[31:0] 	IR_Data;
+	wire 	[7:0]	keyCode;
+	wire 			keyValid;
+	wire      		_KEY0, _KEY1, _KEY2, _KEY3;
 	
-	wire 		[31:0] 	IR_Data;
-	wire 		[7:0]		keyCode;
-	wire 					keyValid;
-	wire      			_KEY0, _KEY1, _KEY2, _KEY3;
+	// ===== Game Use ===== // 
+	reg		[1:0]	player = 0;
+	reg 	[17:0] 	result_in = 0;
+	reg 	[1:0]	result;
 	
+	wire 	[17:0]	result_out;
+	wire			CLK_50M;
+	wire 			CLK_5HZ;
+
 	assign 	rst = KEY[0];
 	assign 	keyCode = IR_Data[23:16];
-	assign 	LEDG = keyCode; 								// Show to verify
+	assign 	LEDG = keyCode; 							// Show to verify
 	// assign 	LEDR = {_KEY3, _KEY2, _KEY1, _KEY0};	// Show to verify
 	assign 	LEDR = result_out;
-	wire		CLK_50M;
-	wire 		CLK_5HZ;
-	
-	reg		[1:0]		player = 0;
-	reg 		[17:0] 	result_in = 0;
-	wire 		[17:0]	result_out;
+
 	
 	VGA U1(clk, rst, VGA_HS, VGA_VS ,VGA_R, VGA_G, VGA_B,VGA_BLANK_N,VGA_CLOCK, player, result_in, result_out);
 	
@@ -39,96 +46,187 @@ module Final(clk, VGA_HS, VGA_VS ,VGA_R, VGA_G, VGA_B, VGA_BLANK_N, VGA_CLOCK, i
 	Debounce U5(.clk(clk), .in(KEY[2]), .out(_KEY2));
 	Debounce U6(.clk(clk), .in(KEY[3]), .out(_KEY3));
 	
-	Clock(clk, 5000000, CLK_5HZ);
+	Clock U7(clk, 5000000, CLK_5HZ);
 	
+	CheckWin U8(.clk(clk), .data(result_out), .out(result));
 	
+	wire start = 0;
+
+	// Player
 	always @(negedge keyValid) begin
-		player = player == 1 ? 2 : 1;
+		if(start == 0 && keyCode == 8'h12)begin
+			player = player == 2'b01 ? 2'b10 : 2'b01;
+			start = 1;
+		end
+		else if(start == 1)begin
+			case(keyCode)
+				8'h01:begin
+					if(result_out[1:0] == 2'b00)begin
+						result_in[1:0] = player;
+						player = player == 1 ? 2 : 1;
+					end
+				end
+				8'h02:begin
+					if(result_out[3:2] == 2'b00)begin
+						result_in[3:2] = player;
+						player = player == 1 ? 2 : 1;
+					end
+				end
+				8'h03:begin
+					if(result_out[5:4] == 2'b00)begin
+						result_in[5:4] = player;
+						player = player == 1 ? 2 : 1;
+					end
+				end
+				8'h04:begin
+					if(result_out[7:6] == 2'b00)begin
+						result_in[7:6] = player;
+						player = player == 1 ? 2 : 1;
+					end
+				end
+				8'h05:begin
+					if(result_out[9:8] == 2'b00)begin
+						result_in[9:8] = player;
+						player = player == 1 ? 2 : 1;
+					end
+				end
+				8'h06:begin
+					if(result_out[11:10] == 2'b00)begin
+						result_in[11:10] = player;
+						player = player == 1 ? 2 : 1;
+					end
+				end
+				8'h07:begin
+					if(result_out[13:12] == 2'b00)begin
+						result_in[13:12] = player;
+						player = player == 1 ? 2 : 1;
+					end
+				end
+				8'h08:begin
+					if(result_out[15:14] == 2'b00)begin
+						result_in[15:14] = player;
+						player = player == 1 ? 2 : 1;
+					end
+				end
+				8'h09:begin
+					if(result_out[17:16] == 2'b00)begin
+						result_in[17:16] = player;
+						player = player == 1 ? 2 : 1;
+					end
+				end
+				8'h00:begin
+					result_in = 0;
+					player = 0;
+				end
+				default:begin
+					player = player;
+
+				end
+			endcase
+		end
 		
-		case(keyCode)
-			8'h01:begin
-				if(result_out[1:0] == 2'b00)begin
-					
-					result_in[1:0] = player;
-				end
-			end
-			8'h02:begin
-				if(result_out[3:2] == 2'b00)begin
-					 result_in[3:2] = player;
-				end
-			end
-			8'h03:begin
-				if(result_out[5:4] == 2'b00)begin
-					 result_in[5:4] = player;
-				end
-			end
-			8'h04:begin
-				if(result_out[7:6] == 2'b00)begin
-					 result_in[7:6] = player;
-				end
-			end
-			8'h05:begin
-				if(result_out[9:8] == 2'b00)begin
-					 result_in[9:8] = player;
-				end
-			end
-			8'h06:begin
-				if(result_out[11:10] == 2'b00)begin
-					 result_in[11:10] = player;
-				end
-			end
-			8'h07:begin
-				if(result_out[13:12] == 2'b00)begin
-					 result_in[13:12] = player;
-				end
-			end
-			8'h08:begin
-				if(result_out[15:14] == 2'b00)begin
-					 result_in[15:14] = player;
-				end
-			end
-			8'h09:begin
-				if(result_out[17:16] == 2'b00)begin
-					 result_in[17:16] = player;
-				end
-			end
-			8'h00:begin
-				result_in = 0;
-				player = 0;
-			end
-			default:begin
-				player = player;
-			end
-		endcase
-	
 	end
 endmodule
 
-module VGA(clk, rst, VGA_HS, VGA_VS ,VGA_R, VGA_G, VGA_B,VGA_BLANK_N,VGA_CLOCK, player, result_in, result_out);
-	input [1:0]    player;
+module CheckWin(clk, data, out)
+	input [17:0] data;
+	input clk;
+
+	output reg [1:0] out; // 00: Judging | 01: Player 1 | 10: Player 2 | 11: Tie
+
+	always @(posedge clk) begin
+		case(data)
+			  //00_01_02_03_04_05_06_07_08
+			// Player 1
+			18'b01_xx_xx_xx_01_xx_xx_xx_01:begin
+				out <= 2'b01;
+			end
+			18'bxx_xx_01_xx_01_xx_01_xx_xx:begin
+				out <= 2'b01;
+			end
+			// -
+			18'b01_01_01_xx_xx_xx_xx_xx_xx:begin
+				out <= 2'b01;
+			end
+			18'bxx_xx_xx_01_01_01_xx_xx_xx:begin
+				out <= 2'b01;
+			end
+			18'bxx_xx_xx_xx_xx_xx_01_01_01:begin
+				out <= 2'b01;
+			end
+			// |
+			18'b01_xx_xx_01_xx_xx_01_xx_xx:begin
+				out <= 2'b01;
+			end
+			18'bxx_01_xx_xx_01_xx_xx_01_xx:begin
+				out <= 2'b01;
+			end
+			18'bxx_xx_01_xx_xx_01_xx_xx_01:begin
+				out <= 2'b01;
+			end
+
+			// Player 2
+			18'b10_xx_xx_xx_10_xx_xx_xx_10:begin
+				out <= 2'b10;
+			end
+			18'bxx_xx_10_xx_10_xx_10_xx_xx:begin
+				out <= 2'b10;
+			end
+			// -
+			18'b10_10_10_xx_xx_xx_xx_xx_xx:begin
+				out <= 2'b10;
+			end
+			18'bxx_xx_xx_10_10_10_xx_xx_xx:begin
+				out <= 2'b10;
+			end
+			18'bxx_xx_xx_xx_xx_xx_10_10_10:begin
+				out <= 2'b10;
+			end
+			// |
+			18'b10_xx_xx_10_xx_xx_10_xx_xx:begin
+				out <= 2'b10;
+			end
+			18'bxx_10_xx_xx_10_xx_xx_10_xx:begin
+				out <= 2'b10;
+			end
+			18'bxx_xx_10_xx_xx_10_xx_xx_10:begin
+				out <= 2'b10;
+			end
+			default:begin
+				out <= 2'b00;
+			end	
+		endcase
+	end
 	
-	input [17:0] result_in;
+
+
+
+endmodule
+
+
+module VGA(clk, rst, VGA_HS, VGA_VS ,VGA_R, VGA_G, VGA_B,VGA_BLANK_N,VGA_CLOCK, player, result_in, result_out);
 	input 			clk, rst;
 	
+	input 	[1:0]   player; // Receieve player 1 or 2 or computer
+	input 	[17:0] 	result_in; // Receieve user location
+	
+	output 	[17:0]	result_out;
+	
 	output 			VGA_HS, VGA_VS;
-	
-	output [17:0]	result_out;
-	output 			VGA_BLANK_N,VGA_CLOCK;
-	output reg [7:0] VGA_R,VGA_G,VGA_B;
-	
-	reg 	[17:0] 	TicTac;
-	
-	reg 				VGA_HS, VGA_VS;
-	reg	[10:0] 	counterHS;
-	reg	[9:0] 	counterVS;
+	output 			VGA_BLANK_N, VGA_CLOCK;
+	output reg [7:0] VGA_R, VGA_G, VGA_B;
+
+	reg 			clk25M;
+	reg 			VGA_HS, VGA_VS;
+	reg		[10:0] 	counterHS;
+	reg		[9:0] 	counterVS;
 	reg 	[2:0] 	valid;
-	reg 				clk25M;
 
 	reg 	[12:0] 	X, Y;
+	// ===== Game Use ===== //
+	reg 	[17:0] 	TicTac;
 	reg 	[23:0]	color[0:5];
 	
-	
-	wire 				flag;
 	assign 	 result_out  = TicTac;
 	
 	parameter H_FRONT = 16;
@@ -196,12 +294,12 @@ module VGA(clk, rst, VGA_HS, VGA_VS ,VGA_R, VGA_G, VGA_B,VGA_BLANK_N,VGA_CLOCK, 
 		end
 	end
 
-	////////////////////////////////////////////////////
+	// ===== Main Screen Output ==== //
 	always@(posedge clk25M)
 	begin
 		if (!rst) 
 		begin
-			{VGA_R,VGA_G,VGA_B}<=0;
+			{VGA_R,VGA_G,VGA_B} <= 0 ;
 			TicTac <= 0;
 		end
 		else 
@@ -213,9 +311,9 @@ module VGA(clk, rst, VGA_HS, VGA_VS ,VGA_R, VGA_G, VGA_B,VGA_BLANK_N,VGA_CLOCK, 
 			
 			// Draw nine square
 			if(( X <= 218 && X >= 208) || (X >= 421 && X <=431))
-				{VGA_R,VGA_G,VGA_B} <= 24'hCACACAC;
+				{VGA_R,VGA_G,VGA_B} <= color[0];
 			else if(( Y >= 155 && Y <= 165) || (Y <= 325 && Y >= 315))
-				{VGA_R,VGA_G,VGA_B} <= 24'hCACACAC;
+				{VGA_R,VGA_G,VGA_B} <= color[0];
 			else
 				{VGA_R,VGA_G,VGA_B}<= 24'hFFFFFF;
 			
@@ -231,10 +329,10 @@ module VGA(clk, rst, VGA_HS, VGA_VS ,VGA_R, VGA_G, VGA_B,VGA_BLANK_N,VGA_CLOCK, 
 			// X
 			else if(result_in[1:0] == 2'b10)begin
 				TicTac = result_in;
-				if( ((X < 150 && X > 60)  && (Y < 120 && Y > 40))	 && ( (X - Y >= 22) && (X - Y <= 32)  ) )
+				if( ((X < 150 && X > 60)  && (Y < 120 && Y > 40)) && ( ( (X - Y >= 22) && (X - Y <= 32)  )  || ( (X + Y >= 182) && (X + Y <= 192) )) )
 					{VGA_R,VGA_G,VGA_B} <=  24'hCA1F3D;
-				if( ((X < 150 && X > 60)  && (Y < 120 && Y > 40))	 && ( (X + Y >= 182) && (X + Y <= 192)  ) )
-					{VGA_R,VGA_G,VGA_B} <=  24'hCA1F3D;
+				// if( ((X < 150 && X > 60)  && (Y < 120 && Y > 40))	 && ( (X + Y >= 182) && (X + Y <= 192)  ) )
+				// 	{VGA_R,VGA_G,VGA_B} <=  24'hCA1F3D;
 			end
 			
 			// Middle  Up
@@ -248,10 +346,10 @@ module VGA(clk, rst, VGA_HS, VGA_VS ,VGA_R, VGA_G, VGA_B,VGA_BLANK_N,VGA_CLOCK, 
 			end else if(result_in[3:2] == 2'b10)begin
 				// X
 				TicTac = result_in;
-				if( ((X < 363 && X > 273)  && (Y < 120 && Y > 40))	 && ( (X - Y >= 235) && (X - Y <= 245)  ) )
+				if( ((X < 363 && X > 273)  && (Y < 120 && Y > 40))	 && ( ((X - Y >= 235) && (X - Y <= 245) ) ||  ( (X + Y >= 395) && (X + Y <= 405)  ) ) )
 					{VGA_R,VGA_G,VGA_B} <=  24'hCA1F3D;
-				if( ((X < 363 && X > 273)  && (Y < 120 && Y > 40))	 && ( (X + Y >= 395) && (X + Y <= 405)  ) )
-					{VGA_R,VGA_G,VGA_B} <=  24'hCA1F3D;
+				// if( ((X < 363 && X > 273)  && (Y < 120 && Y > 40))	 && ( (X + Y >= 395) && (X + Y <= 405)  ) )
+				// 	{VGA_R,VGA_G,VGA_B} <=  24'hCA1F3D;
 			end
 			
 			// Right Up
@@ -324,7 +422,6 @@ module VGA(clk, rst, VGA_HS, VGA_VS ,VGA_R, VGA_G, VGA_B,VGA_BLANK_N,VGA_CLOCK, 
 					{VGA_R,VGA_G,VGA_B} <=  24'hCA1F3D;
 			end
 			
-			
 			// Left Down
 			if(result_in[13:12] == 2'b01)begin
 				TicTac = result_in;
@@ -380,19 +477,18 @@ module VGA(clk, rst, VGA_HS, VGA_VS ,VGA_R, VGA_G, VGA_B,VGA_BLANK_N,VGA_CLOCK, 
 		end
 	end
 	
-	///////////////////////////////////////////
 	// ===== Color ===== //
 	always@(posedge clk,negedge rst)begin
 		if(!rst)begin
-			color[0]<=24'h000000;//
-			color[1]<=24'h000000;//
-			color[2]<=24'h000000;//
-			color[3]<=24'h000000;//
+			color[0]<=24'h000000;
+			color[1]<=24'h000000;
+			color[2]<=24'h000000;
+			color[3]<=24'h000000;
 		end else begin
-			color[0]<=24'h0000ff;//blue
-			color[1]<=24'h00ff00;//green
-			color[2]<=24'hff0000;//red
-			color[3]<=24'h000000;//
+			color[0]<=24'hCACACA;	// Gray
+			color[1]<=24'h2E77AE;  	// Light blue
+			color[2]<=24'hCA1F3D;	// Red
+			color[3]<=24'hFFFFFF;	// White
 		end
 	end
 
@@ -566,7 +662,6 @@ module IR_RECEIVE(iCLK,iRST_n,iIRDA,oDATA_READY,oDATA);
 		  else if (data_ready)
 			  oDATA <= data_buf;  //output
 	end	  
-
 endmodule
 
 module Debounce(clk, in, out);
