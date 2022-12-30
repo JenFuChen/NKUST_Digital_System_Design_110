@@ -1,7 +1,6 @@
 // ===== Home Work 3 : 1A2B Game ===== //
 
-`define MAXHZ 5_000_000 // to 5 Hz :  
-`define 
+`define MAXHZ 5_000_000 // to 5 Hz
 
 module HW3(clk, KEY, SW, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7, LEDR , LEDG);
 	//input 	CLK_50;
