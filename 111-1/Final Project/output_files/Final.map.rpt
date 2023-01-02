@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Final
-Thu Dec 29 17:29:27 2022
+Mon Jan 02 23:13:51 2023
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -15,27 +15,39 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis DSP Block Usage Summary
   9. State Machine - |Final|IR_RECEIVE:U2|state
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Parameter Settings for User Entity Instance: VGA:U1
- 14. Parameter Settings for User Entity Instance: IR_RECEIVE:U2
- 15. Parameter Settings for Inferred Entity Instance: VGA:U1|lpm_mult:Mult0
- 16. Parameter Settings for Inferred Entity Instance: VGA:U1|lpm_mult:Mult1
- 17. Parameter Settings for Inferred Entity Instance: VGA:U1|lpm_mult:Mult4
- 18. Parameter Settings for Inferred Entity Instance: VGA:U1|lpm_mult:Mult8
- 19. Parameter Settings for Inferred Entity Instance: VGA:U1|lpm_mult:Mult13
- 20. Parameter Settings for Inferred Entity Instance: VGA:U1|lpm_mult:Mult25
- 21. lpm_mult Parameter Settings by Entity Instance
- 22. Port Connectivity Checks: "Clock:comb_38"
- 23. Port Connectivity Checks: "Debounce:U6"
- 24. Port Connectivity Checks: "Debounce:U5"
- 25. Port Connectivity Checks: "Debounce:U4"
- 26. Port Connectivity Checks: "Debounce:U3"
- 27. Port Connectivity Checks: "IR_RECEIVE:U2"
- 28. Elapsed Time Per Partition
- 29. Analysis & Synthesis Messages
- 30. Analysis & Synthesis Suppressed Messages
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: Top-level Entity: |Final
+ 15. Parameter Settings for User Entity Instance: VGA:U1
+ 16. Parameter Settings for User Entity Instance: IR_RECEIVE:U2
+ 17. Parameter Settings for Inferred Entity Instance: VGA:U1|lpm_mult:Mult29
+ 18. Parameter Settings for Inferred Entity Instance: VGA:U1|lpm_mult:Mult12
+ 19. Parameter Settings for Inferred Entity Instance: VGA:U1|lpm_mult:Mult8
+ 20. Parameter Settings for Inferred Entity Instance: VGA:U1|lpm_mult:Mult4
+ 21. Parameter Settings for Inferred Entity Instance: VGA:U1|lpm_mult:Mult17
+ 22. Parameter Settings for Inferred Entity Instance: VGA:U1|lpm_mult:Mult5
+ 23. Parameter Settings for Inferred Entity Instance: VGA:U1|lpm_mult:Mult0
+ 24. lpm_mult Parameter Settings by Entity Instance
+ 25. Port Connectivity Checks: "LED_Decoder:U16"
+ 26. Port Connectivity Checks: "LED_Decoder:U15"
+ 27. Port Connectivity Checks: "LED_Decoder:U14"
+ 28. Port Connectivity Checks: "LED_Decoder:U13"
+ 29. Port Connectivity Checks: "LED_Decoder:U12"
+ 30. Port Connectivity Checks: "LED_Decoder:U11"
+ 31. Port Connectivity Checks: "LED_Decoder:U10"
+ 32. Port Connectivity Checks: "LED_Decoder:U9"
+ 33. Port Connectivity Checks: "Debounce:U6"
+ 34. Port Connectivity Checks: "Debounce:U5"
+ 35. Port Connectivity Checks: "Debounce:U4"
+ 36. Port Connectivity Checks: "Debounce:U3"
+ 37. Port Connectivity Checks: "Clock:C2"
+ 38. Port Connectivity Checks: "Clock:C1"
+ 39. Port Connectivity Checks: "IR_RECEIVE:U2"
+ 40. Elapsed Time Per Partition
+ 41. Analysis & Synthesis Messages
+ 42. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -61,19 +73,19 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Dec 29 17:29:27 2022           ;
+; Analysis & Synthesis Status        ; Successful - Mon Jan 02 23:13:51 2023           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Final                                           ;
 ; Top-level Entity Name              ; Final                                           ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 993                                             ;
-;     Total combinational functions  ; 950                                             ;
-;     Dedicated logic registers      ; 208                                             ;
-; Total registers                    ; 208                                             ;
-; Total pins                         ; 78                                              ;
+; Total logic elements               ; 1,301                                           ;
+;     Total combinational functions  ; 1,268                                           ;
+;     Dedicated logic registers      ; 252                                             ;
+; Total registers                    ; 252                                             ;
+; Total pins                         ; 134                                             ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
-; Embedded Multiplier 9-bit elements ; 12                                              ;
+; Embedded Multiplier 9-bit elements ; 14                                              ;
 ; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
 
@@ -197,28 +209,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 993          ;
+; Estimated Total logic elements              ; 1,301        ;
 ;                                             ;              ;
-; Total combinational functions               ; 950          ;
+; Total combinational functions               ; 1268         ;
 ; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 357          ;
-;     -- 3 input functions                    ; 355          ;
-;     -- <=2 input functions                  ; 238          ;
+;     -- 4 input functions                    ; 487          ;
+;     -- 3 input functions                    ; 451          ;
+;     -- <=2 input functions                  ; 330          ;
 ;                                             ;              ;
 ; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 537          ;
-;     -- arithmetic mode                      ; 413          ;
+;     -- normal mode                          ; 754          ;
+;     -- arithmetic mode                      ; 514          ;
 ;                                             ;              ;
-; Total registers                             ; 208          ;
-;     -- Dedicated logic registers            ; 208          ;
+; Total registers                             ; 252          ;
+;     -- Dedicated logic registers            ; 252          ;
 ;     -- I/O registers                        ; 0            ;
 ;                                             ;              ;
-; I/O pins                                    ; 78           ;
-; Embedded Multiplier 9-bit elements          ; 12           ;
+; I/O pins                                    ; 134          ;
+; Embedded Multiplier 9-bit elements          ; 14           ;
 ; Maximum fan-out node                        ; KEY[0]~input ;
-; Maximum fan-out                             ; 146          ;
-; Total fan-out                               ; 3888         ;
-; Average fan-out                             ; 2.93         ;
+; Maximum fan-out                             ; 202          ;
+; Total fan-out                               ; 5231         ;
+; Average fan-out                             ; 2.90         ;
 +---------------------------------------------+--------------+
 
 
@@ -227,19 +239,27 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                   ; Library Name ;
 +------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
-; |Final                             ; 950 (33)          ; 208 (20)     ; 0           ; 12           ; 0       ; 6         ; 78   ; 0            ; |Final                                                ; work         ;
+; |Final                             ; 1268 (141)        ; 252 (59)     ; 0           ; 14           ; 0       ; 7         ; 134  ; 0            ; |Final                                                ; work         ;
+;    |CheckWin:U8|                   ; 37 (37)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|CheckWin:U8                                    ; work         ;
+;    |Clock:C2|                      ; 41 (41)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|Clock:C2                                       ; work         ;
 ;    |IR_RECEIVE:U2|                 ; 128 (128)         ; 99 (99)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|IR_RECEIVE:U2                                  ; work         ;
-;    |VGA:U1|                        ; 789 (789)         ; 89 (89)      ; 0           ; 12           ; 0       ; 6         ; 0    ; 0            ; |Final|VGA:U1                                         ; work         ;
+;    |LED_Decoder:U11|               ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|LED_Decoder:U11                                ; work         ;
+;    |LED_Decoder:U13|               ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|LED_Decoder:U13                                ; work         ;
+;    |LED_Decoder:U15|               ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|LED_Decoder:U15                                ; work         ;
+;    |LED_Decoder:U9|                ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Final|LED_Decoder:U9                                 ; work         ;
+;    |VGA:U1|                        ; 908 (908)         ; 61 (61)      ; 0           ; 14           ; 0       ; 7         ; 0    ; 0            ; |Final|VGA:U1                                         ; work         ;
 ;       |lpm_mult:Mult0|             ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |Final|VGA:U1|lpm_mult:Mult0                          ; work         ;
 ;          |mult_56t:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |Final|VGA:U1|lpm_mult:Mult0|mult_56t:auto_generated  ; work         ;
-;       |lpm_mult:Mult13|            ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |Final|VGA:U1|lpm_mult:Mult13                         ; work         ;
-;          |mult_56t:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |Final|VGA:U1|lpm_mult:Mult13|mult_56t:auto_generated ; work         ;
-;       |lpm_mult:Mult1|             ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |Final|VGA:U1|lpm_mult:Mult1                          ; work         ;
-;          |mult_56t:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |Final|VGA:U1|lpm_mult:Mult1|mult_56t:auto_generated  ; work         ;
-;       |lpm_mult:Mult25|            ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |Final|VGA:U1|lpm_mult:Mult25                         ; work         ;
-;          |mult_56t:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |Final|VGA:U1|lpm_mult:Mult25|mult_56t:auto_generated ; work         ;
+;       |lpm_mult:Mult12|            ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |Final|VGA:U1|lpm_mult:Mult12                         ; work         ;
+;          |mult_56t:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |Final|VGA:U1|lpm_mult:Mult12|mult_56t:auto_generated ; work         ;
+;       |lpm_mult:Mult17|            ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |Final|VGA:U1|lpm_mult:Mult17                         ; work         ;
+;          |mult_56t:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |Final|VGA:U1|lpm_mult:Mult17|mult_56t:auto_generated ; work         ;
+;       |lpm_mult:Mult29|            ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |Final|VGA:U1|lpm_mult:Mult29                         ; work         ;
+;          |mult_56t:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |Final|VGA:U1|lpm_mult:Mult29|mult_56t:auto_generated ; work         ;
 ;       |lpm_mult:Mult4|             ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |Final|VGA:U1|lpm_mult:Mult4                          ; work         ;
 ;          |mult_56t:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |Final|VGA:U1|lpm_mult:Mult4|mult_56t:auto_generated  ; work         ;
+;       |lpm_mult:Mult5|             ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |Final|VGA:U1|lpm_mult:Mult5                          ; work         ;
+;          |mult_56t:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |Final|VGA:U1|lpm_mult:Mult5|mult_56t:auto_generated  ; work         ;
 ;       |lpm_mult:Mult8|             ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |Final|VGA:U1|lpm_mult:Mult8                          ; work         ;
 ;          |mult_56t:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |Final|VGA:U1|lpm_mult:Mult8|mult_56t:auto_generated  ; work         ;
 +------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
@@ -252,10 +272,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Statistic                             ; Number Used ;
 +---------------------------------------+-------------+
 ; Simple Multipliers (9-bit)            ; 0           ;
-; Simple Multipliers (18-bit)           ; 6           ;
+; Simple Multipliers (18-bit)           ; 7           ;
 ; Embedded Multiplier Blocks            ; --          ;
-; Embedded Multiplier 9-bit elements    ; 12          ;
-; Signed Embedded Multipliers           ; 6           ;
+; Embedded Multiplier 9-bit elements    ; 14          ;
+; Signed Embedded Multipliers           ; 7           ;
 ; Unsigned Embedded Multipliers         ; 0           ;
 ; Mixed Sign Embedded Multipliers       ; 0           ;
 ; Variable Sign Embedded Multipliers    ; 0           ;
@@ -276,15 +296,148 @@ Encoding Type:  One-Hot
 +----------------+------------+----------------+----------------+
 
 
-+------------------------------------------------------------------+
-; Registers Removed During Synthesis                               ;
-+---------------------------------------+--------------------------+
-; Register name                         ; Reason for Removal       ;
-+---------------------------------------+--------------------------+
-; VGA:U1|Y[11,12]                       ; Merged with VGA:U1|Y[10] ;
-; VGA:U1|X[12]                          ; Merged with VGA:U1|X[11] ;
-; Total Number of Removed Registers = 3 ;                          ;
-+---------------------------------------+--------------------------+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; TicTac[0]                                           ; Mux21               ; yes                    ;
+; TicTac[1]                                           ; Mux21               ; yes                    ;
+; TicTac[2]                                           ; Mux21               ; yes                    ;
+; TicTac[3]                                           ; Mux21               ; yes                    ;
+; TicTac[4]                                           ; Mux21               ; yes                    ;
+; TicTac[5]                                           ; Mux21               ; yes                    ;
+; TicTac[6]                                           ; Mux21               ; yes                    ;
+; TicTac[7]                                           ; Mux21               ; yes                    ;
+; TicTac[8]                                           ; Mux21               ; yes                    ;
+; TicTac[9]                                           ; Mux21               ; yes                    ;
+; TicTac[10]                                          ; Mux21               ; yes                    ;
+; TicTac[11]                                          ; Mux21               ; yes                    ;
+; TicTac[12]                                          ; Mux21               ; yes                    ;
+; TicTac[13]                                          ; Mux21               ; yes                    ;
+; TicTac[14]                                          ; Mux21               ; yes                    ;
+; TicTac[15]                                          ; Mux21               ; yes                    ;
+; TicTac[16]                                          ; Mux21               ; yes                    ;
+; TicTac[17]                                          ; Mux21               ; yes                    ;
+; NextState[1]                                        ; Mux21               ; yes                    ;
+; NextState[0]                                        ; Mux21               ; yes                    ;
+; Number of user-specified and inferred latches = 20  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; VGA:U1|color[0][21]                     ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[0][20]                     ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[0][18]                     ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[0][16]                     ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[0][13]                     ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[0][12]                     ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[0][10]                     ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[0][8]                      ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[0][5]                      ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[0][4]                      ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[0][2]                      ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[0][0]                      ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[1][23]                     ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[1][22]                     ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[1][20]                     ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[1][16]                     ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[1][15]                     ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[1][11]                     ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[1][6]                      ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[1][4]                      ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[1][0]                      ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[2][21]                     ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[2][20]                     ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[2][18]                     ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[2][16]                     ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[2][15]                     ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[2][14]                     ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[2][13]                     ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[2][7]                      ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[2][6]                      ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|color[2][1]                      ; Stuck at GND due to stuck port data_in ;
+; VGA:U1|VGA_B[5]                         ; Merged with VGA:U1|VGA_B[2]            ;
+; VGA:U1|VGA_G[0,4]                       ; Merged with VGA:U1|VGA_B[2]            ;
+; VGA:U1|VGA_B[4]                         ; Merged with VGA:U1|VGA_B[0]            ;
+; VGA:U1|VGA_R[1,3]                       ; Merged with VGA:U1|VGA_B[3]            ;
+; VGA:U1|VGA_B[7]                         ; Merged with VGA:U1|VGA_B[1]            ;
+; VGA:U1|color[0][14]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[0][15]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[0][17]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[0][19]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[0][1]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[0][22]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[0][23]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[0][3]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[0][6]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[0][7]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[0][9]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[1][10]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[1][12]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[1][13]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[1][14]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[1][17]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[1][18]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[1][19]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[1][1]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[1][21]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[1][2]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[1][3]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[1][5]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[1][7]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[1][8]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[1][9]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[2][0]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[2][10]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[2][11]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[2][12]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[2][17]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[2][19]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[2][22]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[2][23]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[2][2]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[2][3]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[2][4]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[2][5]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[2][8]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[2][9]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[3][0]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[3][10]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[3][11]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[3][12]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[3][13]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[3][14]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[3][15]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[3][16]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[3][17]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[3][18]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[3][19]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[3][1]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[3][20]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[3][21]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[3][22]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[3][23]                     ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[3][2]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[3][3]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[3][4]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[3][5]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[3][6]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[3][7]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[3][8]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|color[3][9]                      ; Merged with VGA:U1|color[0][11]        ;
+; VGA:U1|VGA_R[7]                         ; Merged with VGA:U1|VGA_G[3]            ;
+; VGA:U1|VGA_R[2,5]                       ; Merged with VGA:U1|VGA_G[5]            ;
+; VGA:U1|VGA_R[4]                         ; Merged with VGA:U1|VGA_R[0]            ;
+; VGA:U1|Y[11,12]                         ; Merged with VGA:U1|Y[10]               ;
+; VGA:U1|X[12]                            ; Merged with VGA:U1|X[11]               ;
+; Total Number of Removed Registers = 109 ;                                        ;
++-----------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -292,12 +445,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 208   ;
-; Number of registers using Synchronous Clear  ; 116   ;
-; Number of registers using Synchronous Load   ; 10    ;
-; Number of registers using Asynchronous Clear ; 91    ;
+; Total registers                              ; 252   ;
+; Number of registers using Synchronous Clear  ; 159   ;
+; Number of registers using Synchronous Load   ; 46    ;
+; Number of registers using Asynchronous Clear ; 151   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 99    ;
+; Number of registers using Clock Enable       ; 97    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -307,24 +460,45 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
-; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |Final|VGA:U1|counterHS[5]       ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |Final|IR_RECEIVE:U2|bitcount[3] ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |Final|VGA:U1|counterVS[1]       ;
-; 257:1              ; 2 bits    ; 342 LEs       ; 2 LEs                ; 340 LEs                ; Yes        ; |Final|result_in[1]              ;
-; 257:1              ; 2 bits    ; 342 LEs       ; 2 LEs                ; 340 LEs                ; Yes        ; |Final|result_in[2]              ;
-; 257:1              ; 2 bits    ; 342 LEs       ; 2 LEs                ; 340 LEs                ; Yes        ; |Final|result_in[5]              ;
-; 257:1              ; 2 bits    ; 342 LEs       ; 2 LEs                ; 340 LEs                ; Yes        ; |Final|result_in[7]              ;
-; 257:1              ; 2 bits    ; 342 LEs       ; 2 LEs                ; 340 LEs                ; Yes        ; |Final|result_in[9]              ;
-; 257:1              ; 2 bits    ; 342 LEs       ; 2 LEs                ; 340 LEs                ; Yes        ; |Final|result_in[10]             ;
-; 257:1              ; 2 bits    ; 342 LEs       ; 2 LEs                ; 340 LEs                ; Yes        ; |Final|result_in[12]             ;
-; 257:1              ; 2 bits    ; 342 LEs       ; 2 LEs                ; 340 LEs                ; Yes        ; |Final|result_in[14]             ;
-; 257:1              ; 2 bits    ; 342 LEs       ; 2 LEs                ; 340 LEs                ; Yes        ; |Final|result_in[17]             ;
-; 21:1               ; 18 bits   ; 252 LEs       ; 18 LEs               ; 234 LEs                ; Yes        ; |Final|VGA:U1|TicTac[7]          ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Final|VGA:U1|VGA_R              ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |Final|VGA:U1|VGA_R              ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |Final|IR_RECEIVE:U2|Selector2   ;
-; 35:1               ; 4 bits    ; 92 LEs        ; 72 LEs               ; 20 LEs                 ; No         ; |Final|VGA:U1|VGA_R              ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |Final|VGA:U1|counterHS[3]       ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |Final|IR_RECEIVE:U2|bitcount[1] ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |Final|VGA:U1|counterVS[3]       ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |Final|result_in[1]              ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |Final|result_in[2]              ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |Final|result_in[4]              ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |Final|result_in[6]              ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |Final|result_in[8]              ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |Final|result_in[10]             ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |Final|result_in[13]             ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |Final|result_in[15]             ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |Final|result_in[16]             ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |Final|VGA:U1|VGA_B[6]           ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |Final|VGA:U1|VGA_B[2]           ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Final|VGA:U1|VGA_G[1]           ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; Yes        ; |Final|VGA:U1|VGA_R[6]           ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; Yes        ; |Final|VGA:U1|VGA_B[1]           ;
+; 268:1              ; 2 bits    ; 356 LEs       ; 4 LEs                ; 352 LEs                ; Yes        ; |Final|player[0]                 ;
+; 267:1              ; 4 bits    ; 712 LEs       ; 4 LEs                ; 708 LEs                ; Yes        ; |Final|playTimes[3]              ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Final|CheckWin:U8|out[1]        ;
+; 3:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; No         ; |Final|Mux14                     ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |Final|VGA:U1|VGA_R              ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |Final|VGA:U1|VGA_G              ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |Final|IR_RECEIVE:U2|Selector0   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |Final ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; delay          ; 1     ; Signed Integer                               ;
+; START          ; 0     ; Signed Integer                               ;
+; GAMING         ; 1     ; Signed Integer                               ;
+; WIN            ; 3     ; Signed Integer                               ;
+; ENDING         ; 2     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------+
@@ -366,7 +540,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: VGA:U1|lpm_mult:Mult0              ;
+; Parameter Settings for Inferred Entity Instance: VGA:U1|lpm_mult:Mult29             ;
 +------------------------------------------------+--------------+---------------------+
 ; Parameter Name                                 ; Value        ; Type                ;
 +------------------------------------------------+--------------+---------------------+
@@ -401,42 +575,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: VGA:U1|lpm_mult:Mult1              ;
-+------------------------------------------------+--------------+---------------------+
-; Parameter Name                                 ; Value        ; Type                ;
-+------------------------------------------------+--------------+---------------------+
-; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
-; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
-; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
-; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
-; LPM_WIDTHA                                     ; 14           ; Untyped             ;
-; LPM_WIDTHB                                     ; 14           ; Untyped             ;
-; LPM_WIDTHP                                     ; 28           ; Untyped             ;
-; LPM_WIDTHR                                     ; 28           ; Untyped             ;
-; LPM_WIDTHS                                     ; 1            ; Untyped             ;
-; LPM_REPRESENTATION                             ; SIGNED       ; Untyped             ;
-; LPM_PIPELINE                                   ; 0            ; Untyped             ;
-; LATENCY                                        ; 0            ; Untyped             ;
-; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
-; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped             ;
-; USE_EAB                                        ; OFF          ; Untyped             ;
-; MAXIMIZE_SPEED                                 ; 6            ; Untyped             ;
-; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
-; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
-; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
-; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
-; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
-; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
-; CBXI_PARAMETER                                 ; mult_56t     ; Untyped             ;
-; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
-; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
-; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
-+------------------------------------------------+--------------+---------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: VGA:U1|lpm_mult:Mult4              ;
+; Parameter Settings for Inferred Entity Instance: VGA:U1|lpm_mult:Mult12             ;
 +------------------------------------------------+--------------+---------------------+
 ; Parameter Name                                 ; Value        ; Type                ;
 +------------------------------------------------+--------------+---------------------+
@@ -506,7 +645,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: VGA:U1|lpm_mult:Mult13             ;
+; Parameter Settings for Inferred Entity Instance: VGA:U1|lpm_mult:Mult4              ;
 +------------------------------------------------+--------------+---------------------+
 ; Parameter Name                                 ; Value        ; Type                ;
 +------------------------------------------------+--------------+---------------------+
@@ -541,7 +680,77 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: VGA:U1|lpm_mult:Mult25             ;
+; Parameter Settings for Inferred Entity Instance: VGA:U1|lpm_mult:Mult17             ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 14           ; Untyped             ;
+; LPM_WIDTHB                                     ; 14           ; Untyped             ;
+; LPM_WIDTHP                                     ; 28           ; Untyped             ;
+; LPM_WIDTHR                                     ; 28           ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; SIGNED       ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 6            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_56t     ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: VGA:U1|lpm_mult:Mult5              ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 14           ; Untyped             ;
+; LPM_WIDTHB                                     ; 14           ; Untyped             ;
+; LPM_WIDTHP                                     ; 28           ; Untyped             ;
+; LPM_WIDTHR                                     ; 28           ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; SIGNED       ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 6            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_56t     ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: VGA:U1|lpm_mult:Mult0              ;
 +------------------------------------------------+--------------+---------------------+
 ; Parameter Name                                 ; Value        ; Type                ;
 +------------------------------------------------+--------------+---------------------+
@@ -580,8 +789,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------+------------------------+
 ; Name                                  ; Value                  ;
 +---------------------------------------+------------------------+
-; Number of entity instances            ; 6                      ;
-; Entity Instance                       ; VGA:U1|lpm_mult:Mult0  ;
+; Number of entity instances            ; 7                      ;
+; Entity Instance                       ; VGA:U1|lpm_mult:Mult29 ;
 ;     -- LPM_WIDTHA                     ; 14                     ;
 ;     -- LPM_WIDTHB                     ; 14                     ;
 ;     -- LPM_WIDTHP                     ; 28                     ;
@@ -592,18 +801,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                   ;
 ;     -- INPUT_A_FIXED_VALUE            ; Bx                     ;
 ;     -- INPUT_B_FIXED_VALUE            ; Bx                     ;
-; Entity Instance                       ; VGA:U1|lpm_mult:Mult1  ;
-;     -- LPM_WIDTHA                     ; 14                     ;
-;     -- LPM_WIDTHB                     ; 14                     ;
-;     -- LPM_WIDTHP                     ; 28                     ;
-;     -- LPM_REPRESENTATION             ; SIGNED                 ;
-;     -- INPUT_A_IS_CONSTANT            ; NO                     ;
-;     -- INPUT_B_IS_CONSTANT            ; NO                     ;
-;     -- USE_EAB                        ; OFF                    ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                   ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx                     ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx                     ;
-; Entity Instance                       ; VGA:U1|lpm_mult:Mult4  ;
+; Entity Instance                       ; VGA:U1|lpm_mult:Mult12 ;
 ;     -- LPM_WIDTHA                     ; 14                     ;
 ;     -- LPM_WIDTHB                     ; 14                     ;
 ;     -- LPM_WIDTHP                     ; 28                     ;
@@ -625,7 +823,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                   ;
 ;     -- INPUT_A_FIXED_VALUE            ; Bx                     ;
 ;     -- INPUT_B_FIXED_VALUE            ; Bx                     ;
-; Entity Instance                       ; VGA:U1|lpm_mult:Mult13 ;
+; Entity Instance                       ; VGA:U1|lpm_mult:Mult4  ;
 ;     -- LPM_WIDTHA                     ; 14                     ;
 ;     -- LPM_WIDTHB                     ; 14                     ;
 ;     -- LPM_WIDTHP                     ; 28                     ;
@@ -636,7 +834,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                   ;
 ;     -- INPUT_A_FIXED_VALUE            ; Bx                     ;
 ;     -- INPUT_B_FIXED_VALUE            ; Bx                     ;
-; Entity Instance                       ; VGA:U1|lpm_mult:Mult25 ;
+; Entity Instance                       ; VGA:U1|lpm_mult:Mult17 ;
+;     -- LPM_WIDTHA                     ; 14                     ;
+;     -- LPM_WIDTHB                     ; 14                     ;
+;     -- LPM_WIDTHP                     ; 28                     ;
+;     -- LPM_REPRESENTATION             ; SIGNED                 ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                     ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                     ;
+;     -- USE_EAB                        ; OFF                    ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                   ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                     ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                     ;
+; Entity Instance                       ; VGA:U1|lpm_mult:Mult5  ;
+;     -- LPM_WIDTHA                     ; 14                     ;
+;     -- LPM_WIDTHB                     ; 14                     ;
+;     -- LPM_WIDTHP                     ; 28                     ;
+;     -- LPM_REPRESENTATION             ; SIGNED                 ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                     ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                     ;
+;     -- USE_EAB                        ; OFF                    ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                   ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                     ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                     ;
+; Entity Instance                       ; VGA:U1|lpm_mult:Mult0  ;
 ;     -- LPM_WIDTHA                     ; 14                     ;
 ;     -- LPM_WIDTHB                     ; 14                     ;
 ;     -- LPM_WIDTHP                     ; 28                     ;
@@ -650,26 +870,95 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------+------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Clock:comb_38"                                                                            ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port       ; Type   ; Severity ; Details                                                                             ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-; HZ[19..18] ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; HZ[9..8]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; HZ[31..23] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; HZ[21..20] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; HZ[17..15] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; HZ[13..12] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; HZ[5..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
-; HZ[22]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; HZ[14]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; HZ[11]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; HZ[10]     ; Input  ; Info     ; Stuck at GND                                                                        ;
-; HZ[7]      ; Input  ; Info     ; Stuck at GND                                                                        ;
-; HZ[6]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; out        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LED_Decoder:U16"                                                                                                                                                                        ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; data       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; data[3..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; mode       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (2 bits) it drives.  The 30 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; mode[1..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LED_Decoder:U15"                                                                                                                                                                        ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; data       ; Input ; Warning  ; Input port expression (2 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "data[3..2]" will be connected to GND.                                       ;
+; mode       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (2 bits) it drives.  The 30 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; mode[1..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LED_Decoder:U14"                                                                                                                                                                        ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; data       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; data[3..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; mode       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (2 bits) it drives.  The 30 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; mode[1..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LED_Decoder:U13"                                                                                                                                                                        ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; data       ; Input ; Warning  ; Input port expression (2 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "data[3..2]" will be connected to GND.                                       ;
+; mode       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (2 bits) it drives.  The 30 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; mode[1..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LED_Decoder:U12"                                                                                                                                                                        ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; data       ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "data[3..1]" will be connected to GND.                                       ;
+; mode       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (2 bits) it drives.  The 30 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; mode[1..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LED_Decoder:U11"                                                                                                                                                                        ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; data       ; Input ; Warning  ; Input port expression (2 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "data[3..2]" will be connected to GND.                                       ;
+; mode       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (2 bits) it drives.  The 30 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; mode[1..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LED_Decoder:U10"                                                                                                                                                                        ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; data       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; data[3..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; mode       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (2 bits) it drives.  The 30 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; mode[1..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LED_Decoder:U9"                                                                                                                                                                         ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; data       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; mode       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (2 bits) it drives.  The 30 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; mode[1..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
@@ -708,6 +997,47 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
 
++----------------------------------------------+
+; Port Connectivity Checks: "Clock:C2"         ;
++------------+-------+----------+--------------+
+; Port       ; Type  ; Severity ; Details      ;
++------------+-------+----------+--------------+
+; HZ[23..19] ; Input ; Info     ; Stuck at VCC ;
+; HZ[15..12] ; Input ; Info     ; Stuck at VCC ;
+; HZ[31..26] ; Input ; Info     ; Stuck at GND ;
+; HZ[11..8]  ; Input ; Info     ; Stuck at GND ;
+; HZ[6..0]   ; Input ; Info     ; Stuck at GND ;
+; HZ[25]     ; Input ; Info     ; Stuck at VCC ;
+; HZ[24]     ; Input ; Info     ; Stuck at GND ;
+; HZ[18]     ; Input ; Info     ; Stuck at GND ;
+; HZ[17]     ; Input ; Info     ; Stuck at VCC ;
+; HZ[16]     ; Input ; Info     ; Stuck at GND ;
+; HZ[7]      ; Input ; Info     ; Stuck at VCC ;
++------------+-------+----------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Clock:C1"                                                                                 ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; HZ[19..18] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; HZ[9..8]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; HZ[31..23] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; HZ[21..20] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; HZ[17..15] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; HZ[13..12] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; HZ[5..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; HZ[22]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; HZ[14]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; HZ[11]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; HZ[10]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; HZ[7]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; HZ[6]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; out        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "IR_RECEIVE:U2"                                                                               ;
 +---------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -723,7 +1053,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:05     ;
 +----------------+--------------+
 
 
@@ -733,39 +1063,165 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Dec 29 17:29:22 2022
+    Info: Processing started: Mon Jan 02 23:13:43 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Final -c Final
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Warning (10229): Verilog HDL Expression warning at Final.v(216): truncated literal to match 24 bits
-Warning (10229): Verilog HDL Expression warning at Final.v(218): truncated literal to match 24 bits
-Info (12021): Found 5 design units, including 5 entities, in source file final.v
+Info (12021): Found 7 design units, including 7 entities, in source file final.v
     Info (12023): Found entity 1: Final
-    Info (12023): Found entity 2: VGA
-    Info (12023): Found entity 3: IR_RECEIVE
-    Info (12023): Found entity 4: Debounce
-    Info (12023): Found entity 5: Clock
-Warning (10236): Verilog HDL Implicit Net warning at Final.v(21): created implicit net for "rst"
-Warning (10236): Verilog HDL Implicit Net warning at Final.v(147): created implicit net for "VGA_SYNC_N"
-Critical Warning (10846): Verilog HDL Instantiation warning at Final.v(42): instance has no name
+    Info (12023): Found entity 2: CheckWin
+    Info (12023): Found entity 3: VGA
+    Info (12023): Found entity 4: IR_RECEIVE
+    Info (12023): Found entity 5: Debounce
+    Info (12023): Found entity 6: Clock
+    Info (12023): Found entity 7: LED_Decoder
+Warning (10236): Verilog HDL Implicit Net warning at Final.v(39): created implicit net for "rst"
+Warning (10236): Verilog HDL Implicit Net warning at Final.v(299): created implicit net for "VGA_SYNC_N"
 Info (12127): Elaborating entity "Final" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at Final.v(46): truncated value with size 32 to match size of target (2)
+Warning (10036): Verilog HDL or VHDL warning at Final.v(77): object "flag" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at Final.v(41): truncated value with size 8 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at Final.v(80): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Final.v(89): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Final.v(91): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Final.v(95): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Final.v(97): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Final.v(101): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Final.v(103): truncated value with size 32 to match size of target (2)
+Warning (10270): Verilog HDL Case Statement warning at Final.v(86): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at Final.v(85): inferring latch(es) for variable "NextState", which holds its previous value in one or more paths through the always construct
+Warning (10230): Verilog HDL assignment warning at Final.v(124): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Final.v(125): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Final.v(131): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Final.v(132): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Final.v(138): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Final.v(139): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Final.v(145): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Final.v(146): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Final.v(152): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Final.v(153): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Final.v(159): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Final.v(160): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Final.v(166): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Final.v(167): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Final.v(173): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Final.v(174): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Final.v(180): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Final.v(181): truncated value with size 32 to match size of target (4)
+Warning (10270): Verilog HDL Case Statement warning at Final.v(196): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at Final.v(195): inferring latch(es) for variable "TicTac", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "TicTac[0]" at Final.v(195)
+Info (10041): Inferred latch for "TicTac[1]" at Final.v(195)
+Info (10041): Inferred latch for "TicTac[2]" at Final.v(195)
+Info (10041): Inferred latch for "TicTac[3]" at Final.v(195)
+Info (10041): Inferred latch for "TicTac[4]" at Final.v(195)
+Info (10041): Inferred latch for "TicTac[5]" at Final.v(195)
+Info (10041): Inferred latch for "TicTac[6]" at Final.v(195)
+Info (10041): Inferred latch for "TicTac[7]" at Final.v(195)
+Info (10041): Inferred latch for "TicTac[8]" at Final.v(195)
+Info (10041): Inferred latch for "TicTac[9]" at Final.v(195)
+Info (10041): Inferred latch for "TicTac[10]" at Final.v(195)
+Info (10041): Inferred latch for "TicTac[11]" at Final.v(195)
+Info (10041): Inferred latch for "TicTac[12]" at Final.v(195)
+Info (10041): Inferred latch for "TicTac[13]" at Final.v(195)
+Info (10041): Inferred latch for "TicTac[14]" at Final.v(195)
+Info (10041): Inferred latch for "TicTac[15]" at Final.v(195)
+Info (10041): Inferred latch for "TicTac[16]" at Final.v(195)
+Info (10041): Inferred latch for "TicTac[17]" at Final.v(195)
+Info (10041): Inferred latch for "NextState[0]" at Final.v(85)
+Info (10041): Inferred latch for "NextState[1]" at Final.v(85)
 Info (12128): Elaborating entity "VGA" for hierarchy "VGA:U1"
-Warning (10036): Verilog HDL or VHDL warning at Final.v(147): object "VGA_SYNC_N" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Final.v(128): object "color" assigned a value but never read
-Warning (10230): Verilog HDL assignment warning at Final.v(171): truncated value with size 32 to match size of target (13)
-Warning (10230): Verilog HDL assignment warning at Final.v(193): truncated value with size 32 to match size of target (13)
+Warning (10036): Verilog HDL or VHDL warning at Final.v(299): object "VGA_SYNC_N" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at Final.v(322): truncated value with size 32 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at Final.v(344): truncated value with size 32 to match size of target (13)
 Info (12128): Elaborating entity "IR_RECEIVE" for hierarchy "IR_RECEIVE:U2"
+Info (12128): Elaborating entity "Clock" for hierarchy "Clock:C1"
 Info (12128): Elaborating entity "Debounce" for hierarchy "Debounce:U3"
-Info (12128): Elaborating entity "Clock" for hierarchy "Clock:comb_38"
-Info (278001): Inferred 6 megafunctions from design logic
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "VGA:U1|Mult0"
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "VGA:U1|Mult1"
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "VGA:U1|Mult4"
+Info (12128): Elaborating entity "LED_Decoder" for hierarchy "LED_Decoder:U9"
+Warning (10240): Verilog HDL Always Construct warning at Final.v(757): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "out[0]" at Final.v(757)
+Info (10041): Inferred latch for "out[1]" at Final.v(757)
+Info (10041): Inferred latch for "out[2]" at Final.v(757)
+Info (10041): Inferred latch for "out[3]" at Final.v(757)
+Info (10041): Inferred latch for "out[4]" at Final.v(757)
+Info (10041): Inferred latch for "out[5]" at Final.v(757)
+Info (10041): Inferred latch for "out[6]" at Final.v(757)
+Info (12128): Elaborating entity "CheckWin" for hierarchy "CheckWin:U8"
+Warning (14026): LATCH primitive "LED_Decoder:U15|out[1]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U15|out[0]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U15|out[3]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U15|out[4]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U15|out[5]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U15|out[6]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U15|out[2]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U13|out[1]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U13|out[0]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U13|out[3]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U13|out[4]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U13|out[5]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U13|out[6]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U13|out[2]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U12|out[1]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U12|out[0]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U12|out[3]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U12|out[4]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U12|out[5]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U12|out[6]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U11|out[1]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U11|out[0]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U11|out[3]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U11|out[4]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U11|out[5]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U11|out[6]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U11|out[2]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U9|out[1]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U9|out[0]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U9|out[3]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U9|out[4]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U9|out[5]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U9|out[6]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U9|out[2]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U15|out[1]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U15|out[0]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U15|out[3]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U15|out[4]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U15|out[5]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U15|out[6]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U15|out[2]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U13|out[1]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U13|out[0]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U13|out[3]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U13|out[4]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U13|out[5]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U13|out[6]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U13|out[2]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U12|out[1]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U12|out[0]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U12|out[3]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U12|out[4]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U12|out[5]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U11|out[1]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U11|out[0]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U11|out[3]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U11|out[4]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U11|out[5]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U11|out[6]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U11|out[2]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U9|out[1]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U9|out[0]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U9|out[3]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U9|out[4]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U9|out[5]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U9|out[6]" is permanently enabled
+Warning (14026): LATCH primitive "LED_Decoder:U9|out[2]" is permanently enabled
+Info (278001): Inferred 7 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "VGA:U1|Mult29"
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "VGA:U1|Mult12"
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "VGA:U1|Mult8"
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "VGA:U1|Mult13"
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "VGA:U1|Mult25"
-Info (12130): Elaborated megafunction instantiation "VGA:U1|lpm_mult:Mult0"
-Info (12133): Instantiated megafunction "VGA:U1|lpm_mult:Mult0" with the following parameter:
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "VGA:U1|Mult4"
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "VGA:U1|Mult17"
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "VGA:U1|Mult5"
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "VGA:U1|Mult0"
+Info (12130): Elaborated megafunction instantiation "VGA:U1|lpm_mult:Mult29"
+Info (12133): Instantiated megafunction "VGA:U1|lpm_mult:Mult29" with the following parameter:
     Info (12134): Parameter "LPM_WIDTHA" = "14"
     Info (12134): Parameter "LPM_WIDTHB" = "14"
     Info (12134): Parameter "LPM_WIDTHP" = "28"
@@ -777,6 +1233,76 @@ Info (12133): Instantiated megafunction "VGA:U1|lpm_mult:Mult0" with the followi
     Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_56t.tdf
     Info (12023): Found entity 1: mult_56t
+Warning (12241): 8 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch TicTac[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[1]
+Warning (13012): Latch TicTac[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[1]
+Warning (13012): Latch TicTac[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[1]
+Warning (13012): Latch TicTac[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[1]
+Warning (13012): Latch TicTac[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[1]
+Warning (13012): Latch TicTac[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[1]
+Warning (13012): Latch TicTac[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[1]
+Warning (13012): Latch TicTac[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[1]
+Warning (13012): Latch TicTac[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[1]
+Warning (13012): Latch TicTac[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[1]
+Warning (13012): Latch TicTac[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[1]
+Warning (13012): Latch TicTac[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[1]
+Warning (13012): Latch TicTac[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[1]
+Warning (13012): Latch TicTac[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[1]
+Warning (13012): Latch TicTac[14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[1]
+Warning (13012): Latch TicTac[15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[1]
+Warning (13012): Latch TicTac[16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[1]
+Warning (13012): Latch TicTac[17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[1]
+Warning (13012): Latch NextState[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[0]
+Warning (13012): Latch NextState[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal State[0]
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDG[5]" is stuck at GND
+    Warning (13410): Pin "HEX1[0]" is stuck at GND
+    Warning (13410): Pin "HEX1[1]" is stuck at GND
+    Warning (13410): Pin "HEX1[2]" is stuck at GND
+    Warning (13410): Pin "HEX1[3]" is stuck at GND
+    Warning (13410): Pin "HEX1[4]" is stuck at GND
+    Warning (13410): Pin "HEX1[5]" is stuck at GND
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC
+    Warning (13410): Pin "HEX2[1]" is stuck at GND
+    Warning (13410): Pin "HEX3[1]" is stuck at GND
+    Warning (13410): Pin "HEX3[2]" is stuck at GND
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC
+    Warning (13410): Pin "HEX4[1]" is stuck at GND
+    Warning (13410): Pin "HEX5[0]" is stuck at GND
+    Warning (13410): Pin "HEX5[1]" is stuck at GND
+    Warning (13410): Pin "HEX5[2]" is stuck at GND
+    Warning (13410): Pin "HEX5[3]" is stuck at GND
+    Warning (13410): Pin "HEX5[4]" is stuck at GND
+    Warning (13410): Pin "HEX5[5]" is stuck at GND
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC
+    Warning (13410): Pin "HEX6[1]" is stuck at GND
+    Warning (13410): Pin "HEX7[0]" is stuck at GND
+    Warning (13410): Pin "HEX7[1]" is stuck at GND
+    Warning (13410): Pin "HEX7[2]" is stuck at GND
+    Warning (13410): Pin "HEX7[3]" is stuck at GND
+    Warning (13410): Pin "HEX7[4]" is stuck at GND
+    Warning (13410): Pin "HEX7[5]" is stuck at GND
+    Warning (13410): Pin "HEX7[6]" is stuck at VCC
 Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/Final Project/output_files/Final.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -803,16 +1329,16 @@ Warning (21074): Design contains 21 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[1]"
     Warning (15610): No output dependent on input pin "KEY[2]"
     Warning (15610): No output dependent on input pin "KEY[3]"
-Info (21057): Implemented 1096 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1454 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 24 input pins
-    Info (21059): Implemented 54 output pins
-    Info (21061): Implemented 1006 logic cells
-    Info (21062): Implemented 12 DSP elements
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 33 warnings
-    Info: Peak virtual memory: 4609 megabytes
-    Info: Processing ended: Thu Dec 29 17:29:27 2022
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:04
+    Info (21059): Implemented 110 output pins
+    Info (21061): Implemented 1306 logic cells
+    Info (21062): Implemented 14 DSP elements
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 197 warnings
+    Info: Peak virtual memory: 4611 megabytes
+    Info: Processing ended: Mon Jan 02 23:13:51 2023
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:05
 
 
 +------------------------------------------+

@@ -88,7 +88,6 @@ module LED_Decoder(data, out, mode);
 	input   		[3:0] data;
 	input   		[1:0] mode;
 	output reg  [6:0] out;
-	
 	always@(*)begin
 		if(mode == 0)begin
 			case(data)

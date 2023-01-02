@@ -3,111 +3,183 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'VGA:U1|clk25M'
-Slack : -16.743
-TNS   : -533.393
+Slack : -19.668
+TNS   : -371.393
 
-Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -3.322
-TNS   : -179.357
+Type  : Slow 1200mV 85C Model Setup 'Clock:C2|out'
+Slack : -4.450
+TNS   : -137.585
 
 Type  : Slow 1200mV 85C Model Setup 'IR_RECEIVE:U2|data_ready'
-Slack : -2.239
-TNS   : -35.051
+Slack : -3.984
+TNS   : -81.831
 
-Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : -0.112
-TNS   : -0.112
+Type  : Slow 1200mV 85C Model Setup 'State[0]'
+Slack : -3.418
+TNS   : -33.605
 
-Type  : Slow 1200mV 85C Model Hold 'VGA:U1|clk25M'
-Slack : 0.404
-TNS   : 0.000
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -3.130
+TNS   : -271.052
 
 Type  : Slow 1200mV 85C Model Hold 'IR_RECEIVE:U2|data_ready'
-Slack : 0.411
+Slack : -1.475
+TNS   : -22.961
+
+Type  : Slow 1200mV 85C Model Hold 'State[0]'
+Slack : -0.993
+TNS   : -15.054
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : -0.210
+TNS   : -0.340
+
+Type  : Slow 1200mV 85C Model Hold 'VGA:U1|clk25M'
+Slack : -0.208
+TNS   : -1.391
+
+Type  : Slow 1200mV 85C Model Hold 'Clock:C2|out'
+Slack : 0.512
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -131.500
+TNS   : -177.760
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'VGA:U1|clk25M'
 Slack : -1.285
-TNS   : -113.080
+TNS   : -75.815
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Clock:C2|out'
+Slack : -1.285
+TNS   : -42.405
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'IR_RECEIVE:U2|data_ready'
 Slack : -1.285
-TNS   : -25.700
+TNS   : -30.840
 
-Type  : Slow 1200mV 0C Model Setup 'VGA:U1|clk25M'
-Slack : -15.082
-TNS   : -477.980
-
-Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -2.959
-TNS   : -153.548
-
-Type  : Slow 1200mV 0C Model Setup 'IR_RECEIVE:U2|data_ready'
-Slack : -2.097
-TNS   : -33.039
-
-Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : -0.086
-TNS   : -0.086
-
-Type  : Slow 1200mV 0C Model Hold 'VGA:U1|clk25M'
-Slack : 0.355
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'State[0]'
+Slack : 0.397
 TNS   : 0.000
 
+Type  : Slow 1200mV 0C Model Setup 'VGA:U1|clk25M'
+Slack : -17.757
+TNS   : -332.548
+
+Type  : Slow 1200mV 0C Model Setup 'Clock:C2|out'
+Slack : -3.886
+TNS   : -119.532
+
+Type  : Slow 1200mV 0C Model Setup 'IR_RECEIVE:U2|data_ready'
+Slack : -3.568
+TNS   : -75.066
+
+Type  : Slow 1200mV 0C Model Setup 'State[0]'
+Slack : -3.104
+TNS   : -29.984
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -2.795
+TNS   : -235.442
+
 Type  : Slow 1200mV 0C Model Hold 'IR_RECEIVE:U2|data_ready'
-Slack : 0.367
+Slack : -1.247
+TNS   : -18.428
+
+Type  : Slow 1200mV 0C Model Hold 'State[0]'
+Slack : -0.755
+TNS   : -10.843
+
+Type  : Slow 1200mV 0C Model Hold 'VGA:U1|clk25M'
+Slack : -0.211
+TNS   : -1.354
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : -0.174
+TNS   : -0.243
+
+Type  : Slow 1200mV 0C Model Hold 'Clock:C2|out'
+Slack : 0.458
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -131.500
+TNS   : -177.760
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'VGA:U1|clk25M'
 Slack : -1.285
-TNS   : -113.080
+TNS   : -75.815
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Clock:C2|out'
+Slack : -1.285
+TNS   : -42.405
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'IR_RECEIVE:U2|data_ready'
 Slack : -1.285
-TNS   : -25.700
+TNS   : -30.840
 
-Type  : Fast 1200mV 0C Model Setup 'VGA:U1|clk25M'
-Slack : -7.694
-TNS   : -226.404
-
-Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -1.063
-TNS   : -39.756
-
-Type  : Fast 1200mV 0C Model Setup 'IR_RECEIVE:U2|data_ready'
-Slack : -0.761
-TNS   : -10.083
-
-Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : -0.191
-TNS   : -0.967
-
-Type  : Fast 1200mV 0C Model Hold 'VGA:U1|clk25M'
-Slack : 0.183
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'State[0]'
+Slack : 0.342
 TNS   : 0.000
 
+Type  : Fast 1200mV 0C Model Setup 'VGA:U1|clk25M'
+Slack : -8.940
+TNS   : -153.802
+
+Type  : Fast 1200mV 0C Model Setup 'Clock:C2|out'
+Slack : -1.769
+TNS   : -53.803
+
+Type  : Fast 1200mV 0C Model Setup 'State[0]'
+Slack : -1.462
+TNS   : -11.017
+
+Type  : Fast 1200mV 0C Model Setup 'IR_RECEIVE:U2|data_ready'
+Slack : -1.384
+TNS   : -29.561
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -0.986
+TNS   : -64.328
+
 Type  : Fast 1200mV 0C Model Hold 'IR_RECEIVE:U2|data_ready'
-Slack : 0.188
+Slack : -0.991
+TNS   : -17.036
+
+Type  : Fast 1200mV 0C Model Hold 'State[0]'
+Slack : -0.731
+TNS   : -11.643
+
+Type  : Fast 1200mV 0C Model Hold 'VGA:U1|clk25M'
+Slack : -0.198
+TNS   : -1.186
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : -0.182
+TNS   : -0.363
+
+Type  : Fast 1200mV 0C Model Hold 'Clock:C2|out'
+Slack : 0.229
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -109.488
+TNS   : -178.707
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'VGA:U1|clk25M'
 Slack : -1.000
-TNS   : -88.000
+TNS   : -59.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Clock:C2|out'
+Slack : -1.000
+TNS   : -33.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'IR_RECEIVE:U2|data_ready'
 Slack : -1.000
-TNS   : -20.000
+TNS   : -24.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'State[0]'
+Slack : 0.437
+TNS   : 0.000
 
 ------------------------------------------------------------
