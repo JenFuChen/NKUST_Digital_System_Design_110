@@ -1,3 +1,2 @@
-Warning (10268): Verilog HDL information at Final.v(108): always construct contains both blocking and non-blocking assignments
-Info (10281): Verilog HDL Declaration information at Final.v(25): object "start" differs only in case from object "START" in the same scope
-Warning (10268): Verilog HDL information at Final.v(237): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at Final.v(104): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at Final.v(243): always construct contains both blocking and non-blocking assignments

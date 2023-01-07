@@ -1,5 +1,5 @@
 |Final
-clk => clk.IN8
+clk => clk.IN5
 VGA_HS <= VGA:U1.port2
 VGA_VS <= VGA:U1.port3
 VGA_R[0] <= VGA:U1.port4
@@ -74,9 +74,9 @@ SW[15] => ~NO_FANOUT~
 SW[16] => ~NO_FANOUT~
 SW[17] => ~NO_FANOUT~
 KEY[0] => rst.IN3
-KEY[1] => KEY[1].IN1
-KEY[2] => KEY[2].IN1
-KEY[3] => KEY[3].IN1
+KEY[1] => ~NO_FANOUT~
+KEY[2] => ~NO_FANOUT~
+KEY[3] => ~NO_FANOUT~
 HEX0[0] <= LED_Decoder:U9.out
 HEX0[1] <= LED_Decoder:U9.out
 HEX0[2] <= LED_Decoder:U9.out
@@ -982,123 +982,6 @@ out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Final|Debounce:U3
-clk => out~reg0.CLK
-clk => count[0].CLK
-clk => count[1].CLK
-clk => count[2].CLK
-clk => count[3].CLK
-clk => count[4].CLK
-clk => count[5].CLK
-clk => count[6].CLK
-clk => count[7].CLK
-clk => count[8].CLK
-clk => count[9].CLK
-clk => count[10].CLK
-clk => count[11].CLK
-clk => count[12].CLK
-clk => count[13].CLK
-clk => count[14].CLK
-clk => count[15].CLK
-clk => count[16].CLK
-clk => count[17].CLK
-clk => count[18].CLK
-clk => count[19].CLK
-clk => count[20].CLK
-clk => count[21].CLK
-clk => count[22].CLK
-clk => count[23].CLK
-clk => count[24].CLK
-clk => count[25].CLK
-clk => count[26].CLK
-clk => count[27].CLK
-clk => count[28].CLK
-clk => count[29].CLK
-clk => count[30].CLK
-clk => count[31].CLK
-in => always0.IN1
-in => out~reg0.DATAIN
-out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Final|Debounce:U4
-clk => out~reg0.CLK
-clk => count[0].CLK
-clk => count[1].CLK
-clk => count[2].CLK
-clk => count[3].CLK
-clk => count[4].CLK
-clk => count[5].CLK
-clk => count[6].CLK
-clk => count[7].CLK
-clk => count[8].CLK
-clk => count[9].CLK
-clk => count[10].CLK
-clk => count[11].CLK
-clk => count[12].CLK
-clk => count[13].CLK
-clk => count[14].CLK
-clk => count[15].CLK
-clk => count[16].CLK
-clk => count[17].CLK
-clk => count[18].CLK
-clk => count[19].CLK
-clk => count[20].CLK
-clk => count[21].CLK
-clk => count[22].CLK
-clk => count[23].CLK
-clk => count[24].CLK
-clk => count[25].CLK
-clk => count[26].CLK
-clk => count[27].CLK
-clk => count[28].CLK
-clk => count[29].CLK
-clk => count[30].CLK
-clk => count[31].CLK
-in => always0.IN1
-in => out~reg0.DATAIN
-out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Final|Debounce:U5
-clk => out~reg0.CLK
-clk => count[0].CLK
-clk => count[1].CLK
-clk => count[2].CLK
-clk => count[3].CLK
-clk => count[4].CLK
-clk => count[5].CLK
-clk => count[6].CLK
-clk => count[7].CLK
-clk => count[8].CLK
-clk => count[9].CLK
-clk => count[10].CLK
-clk => count[11].CLK
-clk => count[12].CLK
-clk => count[13].CLK
-clk => count[14].CLK
-clk => count[15].CLK
-clk => count[16].CLK
-clk => count[17].CLK
-clk => count[18].CLK
-clk => count[19].CLK
-clk => count[20].CLK
-clk => count[21].CLK
-clk => count[22].CLK
-clk => count[23].CLK
-clk => count[24].CLK
-clk => count[25].CLK
-clk => count[26].CLK
-clk => count[27].CLK
-clk => count[28].CLK
-clk => count[29].CLK
-clk => count[30].CLK
-clk => count[31].CLK
-in => always0.IN1
-in => out~reg0.DATAIN
-out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Final|Debounce:U6
 clk => out~reg0.CLK
 clk => count[0].CLK
 clk => count[1].CLK

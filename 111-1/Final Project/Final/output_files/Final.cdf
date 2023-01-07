@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE115F29) Path("C:/Users/dht98/Downloads/NKUST/NKUST_Digital_System_Design_110/111-1/Final Project/output_files/") File("Final.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE115F29) Path("C:/Users/a7262/Downloads/Final Project/Final/output_files/") File("Final.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
